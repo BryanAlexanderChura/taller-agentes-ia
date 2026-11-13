@@ -73,6 +73,16 @@ if (Test-Cmd 'engram') {
     Add-UserPath $dest
 }
 
+# Conectar engram como MCP en cada agente instalado (claude-code pregunta por permisos)
+if (Test-Cmd 'engram') {
+    foreach ($pair in @(@('codex', 'codex'), @('opencode', 'opencode'), @('claude', 'claude-code'))) {
+        if (Test-Cmd $pair[0]) {
+            Write-Host "[engram] setup $($pair[1])"
+            engram setup $pair[1]
+        }
+    }
+}
+
 # 4. Herdr (preview beta en Windows): un fallo no detiene el resto
 if (Test-Cmd 'herdr') {
     Write-Host '[ok] herdr'

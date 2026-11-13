@@ -89,7 +89,25 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 5. Goal
+    ## 5. Revisión con otra IA
+
+    - Hoy la IA revisa bien: encuentra defectos reales en un diff.
+    - El autor no ve sus propios errores; un modelo distinto tiene otros puntos ciegos.
+    - Siempre un reviewer de otro proveedor: por ejemplo, un worker pi con otro modelo.
+
+    | Capa | Revisa | Ejemplo |
+    |---|---|---|
+    | Checker | lo mecánico | docs, lint, tests |
+    | Reviewer de otra IA | lo semántico | lógica, casos borde, alcance |
+    | Tú | la decisión | aceptar o pedir cambios |
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 6. Goal
 
     - `GOAL.md`: qué se quiere y criterios de aceptación verificables.
     - `RUN.md`: tareas ejecutables, cada una con su test.
@@ -101,7 +119,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 6. Ejecución larga
+    ## 7. Ejecución larga
 
     ```text
     goal -> tarea -> test RED -> código GREEN -> checker -> commit -> siguiente tarea

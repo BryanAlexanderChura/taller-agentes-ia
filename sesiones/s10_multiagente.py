@@ -58,7 +58,7 @@ def _(mo):
     |---|---|---|
     | Orquestador | divide, asigna, integra, decide | implementar todo él mismo |
     | Worker | implementa una tarea en su worktree | salirse de sus archivos |
-    | Reviewer | busca defectos con ojos frescos | editar |
+    | Reviewer | busca defectos; mejor otro modelo (pi con otro proveedor) | editar |
     """)
     return
 

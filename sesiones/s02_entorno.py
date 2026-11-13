@@ -46,7 +46,24 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 3. gh (GitHub CLI)
+    ## 3. GitHub: conceptos
+
+    | Concepto | Qué es |
+    |---|---|
+    | Repo | el proyecto con todo su historial |
+    | Remoto | la copia en GitHub (`origin`) |
+    | Commit | una foto del cambio, con mensaje |
+    | Rama | una línea de trabajo aislada |
+    | Pull request | propuesta para unir una rama, con revisión |
+    | Issue | una tarea o bug registrado |
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 4. gh (GitHub CLI)
 
     - `gh auth login`: una vez por máquina.
     - `gh repo clone`, `gh pr create`, `gh pr view`, `gh issue list`.
@@ -58,7 +75,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 4. Por qué marimo
+    ## 5. Por qué marimo
 
     - El notebook es un `.py` normal: diffs limpios en git, el agente lo lee y edita.
     - Reactivo: al cambiar una celda se recalcula lo que depende de ella; sin estado oculto.

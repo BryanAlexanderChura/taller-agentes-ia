@@ -83,7 +83,27 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 5. Subagentes
+    ## 5. Seguridad: bloquear lo destructivo
+
+    - La seguridad no se pide en el prompt: se impone con un hook bloqueante.
+    - Antes de cada comando (`PreToolUse`), el hook lo compara con una lista y lo rechaza.
+    - El agente recibe el motivo y busca otro camino.
+
+    | Bloquear | Por qué |
+    |---|---|
+    | `rm -rf`, borrar archivos | irreversible; mover a `legacy/` |
+    | `git push --force`, `git reset --hard` | destruye historial |
+    | leer o nombrar `.env` | secretos |
+    | `--no-verify` | salta los controles |
+    | `DROP`, `DELETE`, `UPDATE` en producción | datos reales |
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 6. Subagentes
 
     - Otro agente con su propio contexto; devuelve solo un resumen.
     - Útil para explorar mucho o revisar con ojos frescos.
@@ -95,7 +115,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 6. El harness empaqueta todo esto
+    ## 7. El harness empaqueta todo esto
 
     - Instrucciones + skills + MCP + hooks + roles de subagentes, versionados en el repo.
     - Se instala una vez y habilita `/new-module`, `/yaml-resume`, `/retomar-proyecto`.
