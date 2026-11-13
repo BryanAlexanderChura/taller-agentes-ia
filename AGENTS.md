@@ -1,6 +1,6 @@
 # Reglas del proyecto
 
-Versión lite del harness. Skills en `.agents/skills/`.
+Harness del taller. Skills en `.agents/skills/`.
 
 ## Trabajo
 

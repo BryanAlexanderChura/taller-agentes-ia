@@ -69,7 +69,7 @@ def _(mo):
     - Un agente abre panes, lanza otro agente y espera su resultado.
     - Base de la orquestación con varios agentes.
 
-    *Demo: Claude en un pane, pi en otro, tests en un tercero.*
+    *Demo en ia-postuler: Codex en un pane, pi en otro, tests en un tercero.*
     """)
     return
 

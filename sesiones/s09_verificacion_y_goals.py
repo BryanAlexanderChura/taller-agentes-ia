@@ -68,7 +68,7 @@ def _(mo):
     VERIFY INCOMPLETE
     ```
 
-    Skill `verificar`: destilado de `verify-module` del harness completo, 60 líneas.
+    Skill `verificar`: 60 líneas.
     """)
     return
 

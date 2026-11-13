@@ -72,7 +72,7 @@ def _(mo):
     - Cada worker entrega con `VERIFY PASS`; el orquestador integra solo eso.
     - Herdr muestra el estado de todos; Codex, opencode y pi pueden ser workers.
 
-    *Demo: orquestador en Codex, dos workers en sus worktrees, un reviewer.*
+    *Demo en ia-postuler: orquestador en Codex, dos workers en sus worktrees, un reviewer pi.*
     """)
     return
 

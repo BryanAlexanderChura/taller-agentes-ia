@@ -39,11 +39,18 @@ def _(mo):
     mo.md(r"""
     ## 2. `/new-module`
 
-    - `pipeline/a01_extraer.py`, `b01_procesar.py`, `c01_reporte.py`.
-    - `schemas/`: contratos de entrada y salida.
-    - `docs/`: README, arquitectura, CHANGELOG, `RESUME.yaml`.
+    ```text
+    ventas/
+      a01_extraer.py     bronze
+      b01_procesar.py    silver
+      c01_reporte.py     gold
+      docs/RESUME.yaml   estado
+      docs/CHANGELOG.md  historial
+    ```
 
-    *Demo: crear un módulo y recorrer su árbol.*
+    Sin tests: el checker da INCOMPLETE hasta escribir el primero.
+
+    *Demo: crear un módulo y recorrer su árbol; luego un módulo real en ia-postuler.*
     """)
     return
 
@@ -54,7 +61,7 @@ def _(mo):
     ## 3. Por qué importa al agente
 
     - Sabe dónde va cada cosa sin explorar todo el repo: menos contexto.
-    - Los contratos le dicen qué debe cumplir: verificable.
+    - Los tests le dicen qué debe cumplir: verificable.
     """)
     return
 

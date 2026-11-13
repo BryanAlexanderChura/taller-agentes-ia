@@ -1,4 +1,4 @@
-"""Checker mínimo: destilado de verify-module del harness.
+"""Checker mínimo: decide si un módulo está listo.
 
 Uso:    uv run python ejemplos/checker/check.py <modulo>
 Salida: 0 PASS, 1 FAIL, 2 INCOMPLETE.

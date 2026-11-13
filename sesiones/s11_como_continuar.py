@@ -23,7 +23,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 1. La carpeta `.agents` (versión lite de este repo)
+    ## 1. La carpeta `.agents` de este repo
 
     ```text
     AGENTS.md              reglas del proyecto
@@ -36,8 +36,6 @@ def _(mo):
     .claude/               settings.json (hook) + copia de skills
     .opencode/plugins/     plugin con la misma lista
     ```
-
-    El harness completo agrega roles, goals, swarm y más guards.
     """)
     return
 
@@ -79,6 +77,24 @@ def _(mo):
 
     - Agregar una etapa bronze a `ejemplos/modulo_demo` que lea un CSV.
     - Empezar por el test (RED), terminar con `VERIFY PASS`.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 5. Por qué un framework y no solo prompts
+
+    - Un proyecto largo no cabe en un chat: vive en docs, tests y memoria.
+    - El framework convierte cada sesión en un paso verificable y retomable.
+
+    | Sin framework | Con framework |
+    |---|---|
+    | cada chat reexplica todo | `/retomar-proyecto` |
+    | "ya está" sin pruebas | TDD y checker |
+    | reglas olvidadas | hooks que las imponen |
+    | estructura improvisada | `/new-module` |
     """)
     return
 

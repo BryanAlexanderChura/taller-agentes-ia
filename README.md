@@ -11,7 +11,7 @@ powershell -ExecutionPolicy Bypass -File scripts\windows\instalar.ps1
 Verifica git, gh, lazygit, uv, node, claude, codex, opencode, pi, engram y herdr (preview en Windows);
 instala solo lo que falta, conecta Engram a cada agente y deja el entorno Python listo (`uv sync`).
 
-## Harness lite
+## Harness del taller
 
 Al clonar el repo ya está configurado: `AGENTS.md` con las reglas y `.agents/` con skills y hook.
 
@@ -34,13 +34,13 @@ Codex pide confiar en los hooks del proyecto la primera vez (`/hooks`).
 | 2 | `sesiones/s02_entorno.py` | uv, git, GitHub, gh, por qué marimo |
 | 3 | `sesiones/s03_limites_y_memoria.py` | Límites del LLM, memoria (Engram), instrucciones, verificación |
 | 4 | `sesiones/s04_herramientas.py` | Las cuatro herramientas, archivo de instrucciones, controles |
-| 5 | `sesiones/s05_extender_el_agente.py` | Skills, MCP, hooks, subagentes y el harness |
+| 5 | `sesiones/s05_extender_el_agente.py` | Skills, MCP, CLI y TUI, hooks, seguridad, subagentes |
 | 6 | `sesiones/s06_herdr.py` | Herdr: varios agentes, sidebar de estados, CLI |
 | 7 | `sesiones/s07_modulo_medallion.py` | Arquitectura medallion y `/new-module` |
-| 8 | `sesiones/s08_cierre_y_retoma.py` | `/yaml-resume`, `/retomar-proyecto` y por qué un framework |
+| 8 | `sesiones/s08_cierre_y_retoma.py` | `/yaml-resume` y `/retomar-proyecto` |
 | 9 | `sesiones/s09_verificacion_y_goals.py` | TDD, checker, goals y ejecución larga |
 | 10 | `sesiones/s10_multiagente.py` | Worktrees, roles y orquestación |
-| 11 | `sesiones/s11_como_continuar.py` | Carpeta `.agents`, próximos pasos, práctica |
+| 11 | `sesiones/s11_como_continuar.py` | Carpeta `.agents`, próximos pasos, práctica, por qué un framework |
 
 ## Ejemplos
 

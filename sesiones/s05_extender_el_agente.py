@@ -15,7 +15,7 @@ def _(mo):
     mo.md(r"""
     # Sesión 5: Extender el agente
 
-    Instrucciones piden; skills enseñan; MCP conecta; hooks obligan; subagentes aíslan.
+    Instrucciones piden; skills enseñan; CLI y MCP conectan; hooks obligan; subagentes aíslan.
     """)
     return
 
@@ -54,7 +54,28 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 3. Hooks: por qué
+    ## 3. CLI: el idioma nativo del agente
+
+    - El agente vive en la terminal: una CLI es su forma más directa de actuar.
+    - No ocupa contexto hasta que la usa; `--help` le enseña lo que necesita.
+    - Salida en texto o JSON: la lee, la filtra y la encadena.
+    - Ejemplos: `git`, `gh`, `uv`, `herdr`, `engram`.
+
+    | Interfaz | Para quién | Ejemplo |
+    |---|---|---|
+    | CLI | el agente | `gh pr create`, `herdr agent list` |
+    | TUI | la persona | `lazygit`, herdr |
+    | MCP | el agente, cuando no hay CLI | Engram, docs |
+
+    Las mejores herramientas traen ambas: TUI para ti, CLI para el agente.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 4. Hooks: por qué
 
     - Las instrucciones son sugerencias: el modelo puede olvidarlas.
     - Un hook es código que corre siempre, fuera del modelo: determinista.
@@ -66,7 +87,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 4. Hooks: eventos
+    ## 5. Hooks: eventos
 
     | Cuándo | Claude Code / Codex | opencode (plugin) | Uso típico |
     |---|---|---|---|
@@ -83,7 +104,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 5. Seguridad: bloquear lo destructivo
+    ## 6. Seguridad: bloquear lo destructivo
 
     - La seguridad no se pide en el prompt: se impone con un hook bloqueante.
     - Antes de cada comando (`PreToolUse`), el hook lo compara con una lista y lo rechaza.
@@ -103,7 +124,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 6. Subagentes
+    ## 7. Subagentes
 
     - Otro agente con su propio contexto; devuelve solo un resumen.
     - Útil para explorar mucho o revisar con ojos frescos.
@@ -115,10 +136,10 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 7. El harness empaqueta todo esto
+    ## 8. El harness empaqueta todo esto
 
     - Instrucciones + skills + MCP + hooks + roles de subagentes, versionados en el repo.
-    - Este repo trae una versión lite en `.agents/`: al clonarlo ya está configurado.
+    - Este repo trae uno en `.agents/`: al clonarlo ya está configurado.
     - Hook de seguridad listo para Codex, Claude Code y opencode, con una sola lista.
     """)
     return
