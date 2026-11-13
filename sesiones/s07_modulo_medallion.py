@@ -13,7 +13,7 @@ def _():
 @app.cell
 def _(mo):
     mo.md(r"""
-    # Sesión 6: Arquitectura medallion y módulos
+    # Sesión 7: Arquitectura medallion y módulos
 
     Una estructura predecible para que humanos y agentes se ubiquen.
     """)

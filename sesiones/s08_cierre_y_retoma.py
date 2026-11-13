@@ -13,7 +13,7 @@ def _():
 @app.cell
 def _(mo):
     mo.md(r"""
-    # Sesión 7: Cerrar y retomar
+    # Sesión 8: Cerrar y retomar
 
     Cerrar bien una sesión es lo que permite retomarla.
     """)

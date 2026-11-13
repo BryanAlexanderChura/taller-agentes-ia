@@ -15,7 +15,7 @@ def _(mo):
     mo.md(r"""
     # Sesión 5: Extender el agente
 
-    Instrucciones piden; skills enseñan; hooks obligan; subagentes aíslan.
+    Instrucciones piden; skills enseñan; MCP conecta; hooks obligan; subagentes aíslan.
     """)
     return
 
@@ -41,7 +41,20 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 2. Hooks: por qué
+    ## 2. MCP
+
+    - Protocolo estándar para dar al agente tools y datos externos.
+    - Un servidor MCP sirve a cualquier herramienta compatible.
+    - Ejemplos: Engram (memoria), CodeGraph (índice del código), docs actuales, GitHub.
+    - Cada tool ocupa contexto: pocos servidores, bien elegidos.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 3. Hooks: por qué
 
     - Las instrucciones son sugerencias: el modelo puede olvidarlas.
     - Un hook es código que corre siempre, fuera del modelo: determinista.
@@ -53,7 +66,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 3. Hooks: eventos
+    ## 4. Hooks: eventos
 
     | Evento | Cuándo | Uso típico |
     |---|---|---|
@@ -71,7 +84,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 4. Subagentes
+    ## 5. Subagentes
 
     - Otro agente con su propio contexto; devuelve solo un resumen.
     - Útil para explorar mucho o revisar con ojos frescos.
@@ -83,9 +96,9 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 5. El harness empaqueta todo esto
+    ## 6. El harness empaqueta todo esto
 
-    - Instrucciones + skills + hooks + roles de subagentes, versionados en el repo.
+    - Instrucciones + skills + MCP + hooks + roles de subagentes, versionados en el repo.
     - Se instala una vez y habilita `/new-module`, `/yaml-resume`, `/retomar-proyecto`.
     """)
     return

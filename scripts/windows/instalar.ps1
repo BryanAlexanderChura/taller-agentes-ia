@@ -73,14 +73,27 @@ if (Test-Cmd 'engram') {
     Add-UserPath $dest
 }
 
-# 4. Entorno Python del taller
+# 4. Herdr (preview beta en Windows): un fallo no detiene el resto
+if (Test-Cmd 'herdr') {
+    Write-Host '[ok] herdr'
+} else {
+    Write-Host '[instalando] herdr (preview beta)'
+    try {
+        Invoke-RestMethod https://herdr.dev/install.ps1 | Invoke-Expression
+        Update-SessionPath
+    } catch {
+        Write-Warning "herdr no se instalo: $($_.Exception.Message). El taller sigue sin el."
+    }
+}
+
+# 5. Entorno Python del taller
 $root = Resolve-Path (Join-Path $PSScriptRoot '..\..')
 uv sync --directory $root
 
-# 5. Resumen
+# 6. Resumen
 Write-Host ''
 Write-Host 'Resumen:'
-foreach ($cmd in 'git', 'gh', 'uv', 'node', 'claude', 'codex', 'opencode', 'pi', 'engram') {
+foreach ($cmd in 'git', 'gh', 'uv', 'node', 'claude', 'codex', 'opencode', 'pi', 'engram', 'herdr') {
     $state = if (Test-Cmd $cmd) { 'ok' } else { 'FALTA' }
     Write-Host ("  {0,-9} {1}" -f $cmd, $state)
 }
