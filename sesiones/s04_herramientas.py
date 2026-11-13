@@ -13,9 +13,9 @@ def _():
 @app.cell
 def _(mo):
     mo.md(r"""
-    # Sesión 4: Herramientas y harness
+    # Sesión 4: Herramientas
 
-    Mismo bucle, distintas interfaces; un harness común las une.
+    Mismo bucle, distintas interfaces.
     """)
     return
 
@@ -38,11 +38,11 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 2. Controles comunes
+    ## 2. El archivo de instrucciones
 
-    - Permisos: qué puede ejecutar sin preguntar.
-    - Modo plan: proponer antes de editar.
-    - Revisar el diff de cada cambio.
+    - Se carga en cada turno: es el prefijo que más pesa y más se cachea.
+    - Corto y decisivo: reglas que el agente no deduciría solo.
+    - Una regla, un lugar; lo largo va a una skill o a docs.
     """)
     return
 
@@ -50,10 +50,11 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 3. Instalar el harness
+    ## 3. Controles comunes
 
-    - Reglas, skills y guards compartidos entre herramientas.
-    - Se instala en el repo y habilita `/new-module`, `/yaml-resume`, `/retomar-proyecto`.
+    - Permisos: qué puede ejecutar sin preguntar.
+    - Modo plan: proponer antes de editar.
+    - Revisar el diff de cada cambio.
     """)
     return
 

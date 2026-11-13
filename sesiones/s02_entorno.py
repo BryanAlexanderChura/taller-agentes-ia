@@ -55,5 +55,18 @@ def _(mo):
     return
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 4. Por qué marimo
+
+    - El notebook es un `.py` normal: diffs limpios en git, el agente lo lee y edita.
+    - Reactivo: al cambiar una celda se recalcula lo que depende de ella; sin estado oculto.
+    - Un mismo archivo es notebook, script, app o presentación.
+    - Corre con `uv run`: mismo entorno para todos.
+    """)
+    return
+
+
 if __name__ == "__main__":
     app.run()

@@ -13,7 +13,7 @@ def _():
 @app.cell
 def _(mo):
     mo.md(r"""
-    # Sesión 6: Cerrar y retomar
+    # Sesión 7: Cerrar y retomar
 
     Cerrar bien una sesión es lo que permite retomarla.
     """)
@@ -51,6 +51,26 @@ def _(mo):
     `/new-module` -> trabajo -> `/yaml-resume` -> chat nuevo -> `/retomar-proyecto`
 
     *Demo: cerrar, abrir un chat nuevo y retomar.*
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 4. Por qué un framework y no solo prompts
+
+    - Un proyecto largo no cabe en un chat: vive en docs, tests y memoria.
+    - El framework convierte cada sesión en un paso verificable y retomable.
+    - Ejemplo: agent-harness, 737 commits y 59 versiones en seis semanas,
+      construido con agentes y su propio framework.
+
+    | Sin framework | Con framework |
+    |---|---|
+    | cada chat reexplica todo | `/retomar-proyecto` |
+    | "ya está" sin pruebas | tests y gate de verificación |
+    | reglas olvidadas | hooks que las imponen |
+    | estructura improvisada | `/new-module` |
     """)
     return
 
