@@ -1,0 +1,8 @@
+[project]
+name = "taller-agentes-ia"
+version = "0.1.0"
+description = "Taller de agentes de IA: sesiones en marimo y scripts de instalación"
+requires-python = ">=3.12"
+dependencies = [
+    "marimo",
+]
