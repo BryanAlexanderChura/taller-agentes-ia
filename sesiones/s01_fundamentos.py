@@ -23,6 +23,17 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
+    ## Modelos: dónde compararlos
+
+    - [OpenRouter](https://openrouter.ai): una API para muchos modelos; precios y ranking de uso.
+    - [Artificial Analysis](https://artificialanalysis.ai): benchmarks de calidad, velocidad y precio.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
     ## 1. Tokens
 
     - El modelo no lee palabras: lee tokens.
