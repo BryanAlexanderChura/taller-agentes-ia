@@ -39,6 +39,7 @@ def _(mo):
     - Punto de retorno barato: deshacer lo que hizo el agente.
     - `status`, `diff`, `add`, `commit`, `restore`.
     - Revisar el diff antes de aceptar.
+    - Visual: el panel de git de VS Code, o `lazygit` en un pane junto al agente.
     """)
     return
 

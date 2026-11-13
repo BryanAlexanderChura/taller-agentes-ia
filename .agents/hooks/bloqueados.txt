@@ -1,0 +1,9 @@
+# Un patrón (regex, sin distinguir mayúsculas) por línea. Lo usan bloquear.py y el plugin de opencode.
+\brm\s+-[a-z]*[rf]
+\bRemove-Item\b.*-Recurse
+\bgit\s+push\b.*(--force|\s-f\b)
+\bgit\s+reset\s+--hard
+--no-verify
+\.env\b
+\b(DROP|TRUNCATE)\s+TABLE\b
+\bDELETE\s+FROM\b

@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read|Edit|Write",
+        "hooks": [
+          { "type": "command", "command": "uv run python .agents/hooks/bloquear.py" }
+        ]
+      }
+    ]
+  }
+}

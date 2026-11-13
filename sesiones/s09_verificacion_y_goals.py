@@ -59,17 +59,16 @@ def _(mo):
     ## 3. Demo del checker
 
     ```text
-    > uv run python ejemplos/checker/check.py ejemplos/modulo_demo
+    > uv run python .agents/skills/verificar/scripts/check.py ejemplos/modulo_demo
     VERIFY PASS
 
-    > uv run python ejemplos/checker/check.py ejemplos/checker
-    INCOMPLETE docs: falta docs/RESUME.yaml
-    INCOMPLETE docs: falta docs/CHANGELOG.md
+    > uv run python .agents/skills/new-module/scripts/new_module.py ventas "Ventas"
+    > uv run python .agents/skills/verificar/scripts/check.py ventas
     INCOMPLETE tests: no hay tests
     VERIFY INCOMPLETE
     ```
 
-    Destilado de `verify-module` del harness: misma idea, 60 líneas.
+    Skill `verificar`: destilado de `verify-module` del harness completo, 60 líneas.
     """)
     return
 

@@ -118,7 +118,8 @@ def _(mo):
     ## 7. El harness empaqueta todo esto
 
     - Instrucciones + skills + MCP + hooks + roles de subagentes, versionados en el repo.
-    - Se instala una vez y habilita `/new-module`, `/yaml-resume`, `/retomar-proyecto`.
+    - Este repo trae una versión lite en `.agents/`: al clonarlo ya está configurado.
+    - Hook de seguridad listo para Codex, Claude Code y opencode, con una sola lista.
     """)
     return
 

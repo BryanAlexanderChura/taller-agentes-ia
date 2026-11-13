@@ -37,6 +37,7 @@ function Install-Npm($Cmd, [string[]]$NpmArgs) {
 # 1. Base del entorno
 Install-Winget 'git'  'Git.Git'
 Install-Winget 'gh'   'GitHub.cli'
+Install-Winget 'lazygit' 'JesseDuffield.lazygit'
 Install-Winget 'uv'   'astral-sh.uv'
 Install-Winget 'node' 'OpenJS.NodeJS.LTS'
 
@@ -103,7 +104,7 @@ uv sync --directory $root
 # 6. Resumen
 Write-Host ''
 Write-Host 'Resumen:'
-foreach ($cmd in 'git', 'gh', 'uv', 'node', 'claude', 'codex', 'opencode', 'pi', 'engram', 'herdr') {
+foreach ($cmd in 'git', 'gh', 'lazygit', 'uv', 'node', 'claude', 'codex', 'opencode', 'pi', 'engram', 'herdr') {
     $state = if (Test-Cmd $cmd) { 'ok' } else { 'FALTA' }
     Write-Host ("  {0,-9} {1}" -f $cmd, $state)
 }
