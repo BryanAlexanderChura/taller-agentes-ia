@@ -27,9 +27,9 @@ def _(mo):
 
     | Herramienta | Instrucciones | Nota |
     |---|---|---|
-    | Claude Code | `CLAUDE.md` | skills, hooks, subagentes |
-    | Codex | `AGENTS.md` | |
-    | opencode | `AGENTS.md` | varios proveedores |
+    | Codex | `AGENTS.md` | hooks, subagentes |
+    | opencode | `AGENTS.md` | varios proveedores, plugins |
+    | Claude Code | `CLAUDE.md` o `AGENTS.md` | skills, hooks, subagentes |
     | pi | `AGENTS.md` | mínimo, extensible |
     """)
     return

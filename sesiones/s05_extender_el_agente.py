@@ -68,15 +68,14 @@ def _(mo):
     mo.md(r"""
     ## 4. Hooks: eventos
 
-    | Evento | Cuándo | Uso típico |
-    |---|---|---|
-    | `SessionStart` | al abrir sesión | inyectar memoria (Engram) |
-    | `UserPromptSubmit` | al enviar un mensaje | agregar contexto |
-    | `PreToolUse` | antes de una tool | **bloquear**: `.env`, `/tmp`, `--no-verify` |
-    | `PostToolUse` | después de una tool | formatear, lint, tests |
-    | `Stop` | al terminar el turno | exigir verificación |
+    | Cuándo | Claude Code / Codex | opencode (plugin) | Uso típico |
+    |---|---|---|---|
+    | al abrir sesión | `SessionStart` | evento de sesión | inyectar memoria (Engram) |
+    | antes de una tool | `PreToolUse` | `tool.execute.before` | **bloquear**: `.env`, `/tmp`, `--no-verify` |
+    | después de una tool | `PostToolUse` | `tool.execute.after` | formatear, lint, tests |
+    | al terminar el turno | `Stop` | `session.idle` | exigir verificación |
 
-    Nombres de Claude Code; otras herramientas tienen equivalentes (plugins, extensiones).
+    Codex: `.codex/hooks.json`; revisar soporte en Windows. pi: extensiones.
     """)
     return
 

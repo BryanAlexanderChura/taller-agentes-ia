@@ -23,6 +23,18 @@ deja el entorno Python listo (`uv sync`).
 | 6 | `sesiones/s06_herdr.py` | Herdr: varios agentes, sidebar de estados, CLI |
 | 7 | `sesiones/s07_modulo_medallion.py` | Arquitectura medallion y `/new-module` |
 | 8 | `sesiones/s08_cierre_y_retoma.py` | `/yaml-resume`, `/retomar-proyecto` y por qué un framework |
+| 9 | `sesiones/s09_verificacion_y_goals.py` | TDD, checker, goals y ejecución larga |
+| 10 | `sesiones/s10_multiagente.py` | Worktrees, roles y orquestación |
+| 11 | `sesiones/s11_como_continuar.py` | Carpeta `.agents`, próximos pasos, práctica |
+
+## Ejemplos
+
+- `ejemplos/checker/check.py`: checker mínimo (destilado de `verify-module`); 0 PASS, 1 FAIL, 2 INCOMPLETE.
+- `ejemplos/modulo_demo/`: módulo de juguete con docs y tests para la demo.
+
+```powershell
+uv run python ejemplos/checker/check.py ejemplos/modulo_demo
+```
 
 Abrir una sesión:
 

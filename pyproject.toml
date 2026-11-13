@@ -6,3 +6,9 @@ requires-python = ">=3.12"
 dependencies = [
     "marimo",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+]

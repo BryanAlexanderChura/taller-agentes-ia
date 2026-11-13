@@ -1,0 +1,117 @@
+import marimo
+
+app = marimo.App(width="medium")
+
+
+@app.cell
+def _():
+    import marimo as mo
+
+    return (mo,)
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    # Sesión 9: Verificación y goals
+
+    Que el agente demuestre su trabajo, y que pueda avanzar solo por horas.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 1. TDD
+
+    1. **RED**: escribir el test; llama a la función real; verlo fallar.
+    2. **GREEN**: el código mínimo que lo hace pasar.
+    3. **REFACTOR**: limpiar con los tests en verde.
+
+    - El test fija el objetivo antes de que el agente interprete.
+    - Ver el RED prueba que el test mide algo.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 2. El checker
+
+    Un script que decide si el trabajo está listo, no el agente.
+
+    | Salida | Estado | Significa |
+    |---|---|---|
+    | 0 | PASS | docs, lint y tests en orden |
+    | 1 | FAIL | algo falla |
+    | 2 | INCOMPLETE | falta evidencia: docs o tests |
+
+    Sin evidencia no hay PASS.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 3. Demo del checker
+
+    ```text
+    > uv run python ejemplos/checker/check.py ejemplos/modulo_demo
+    VERIFY PASS
+
+    > uv run python ejemplos/checker/check.py ejemplos/checker
+    INCOMPLETE docs: falta docs/RESUME.yaml
+    INCOMPLETE docs: falta docs/CHANGELOG.md
+    INCOMPLETE tests: no hay tests
+    VERIFY INCOMPLETE
+    ```
+
+    Destilado de `verify-module` del harness: misma idea, 60 líneas.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 4. El checker como regla
+
+    - En `AGENTS.md`: "no declares terminado sin `VERIFY PASS`".
+    - Mejor aún, en un hook al terminar el turno (`Stop`, `session.idle`):
+      si no hay PASS, el agente sigue trabajando.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 5. Goal
+
+    - `GOAL.md`: qué se quiere y criterios de aceptación verificables.
+    - `RUN.md`: tareas ejecutables, cada una con su test.
+    - El checker comprueba los criterios; el goal no se cierra por opinión.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 6. Ejecución larga
+
+    ```text
+    goal -> tarea -> test RED -> código GREEN -> checker -> commit -> siguiente tarea
+    ```
+
+    - El bucle corre solo mientras el checker diga PASS en cada paso.
+    - Al cortarse la sesión: `/yaml-resume`, y luego se retoma donde quedó.
+    """)
+    return
+
+
+if __name__ == "__main__":
+    app.run()
