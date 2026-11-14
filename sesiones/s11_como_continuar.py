@@ -33,7 +33,7 @@ def _(mo):
                            grill-me, root-cause, write-goal,
                            presentar-porque
       plantillas/SKILL.md  punto de partida para una skill nueva
-      hooks/              bloquear.py + bloqueados.txt (una sola lista)
+      hooks/               bloquear.py + bloqueados.txt (una sola lista)
       sync_claude.py       copia skills a .claude/skills
     .codex/hooks.json      hook para Codex
     .claude/               settings.json (hook) + copia de skills
