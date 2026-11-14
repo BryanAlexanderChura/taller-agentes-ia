@@ -4,3 +4,4 @@ __marimo__/
 *.pyc
 notes/
 .env
+.envrc
