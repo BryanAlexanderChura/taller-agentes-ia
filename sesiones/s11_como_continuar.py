@@ -94,7 +94,7 @@ def _(mo):
     .agents/
       skills/
         verificar  tdd  new-module
-        yaml-resume  retomar-proyecto
+        cerrar-sesion  retomar-sesion
         revisar-con-pi  grill-me
         root-cause  write-goal
         presentar-porque

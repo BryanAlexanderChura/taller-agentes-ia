@@ -1,11 +1,11 @@
 ---
-name: yaml-resume
+name: cerrar-sesion
 description: Cierra la sesión de un módulo: sincroniza RESUME.yaml y CHANGELOG con lo hecho, y guarda el resumen en Engram.
 ---
 
-# yaml-resume
+# cerrar-sesion
 
-Uso: `/yaml-resume <modulo>`
+Uso: `/cerrar-sesion <modulo>`
 
 ## Reglas
 

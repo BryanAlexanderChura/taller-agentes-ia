@@ -14,8 +14,8 @@ Harness del taller. Skills en `.agents/skills/`.
 
 ## Sesión
 
-- Al abrir: `/retomar-proyecto <modulo>`.
-- Al cerrar: `/yaml-resume <modulo>`.
+- Al abrir: `/retomar-sesion <modulo>`.
+- Al cerrar: `/cerrar-sesion <modulo>`.
 - Módulo nuevo: `/new-module <ruta>`.
 - Antes de integrar un cambio grande: `/revisar-con-pi`.
 - Presentación nueva o reescrita: `/presentar-porque sesiones/<sesion>.py`.

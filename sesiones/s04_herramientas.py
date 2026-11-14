@@ -125,8 +125,8 @@ def _(mo):
       No borres: mueve a legacy/.
       Si algo es ambiguo, pregunta.
     ## Sesión
-      Al abrir: /retomar-proyecto.
-      Al cerrar: /yaml-resume.
+      Al abrir: /retomar-sesion.
+      Al cerrar: /cerrar-sesion.
     ```
     """),
                     mo.md(r"""

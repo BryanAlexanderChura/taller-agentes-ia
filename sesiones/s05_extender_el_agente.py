@@ -105,7 +105,7 @@ def _(mo):
         Empezó a programar dentro de la retoma.</div>
     </div>
 
-    <div class="nota">Reglas de <code>retomar-proyecto</code>. Plantilla: <code>.agents/plantillas/SKILL.md</code>.</div>
+    <div class="nota">Reglas de <code>retomar-sesion</code>. Plantilla: <code>.agents/plantillas/SKILL.md</code>.</div>
     """)
     return
 

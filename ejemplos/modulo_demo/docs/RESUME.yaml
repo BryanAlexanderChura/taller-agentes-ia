@@ -1,4 +1,4 @@
-# Marcador del módulo, no diario. Lo actualiza /yaml-resume; lo lee /retomar-proyecto.
+# Marcador del módulo, no diario. Lo actualiza /cerrar-sesion; lo lee /retomar-sesion.
 current_focus: Módulo de ejemplo para la demo del checker.
 # goal: docs/goals/goal-1   # solo con un goal activo
 updated: 2026-11-14

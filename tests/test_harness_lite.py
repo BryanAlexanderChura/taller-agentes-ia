@@ -119,6 +119,17 @@ def test_skills_traidas_del_harness_existen(nombre):
     assert (RAIZ / ".agents/skills" / nombre / "SKILL.md").is_file()
 
 
+# Nombres de skills del harness global: una skill personal con el mismo nombre
+# gana a la del proyecto en Claude Code, así que las del taller no los repiten.
+NOMBRES_GLOBALES = ["yaml-resume", "retomar-proyecto"]
+
+
+def test_skills_del_taller_no_repiten_nombres_globales():
+    locales = {p.name for p in SKILLS}
+    assert locales.isdisjoint(NOMBRES_GLOBALES)
+    assert {"cerrar-sesion", "retomar-sesion"} <= locales
+
+
 def test_new_module_no_sobrescribe(tmp_path):
     with pytest.raises(SystemExit):
         new_module.crear(tmp_path, "x")

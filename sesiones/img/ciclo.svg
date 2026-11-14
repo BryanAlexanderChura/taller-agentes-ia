@@ -14,7 +14,7 @@
     <text x="335" y="96" fill="#737373" font-size="13">tdd + verificar</text>
 
     <rect x="480" y="40" width="170" height="70" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
-    <text x="565" y="72" fill="#a3e635" font-weight="700">/yaml-resume</text>
+    <text x="565" y="72" fill="#a3e635" font-weight="700">/cerrar-sesion</text>
     <text x="565" y="96" fill="#737373" font-size="13">cerrar</text>
 
     <rect x="710" y="40" width="170" height="70" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
@@ -22,7 +22,7 @@
     <text x="795" y="96" fill="#737373" font-size="13">contexto limpio</text>
 
     <rect x="350" y="210" width="200" height="70" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
-    <text x="450" y="242" fill="#a3e635" font-weight="700">/retomar-proyecto</text>
+    <text x="450" y="242" fill="#a3e635" font-weight="700">/retomar-sesion</text>
     <text x="450" y="266" fill="#737373" font-size="13">abrir, solo lectura</text>
   </g>
   <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">

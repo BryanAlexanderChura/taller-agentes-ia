@@ -24,7 +24,7 @@ def crear(ruta: Path, proposito: str) -> None:
             encoding="utf-8",
         )
     (ruta / "docs" / "RESUME.yaml").write_text(
-        "# Marcador del módulo, no diario. Lo actualiza /yaml-resume; lo lee /retomar-proyecto.\n"
+        "# Marcador del módulo, no diario. Lo actualiza /cerrar-sesion; lo lee /retomar-sesion.\n"
         f"current_focus: {proposito}\n"
         "# goal: docs/goals/goal-1   # solo con un goal activo\n"
         f"updated: {date.today()}\n"

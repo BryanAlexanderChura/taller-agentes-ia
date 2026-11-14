@@ -20,7 +20,7 @@ Al clonar el repo ya está configurado: `AGENTS.md` con las reglas y `.agents/` 
 | `verificar` | checker: 0 PASS, 1 FAIL, 2 INCOMPLETE |
 | `tdd` | test primero, verlo fallar |
 | `new-module` | crea un módulo con etapas a/b/c y docs |
-| `yaml-resume` / `retomar-proyecto` | cerrar y retomar sesión |
+| `cerrar-sesion` / `retomar-sesion` | cerrar y retomar sesión |
 | `revisar-con-pi` | revisión del diff con otro modelo |
 | `.agents/hooks/` | bloquea comandos destructivos (Codex, Claude Code, opencode) |
 
@@ -37,7 +37,7 @@ Codex pide confiar en los hooks del proyecto la primera vez (`/hooks`).
 | 5 | `sesiones/s05_extender_el_agente.py` | Skills, MCP, CLI y TUI, hooks, seguridad, subagentes |
 | 6 | `sesiones/s06_herdr.py` | Herdr: varios agentes, sidebar de estados, CLI |
 | 7 | `sesiones/s07_modulo_medallion.py` | Arquitectura medallion y `/new-module` |
-| 8 | `sesiones/s08_cierre_y_retoma.py` | `/yaml-resume` y `/retomar-proyecto` |
+| 8 | `sesiones/s08_cierre_y_retoma.py` | `/cerrar-sesion` y `/retomar-sesion` |
 | 9 | `sesiones/s09_verificacion_y_goals.py` | TDD, checker, goals y ejecución larga |
 | 10 | `sesiones/s10_multiagente.py` | Worktrees, roles y orquestación |
 | 11 | `sesiones/s11_como_continuar.py` | Carpeta `.agents`, próximos pasos, práctica, por qué un framework |

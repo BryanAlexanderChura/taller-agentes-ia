@@ -1,11 +1,11 @@
 ---
-name: retomar-proyecto
+name: retomar-sesion
 description: Recupera el estado de un módulo al abrir una sesión y detecta si sus fuentes se contradicen. Solo lectura.
 ---
 
-# retomar-proyecto
+# retomar-sesion
 
-Uso: `/retomar-proyecto <modulo>`
+Uso: `/retomar-sesion <modulo>`
 
 ## Reglas
 
@@ -18,7 +18,7 @@ Uso: `/retomar-proyecto <modulo>`
 
 1. **RESUME**: lee `<modulo>/docs/RESUME.yaml` (`current_focus`, `goal`, `updated`,
    `head`, `next`, `open`, `blockers`, `last_session`, `engram`). Si no existe, dilo y
-   sugiere `/yaml-resume`.
+   sugiere `/cerrar-sesion`.
 2. **Git**, solo para el módulo:
    - `git status --short <modulo>`: cambios sin commitear.
    - `git log --oneline <head>..HEAD -- <modulo>`: commits después del cierre.
@@ -40,7 +40,7 @@ Uso: `/retomar-proyecto <modulo>`
 | REQUIERE VERIFICACIÓN | Hay commits o cambios después de `head` que CHANGELOG o RESUME no reflejan, o falta `head`. |
 | CONTRADICCIÓN | Dos fuentes afirman cosas incompatibles: RUN.md cerrado con tareas abiertas, `next` ya hecho según CHANGELOG. |
 
-Ante REQUIERE VERIFICACIÓN o CONTRADICCIÓN, recomienda `/yaml-resume` antes de seguir.
+Ante REQUIERE VERIFICACIÓN o CONTRADICCIÓN, recomienda `/cerrar-sesion` antes de seguir.
 
 ## Respuesta
 
