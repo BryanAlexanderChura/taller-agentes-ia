@@ -30,9 +30,9 @@ def _(mo):
     - Procedimientos largos sin pagar contexto en cada turno.
 
     ```text
-    skills/retomar-proyecto/
+    skills/verificar/
       SKILL.md
-      scripts/retomar.py
+      scripts/check.py
     ```
     """)
     return
@@ -41,7 +41,28 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 2. MCP
+    ## 2. Cómo crece una skill
+
+    - Versión 1: los pasos mínimos. Se usa en un caso real.
+    - Cada fallo observado del agente se convierte en una regla, y se anota cuál fue.
+    - Una regla que no evitó ningún fallo real sobra.
+
+    | Regla de `retomar-proyecto` | Fallo que la motivó |
+    |---|---|
+    | Mirar `git log <head>..HEAD` | Tomó `next` como pendiente cuando ya estaba hecho. |
+    | Veredicto COHERENTE / CONTRADICCIÓN | Mezcló fuentes que no coincidían sin avisar. |
+    | Edad en días de cada pendiente | Un bloqueante de un mes parecía de ayer. |
+    | Solo lectura | Empezó a programar dentro de la retoma. |
+
+    Plantilla: `.agents/plantillas/SKILL.md`.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## 3. MCP
 
     - Protocolo estándar para dar al agente tools y datos externos.
     - Un servidor MCP sirve a cualquier herramienta compatible.
@@ -54,7 +75,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 3. CLI: el idioma nativo del agente
+    ## 4. CLI: el idioma nativo del agente
 
     - El agente vive en la terminal: una CLI es su forma más directa de actuar.
     - No ocupa contexto hasta que la usa; `--help` le enseña lo que necesita.
@@ -75,7 +96,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 4. Hooks: por qué
+    ## 5. Hooks: por qué
 
     - Las instrucciones son sugerencias: el modelo puede olvidarlas.
     - Un hook es código que corre siempre, fuera del modelo: determinista.
@@ -87,7 +108,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 5. Hooks: eventos
+    ## 6. Hooks: eventos
 
     | Cuándo | Claude Code / Codex | opencode (plugin) | Uso típico |
     |---|---|---|---|
@@ -104,7 +125,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 6. Seguridad: bloquear lo destructivo
+    ## 7. Seguridad: bloquear lo destructivo
 
     - La seguridad no se pide en el prompt: se impone con un hook bloqueante.
     - Antes de cada comando (`PreToolUse`), el hook lo compara con una lista y lo rechaza.
@@ -124,7 +145,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 7. Subagentes
+    ## 8. Subagentes
 
     - Otro agente con su propio contexto; devuelve solo un resumen.
     - Útil para explorar mucho o revisar con ojos frescos.
@@ -136,7 +157,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 8. El harness empaqueta todo esto
+    ## 9. El harness empaqueta todo esto
 
     - Instrucciones + skills + MCP + hooks + roles de subagentes, versionados en el repo.
     - Este repo trae uno en `.agents/`: al clonarlo ya está configurado.

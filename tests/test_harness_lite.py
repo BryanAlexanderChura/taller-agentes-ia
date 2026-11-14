@@ -83,6 +83,34 @@ def test_new_module_crea_etapas_y_queda_incompleto_sin_tests(tmp_path, capsys):
     assert "tests: no hay tests" in capsys.readouterr().out
 
 
+def test_new_module_resume_trae_marcador_de_cierre(tmp_path):
+    ruta = tmp_path / "ventas"
+    new_module.crear(ruta, "Ventas por cliente")
+
+    claves = {
+        linea.split(":")[0]
+        for linea in (ruta / "docs/RESUME.yaml").read_text(encoding="utf-8").splitlines()
+        if linea and not linea.startswith((" ", "#"))
+    }
+    assert {"current_focus", "updated", "head", "next", "open", "blockers"} <= claves
+
+
+SKILLS = sorted(p for p in (RAIZ / ".agents/skills").iterdir() if p.is_dir())
+
+
+@pytest.mark.parametrize("skill", SKILLS, ids=lambda p: p.name)
+def test_skill_tiene_frontmatter_con_su_nombre(skill):
+    texto = (skill / "SKILL.md").read_text(encoding="utf-8")
+    cabecera = texto.split("---")[1]
+    assert f"name: {skill.name}\n" in cabecera
+    assert "description: " in cabecera
+
+
+@pytest.mark.parametrize("nombre", ["grill-me", "root-cause", "write-goal"])
+def test_skills_traidas_del_harness_existen(nombre):
+    assert (RAIZ / ".agents/skills" / nombre / "SKILL.md").is_file()
+
+
 def test_new_module_no_sobrescribe(tmp_path):
     with pytest.raises(SystemExit):
         new_module.crear(tmp_path, "x")

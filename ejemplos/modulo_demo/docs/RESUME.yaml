@@ -1,5 +1,9 @@
+# Marcador del módulo, no diario. Lo actualiza /yaml-resume; lo lee /retomar-proyecto.
 current_focus: Módulo de ejemplo para la demo del checker.
+# goal: docs/goals/goal-1   # solo con un goal activo
+updated: 2026-11-14
+head: 60a432c
 next:
   - Agregar una etapa bronze que lea un CSV.
-open: []
-blockers: []
+open: []       # AAAA-MM-DD: texto
+blockers: []   # AAAA-MM-DD: texto

@@ -29,8 +29,10 @@ def _(mo):
     AGENTS.md              reglas del proyecto
     .agents/
       skills/              verificar, tdd, new-module, yaml-resume,
-                           retomar-proyecto, revisar-con-pi
-      hooks/               bloquear.py + bloqueados.txt (una sola lista)
+                           retomar-proyecto, revisar-con-pi,
+                           grill-me, root-cause, write-goal
+      plantillas/SKILL.md  punto de partida para una skill nueva
+      hooks/              bloquear.py + bloqueados.txt (una sola lista)
       sync_claude.py       copia skills a .claude/skills
     .codex/hooks.json      hook para Codex
     .claude/               settings.json (hook) + copia de skills

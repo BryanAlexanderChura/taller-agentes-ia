@@ -24,8 +24,14 @@ def crear(ruta: Path, proposito: str) -> None:
             encoding="utf-8",
         )
     (ruta / "docs" / "RESUME.yaml").write_text(
-        f"current_focus: {proposito}\nnext:\n  - Escribir el primer test (skill tdd).\n"
-        "open: []\nblockers: []\n",
+        "# Marcador del módulo, no diario. Lo actualiza /yaml-resume; lo lee /retomar-proyecto.\n"
+        f"current_focus: {proposito}\n"
+        "# goal: docs/goals/goal-1   # solo con un goal activo\n"
+        f"updated: {date.today()}\n"
+        'head: ""   # commit corto al cerrar la sesión\n'
+        "next:\n  - Escribir el primer test (skill tdd).\n"
+        "open: []       # AAAA-MM-DD: texto\n"
+        "blockers: []   # AAAA-MM-DD: texto\n",
         encoding="utf-8",
     )
     (ruta / "docs" / "CHANGELOG.md").write_text(
