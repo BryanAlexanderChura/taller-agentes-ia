@@ -27,8 +27,8 @@ Uso: `/retomar-proyecto <modulo>`
 4. **Goal**: si `goal` existe, lee el estado y las tareas en curso de su `RUN.md`.
 5. **Engram** (si está):
    - Abre `last_session` por su ID (`mem_get_observation`): es el resumen de la última sesión.
-   - De la lista `engram`, abre solo la memoria que responda una pregunta concreta; no
-     las leas todas.
+   - En `engram`, elige por la descripción y abre solo la memoria que responda una
+     pregunta concreta; no las leas todas.
    - Sin IDs en RESUME: `mem_context` una vez. Un ID que no existe se reporta, no se adivina.
 6. **Edad**: calcula los días desde la fecha de cada `open` y `blockers` hasta hoy.
 

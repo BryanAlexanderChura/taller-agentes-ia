@@ -79,7 +79,9 @@ def _(mo):
     open: ["2026-11-10: confirmar fuente de clientes"]
     blockers: []
     last_session: 1042
-    engram: [1042, 1038, 1017]
+    engram:
+      decision_fuente_clientes: 1038
+      bug_montos_negativos: 1017
     ```
     """),
                     mo.md(r"""
@@ -91,7 +93,7 @@ def _(mo):
       <code>open</code><span>Con fecha, para ver cuánto lleva pendiente.</span>
       <code>blockers</code><span>Lo que impide avanzar queda a la vista.</span>
       <code>last_session</code><span>Dónde quedó la conversación, sin copiarla aquí.</span>
-      <code>engram</code><span>El historial que importa: el porqué de las decisiones, a un ID de distancia.</span>
+      <code>engram</code><span>El historial que importa: qué responde cada memoria y su ID para abrirla.</span>
     </div>
     """),
                 ],

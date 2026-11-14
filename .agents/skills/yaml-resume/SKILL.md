@@ -28,11 +28,15 @@ open:                     # pendientes con fecha
 blockers:                 # lo que impide avanzar, con fecha; [] si no hay
   - "2026-11-12: sin acceso de lectura a la base de ventas"
 last_session: 1042        # ID del resumen de la última sesión en Engram
-engram: [1042, 1038, 1017] # IDs de memorias relevantes, la más nueva primero; máximo 10
+engram:                   # memorias relevantes, la más nueva primero; máximo 10
+  cierre_sesion_silver: 1042
+  decision_fuente_clientes: 1038
+  bug_montos_negativos: 1017
 ```
 
-Los IDs son los números que devuelve Engram al guardar. Valen dentro del mismo almacén
-de Engram (la misma máquina).
+- La clave dice qué responde la memoria: ASCII, `snake_case`, pocas palabras.
+- El valor es el ID que devuelve Engram al guardar. Vale dentro del mismo almacén
+  de Engram (la misma máquina).
 
 ## Pasos
 
@@ -48,8 +52,8 @@ de Engram (la misma máquina).
 5. Engram (si está), solo en un cierre real:
    - `mem_session_summary` una vez, con objetivo, hecho, descubrimientos y siguiente paso.
    - Su ID va en `last_session` y al inicio de `engram`.
-   - Agrega a `engram` el ID de cada memoria guardada en la sesión (`mem_save`) que siga
-     siendo relevante para el foco, los bloqueantes o `next`.
+   - Agrega a `engram`, como `descripcion_corta: ID`, cada memoria guardada en la sesión
+     (`mem_save`) que siga siendo relevante para el foco, los bloqueantes o `next`.
    - Con más de 10, saca las menos relevantes: siguen en Engram, solo dejan el marcador.
    - Nunca inventes un ID: si Engram falló, conserva los anteriores y repórtalo.
 

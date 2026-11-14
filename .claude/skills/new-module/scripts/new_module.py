@@ -33,7 +33,7 @@ def crear(ruta: Path, proposito: str) -> None:
         "open: []       # AAAA-MM-DD: texto\n"
         "blockers: []   # AAAA-MM-DD: texto\n"
         "# last_session: 1042   # ID del resumen de la última sesión en Engram\n"
-        "engram: []     # IDs de memorias relevantes, la más nueva primero\n",
+        "engram: {}     # descripcion_corta: ID, la más nueva primero\n",
         encoding="utf-8",
     )
     (ruta / "docs" / "CHANGELOG.md").write_text(

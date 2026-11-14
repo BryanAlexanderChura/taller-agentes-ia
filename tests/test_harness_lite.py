@@ -95,6 +95,14 @@ def test_new_module_resume_trae_marcador_de_cierre(tmp_path):
     assert {"current_focus", "updated", "head", "next", "open", "blockers", "engram"} <= claves
 
 
+def test_new_module_resume_engram_es_mapa_de_descripcion_a_id(tmp_path):
+    ruta = tmp_path / "ventas"
+    new_module.crear(ruta, "Ventas por cliente")
+
+    lineas = (ruta / "docs/RESUME.yaml").read_text(encoding="utf-8").splitlines()
+    assert any(linea.startswith("engram: {}") for linea in lineas)
+
+
 SKILLS = sorted(p for p in (RAIZ / ".agents/skills").iterdir() if p.is_dir())
 
 
