@@ -82,7 +82,7 @@
 .portada .titulo,
 .escribir {
   --escribir-max: 48;          /* caracteres como máximo */
-  --escribir-cps: 15;          /* caracteres por segundo */
+  --escribir-cps: 22;          /* caracteres por segundo */
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
@@ -260,8 +260,14 @@
 
 /* Ventana estilo Terminal de macOS alrededor de cada diapositiva */
 .reveal .slides > section {
-  background: rgba(12, 12, 12, 0.84) !important;
-  backdrop-filter: blur(2px);
+  /* Arriba deja ver la lluvia; se vuelve sólida antes de llegar al texto */
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 12, 12, 0.35) 0%,
+    rgba(12, 12, 12, 0.75) 22%,
+    rgba(12, 12, 12, 0.94) 40%,
+    rgba(12, 12, 12, 0.96) 100%
+  ) !important;
   border: 1px solid #2e2e2e;
   border-radius: 12px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.03);
