@@ -1,6 +1,10 @@
 import marimo
 
-app = marimo.App(width="medium")
+app = marimo.App(
+    width="medium",
+    css_file="tema.css",
+    layout_file="layouts/s01_fundamentos.slides.json",
+)
 
 
 @app.cell
@@ -13,9 +17,11 @@ def _():
 @app.cell
 def _(mo):
     mo.md(r"""
-    # Sesión 1: Fundamentos
-
-    Cómo "piensa" un agente, y por qué eso dicta cómo trabajamos con él.
+    <div class="portada">
+      <span class="numero">Sesión 1</span>
+      <span class="titulo">Fundamentos</span>
+      <span class="bajada">Cómo piensa el agente decide cómo trabajamos con él.</span>
+    </div>
     """)
     return
 
@@ -23,10 +29,20 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## Modelos: dónde compararlos
+    ## ¿Por qué hablar de tokens?
 
-    - [OpenRouter](https://openrouter.ai): una API para muchos modelos; precios y ranking de uso.
-    - [Artificial Analysis](https://artificialanalysis.ai): benchmarks de calidad, velocidad y precio.
+    <div class="idea">El modelo no lee palabras: lee tokens. Y todo se paga en tokens.</div>
+
+    <div class="tarjetas">
+      <div class="tarjeta"><b>Se cobra por token</b>
+        Lo que entra y lo que sale tiene precio.</div>
+      <div class="tarjeta"><b>El contexto tiene tope</b>
+        Se mide en tokens, no en páginas ni en archivos.</div>
+      <div class="tarjeta"><b>Ser conciso es ahorrar</b>
+        Menos ruido deja más espacio para lo que importa.</div>
+    </div>
+
+    <div class="nota">Demo: tokenizador en vivo.</div>
     """)
     return
 
@@ -34,12 +50,20 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 1. Tokens
+    ## ¿Por qué importan los embeddings?
 
-    - El modelo no lee palabras: lee tokens.
-    - Todo se mide y se cobra en tokens: entrada, salida, contexto.
+    <div class="idea">El modelo entiende por cercanía de significado, no por palabras exactas.</div>
 
-    *Demo: tokenizador en vivo.*
+    <div class="tarjetas">
+      <div class="tarjeta"><b>Lo parecido se encuentra</b>
+        Dos formas de decir lo mismo quedan cerca.</div>
+      <div class="tarjeta"><b>Los nombres guían</b>
+        Un buen nombre acerca al agente al concepto correcto.</div>
+      <div class="tarjeta"><b>Base de la búsqueda</b>
+        Así se encuentra lo relevante sin coincidencia literal.</div>
+    </div>
+
+    <div class="nota">Demo: mapa 2D de palabras.</div>
     """)
     return
 
@@ -47,11 +71,56 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 2. Embeddings
+    ## ¿Por qué se degrada el contexto?
 
-    - Cada token es un vector; significado parecido, vectores cercanos.
+    <div class="idea">La atención es finita: cuanto más le das, menos atiende a cada cosa.</div>
 
-    *Demo: mapa 2D de palabras.*
+    <div class="tarjetas">
+      <div class="tarjeta aviso"><b>Más es peor</b>
+        Al crecer el contexto, el rendimiento baja.</div>
+      <div class="tarjeta aviso"><b>El centro se pierde</b>
+        Lo que queda en medio se atiende peor.</div>
+      <div class="tarjeta error"><b>Un error se queda</b>
+        Lo equivocado sigue en el contexto y se reutiliza.</div>
+    </div>
+
+    <div class="nota">Por eso: contexto corto y limpio, un chat por tarea.</div>
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿Por qué el agente es un bucle?
+
+    <div class="idea">El agente no recuerda: en cada turno relee toda la conversación.</div>
+    """),
+            mo.image(mo.notebook_dir() / "img" / "bucle.svg", width="100%"),
+        ]
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## ¿Por qué cuidar el cache?
+
+    <div class="idea">Lo que no cambia al inicio se reutiliza; cambiarlo invalida todo lo que sigue.</div>
+
+    <div class="tarjetas">
+      <div class="tarjeta ok"><b>Inicio estable</b>
+        Instrucciones y tools fijas hacen barato cada turno.</div>
+      <div class="tarjeta ok"><b>El bucle solo agrega</b>
+        Lo nuevo va al final, así el resto se aprovecha.</div>
+      <div class="tarjeta error"><b>Tocar el inicio cuesta</b>
+        Cambiar instrucciones a mitad paga todo de nuevo.</div>
+    </div>
+
+    <div class="nota">Demo: calculadora de tokens por turno, con y sin cache.</div>
     """)
     return
 
@@ -59,51 +128,16 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 3. Atención
+    ## ¿Por qué comparar modelos?
 
-    - Cada token "mira" a todos los demás para decidir qué importa.
-    - La atención es finita: más contexto, menos foco por pieza.
-    """)
-    return
+    <div class="idea">Ninguno gana en todo, y el mejor para tu tarea cambia cada pocos meses.</div>
 
-
-@app.cell
-def _(mo):
-    mo.md(r"""
-    ## 4. Degradación del contexto
-
-    - *Context rot*: el rendimiento baja al crecer el contexto.
-    - *Lost in the middle*: lo del centro se atiende peor.
-    - *Context poisoning*: un error queda en el contexto y se reutiliza.
-
-    **Regla:** contexto corto y limpio; `/clear` entre tareas.
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
-    ## 5. El harness es un bucle
-
-    - Cada turno reenvía todo: system + tools + historial + nuevo mensaje.
-    - El modelo responde o pide una tool; el resultado se agrega y se repite.
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
-    ## 6. Cache
-
-    - Se reutiliza el prefijo idéntico: system, luego tools, luego mensajes.
-    - El bucle solo agrega al final, por eso cachea bien.
-    - Cambiar el inicio invalida todo lo que sigue.
-
-    **Regla:** no tocar instrucciones ni tools a mitad de sesión.
-
-    *Demo: calculadora de tokens por turno, con y sin cache.*
+    <div class="tarjetas">
+      <div class="tarjeta"><b><a href="https://openrouter.ai">OpenRouter</a></b>
+        Una sola API para muchos modelos: precios y uso real.</div>
+      <div class="tarjeta"><b><a href="https://artificialanalysis.ai">Artificial Analysis</a></b>
+        Calidad, velocidad y precio medidos con el mismo criterio.</div>
+    </div>
     """)
     return
 

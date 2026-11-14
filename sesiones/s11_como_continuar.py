@@ -30,7 +30,8 @@ def _(mo):
     .agents/
       skills/              verificar, tdd, new-module, yaml-resume,
                            retomar-proyecto, revisar-con-pi,
-                           grill-me, root-cause, write-goal
+                           grill-me, root-cause, write-goal,
+                           presentar-porque
       plantillas/SKILL.md  punto de partida para una skill nueva
       hooks/              bloquear.py + bloqueados.txt (una sola lista)
       sync_claude.py       copia skills a .claude/skills
