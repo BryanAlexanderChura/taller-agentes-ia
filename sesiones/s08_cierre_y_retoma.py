@@ -1,6 +1,10 @@
 import marimo
 
-app = marimo.App(width="medium")
+app = marimo.App(
+    width="medium",
+    css_file="tema.css",
+    layout_file="layouts/s08_cierre_y_retoma.slides.json",
+)
 
 
 @app.cell
@@ -13,9 +17,11 @@ def _():
 @app.cell
 def _(mo):
     mo.md(r"""
-    # Sesión 8: Cerrar y retomar
-
-    Cerrar bien una sesión es lo que permite retomarla.
+    <div class="portada">
+      <span class="numero">Sesión 8</span>
+      <span class="titulo">Cerrar y retomar</span>
+      <span class="bajada">El agente no recuerda. El proyecto sí.</span>
+    </div>
     """)
     return
 
@@ -23,23 +29,96 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 1. `/yaml-resume`
+    ## ¿Por qué cerrar una sesión?
 
-    - Al cerrar: sincroniza `RESUME.yaml` y CHANGELOG con lo hecho.
-    - RESUME es un marcador, no un diario: una frase por entrada.
-    - Guarda el resumen de sesión en Engram.
+    <div class="idea">Lo que no quedó escrito, para el siguiente chat no existió.</div>
 
+    <div class="tarjetas">
+      <div class="tarjeta"><b>El contexto es temporal</b>
+        Al cerrar el chat, todo lo que el agente entendió se pierde.</div>
+      <div class="tarjeta"><b>Lo escrito sobrevive</b>
+        Un archivo en el repo dura más que cualquier conversación.</div>
+      <div class="tarjeta"><b>Cualquiera puede seguir</b>
+        Otro agente, otra herramienta o tú mismo dentro de un mes.</div>
+    </div>
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## ¿Por qué un marcador y no un diario?
+
+    <div class="idea">Un diario crece hasta que nadie lo lee. Un marcador dice dónde seguir.</div>
+
+    <div class="tarjetas">
+      <div class="tarjeta error"><b>Diario</b>
+        Cuenta todo lo que pasó. Hay que leerlo entero para saber dónde estamos.</div>
+      <div class="tarjeta ok"><b>Marcador</b>
+        Cabe en una pantalla. Se lee en segundos y apunta a la siguiente acción.</div>
+    </div>
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack(
+        [
+            mo.md("## Anatomía del marcador"),
+            mo.hstack(
+                [
+                    mo.md(r"""
     ```yaml
     current_focus: Etapa silver de ventas a medias.
-    goal: docs/goals/goal-1      # solo con un goal activo
+    goal: docs/goals/goal-1
     updated: 2026-11-14
-    head: 60a432c                # commit al cerrar
-    next:
-      - Validar montos negativos en b01_procesar.
-    open:
-      - "2026-11-10: confirmar la fuente de clientes"
+    head: 60a432c
+    next: [Validar montos negativos.]
+    open: ["2026-11-10: confirmar fuente de clientes"]
     blockers: []
+    last_session: 1042
+    engram: [1042, 1038, 1017]
     ```
+    """),
+                    mo.md(r"""
+    <div class="anatomia">
+      <code>current_focus</code><span>Una sola línea obliga a saber en qué estamos.</span>
+      <code>goal</code><span>Conecta la sesión con un objetivo mayor.</span>
+      <code>updated · head</code><span>El punto de cierre: lo posterior se verifica.</span>
+      <code>next</code><span>La primera acción concreta: retomar sin pensar.</span>
+      <code>open</code><span>Con fecha, para ver cuánto lleva pendiente.</span>
+      <code>blockers</code><span>Lo que impide avanzar queda a la vista.</span>
+      <code>last_session</code><span>Dónde quedó la conversación, sin copiarla aquí.</span>
+      <code>engram</code><span>El historial que importa: el porqué de las decisiones, a un ID de distancia.</span>
+    </div>
+    """),
+                ],
+                widths=[1, 1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## ¿Por qué reglas tan estrictas?
+
+    <div class="idea">Un estado que miente es peor que no tener estado.</div>
+
+    <div class="tarjetas">
+      <div class="tarjeta"><b>Las fechas no se tocan</b>
+        Ver cuánto lleva abierto algo revela lo que se está evitando.</div>
+      <div class="tarjeta"><b>Se marca el punto de cierre</b>
+        Lo que pasó después no está registrado: no se da por sabido.</div>
+      <div class="tarjeta"><b>"Hecho" lo dice el checker</b>
+        Escribir que algo está terminado no lo hace verdad.</div>
+    </div>
     """)
     return
 
@@ -47,44 +126,36 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## 2. Las reglas que lo mantienen honesto
+    ## ¿Por qué retomar sin tocar nada?
 
-    - Un pendiente resuelto sale de RESUME solo después de quedar en el CHANGELOG.
-    - Un pendiente que sigue conserva su fecha: así se ve cuánto lleva abierto.
-    - `head` marca el cierre: todo commit posterior es trabajo sin registrar.
-    - Actualizar el marcador no prueba nada: el checker sí.
+    <div class="idea">Antes de actuar, confirmar que el mapa coincide con el terreno.</div>
+
+    <div class="tarjetas">
+      <div class="tarjeta ok"><b>Coincide</b>
+        Se sigue con confianza.</div>
+      <div class="tarjeta aviso"><b>Hay algo sin registrar</b>
+        Se verifica antes de construir encima.</div>
+      <div class="tarjeta error"><b>Se contradice</b>
+        Se corrige el estado antes de trabajar.</div>
+    </div>
+
+    <div class="nota">Desconfiar cinco minutos es más barato que rehacer una tarde.</div>
     """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""
-    ## 3. `/retomar-proyecto`
-
-    - Al abrir: lee RESUME, git desde `head`, la última entrada del CHANGELOG, el goal y Engram.
-    - Responde estado, siguiente acción y bloqueantes, sin tocar nada.
-
-    | Veredicto | Significa |
-    |---|---|
-    | COHERENTE | todas las fuentes cuentan la misma historia |
-    | REQUIERE VERIFICACIÓN | hay trabajo después de `head` sin registrar |
-    | CONTRADICCIÓN | dos fuentes afirman cosas incompatibles |
-
-    Ante las dos últimas: `/yaml-resume` antes de seguir.
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
-    ## 4. El ciclo
-
-    `/new-module` -> trabajo -> `/yaml-resume` -> chat nuevo -> `/retomar-proyecto`
-
-    *Demo en ia-postuler: cerrar, abrir un chat nuevo y retomar.*
-    """)
+    mo.vstack(
+        [
+            mo.md("## El ciclo"),
+            mo.image(mo.notebook_dir() / "img" / "ciclo.svg", width="100%"),
+            mo.md(
+                '<div class="idea">Cada sesión empieza donde terminó la anterior, '
+                "no desde cero.</div>"
+            ),
+        ]
+    )
     return
 
 

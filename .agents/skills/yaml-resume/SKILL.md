@@ -27,8 +27,12 @@ open:                     # pendientes con fecha
   - "2026-11-10: confirmar la fuente de clientes con finanzas"
 blockers:                 # lo que impide avanzar, con fecha; [] si no hay
   - "2026-11-12: sin acceso de lectura a la base de ventas"
-last_session: 1eed5698    # opcional: ID del resumen de sesión en Engram
+last_session: 1042        # ID del resumen de la última sesión en Engram
+engram: [1042, 1038, 1017] # IDs de memorias relevantes, la más nueva primero; máximo 10
 ```
+
+Los IDs son los números que devuelve Engram al guardar. Valen dentro del mismo almacén
+de Engram (la misma máquina).
 
 ## Pasos
 
@@ -41,8 +45,13 @@ last_session: 1eed5698    # opcional: ID del resumen de sesión en Engram
    - `goal` se mantiene mientras el goal no esté cerrado.
    - Actualiza `updated` y `head` al final, con el commit en que queda la sesión.
 4. Verifica: `uv run python .agents/skills/verificar/scripts/check.py <modulo>`.
-5. Engram (si está), solo en un cierre real: `mem_session_summary` una vez, con objetivo,
-   hecho, descubrimientos y siguiente paso. Guarda su ID en `last_session`.
+5. Engram (si está), solo en un cierre real:
+   - `mem_session_summary` una vez, con objetivo, hecho, descubrimientos y siguiente paso.
+   - Su ID va en `last_session` y al inicio de `engram`.
+   - Agrega a `engram` el ID de cada memoria guardada en la sesión (`mem_save`) que siga
+     siendo relevante para el foco, los bloqueantes o `next`.
+   - Con más de 10, saca las menos relevantes: siguen en Engram, solo dejan el marcador.
+   - Nunca inventes un ID: si Engram falló, conserva los anteriores y repórtalo.
 
 ## Respuesta
 

@@ -92,7 +92,7 @@ def test_new_module_resume_trae_marcador_de_cierre(tmp_path):
         for linea in (ruta / "docs/RESUME.yaml").read_text(encoding="utf-8").splitlines()
         if linea and not linea.startswith((" ", "#"))
     }
-    assert {"current_focus", "updated", "head", "next", "open", "blockers"} <= claves
+    assert {"current_focus", "updated", "head", "next", "open", "blockers", "engram"} <= claves
 
 
 SKILLS = sorted(p for p in (RAIZ / ".agents/skills").iterdir() if p.is_dir())

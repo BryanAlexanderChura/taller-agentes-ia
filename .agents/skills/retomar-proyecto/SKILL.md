@@ -17,14 +17,19 @@ Uso: `/retomar-proyecto <modulo>`
 ## Pasos
 
 1. **RESUME**: lee `<modulo>/docs/RESUME.yaml` (`current_focus`, `goal`, `updated`,
-   `head`, `next`, `open`, `blockers`). Si no existe, dilo y sugiere `/yaml-resume`.
+   `head`, `next`, `open`, `blockers`, `last_session`, `engram`). Si no existe, dilo y
+   sugiere `/yaml-resume`.
 2. **Git**, solo para el módulo:
    - `git status --short <modulo>`: cambios sin commitear.
    - `git log --oneline <head>..HEAD -- <modulo>`: commits después del cierre.
 3. **CHANGELOG**: la última entrada de `<modulo>/docs/CHANGELOG.md`. Basta para saber
    si los commits y cambios del paso 2 están registrados.
 4. **Goal**: si `goal` existe, lee el estado y las tareas en curso de su `RUN.md`.
-5. **Engram** (si está): `mem_context` una vez; abre la última sesión solo si falta un dato.
+5. **Engram** (si está):
+   - Abre `last_session` por su ID (`mem_get_observation`): es el resumen de la última sesión.
+   - De la lista `engram`, abre solo la memoria que responda una pregunta concreta; no
+     las leas todas.
+   - Sin IDs en RESUME: `mem_context` una vez. Un ID que no existe se reporta, no se adivina.
 6. **Edad**: calcula los días desde la fecha de cada `open` y `blockers` hasta hoy.
 
 ## Coherencia

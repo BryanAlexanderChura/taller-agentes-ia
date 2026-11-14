@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="JetBrains Mono, ui-monospace, monospace">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <g font-size="16" text-anchor="middle">
+    <rect x="20" y="40" width="170" height="70" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="105" y="72" fill="#a3e635" font-weight="700">/new-module</text>
+    <text x="105" y="96" fill="#737373" font-size="13">una vez</text>
+
+    <rect x="250" y="40" width="170" height="70" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="335" y="72" fill="#fafafa" font-weight="700">trabajo</text>
+    <text x="335" y="96" fill="#737373" font-size="13">tdd + verificar</text>
+
+    <rect x="480" y="40" width="170" height="70" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="565" y="72" fill="#a3e635" font-weight="700">/yaml-resume</text>
+    <text x="565" y="96" fill="#737373" font-size="13">cerrar</text>
+
+    <rect x="710" y="40" width="170" height="70" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="795" y="72" fill="#fafafa" font-weight="700">chat nuevo</text>
+    <text x="795" y="96" fill="#737373" font-size="13">contexto limpio</text>
+
+    <rect x="350" y="210" width="200" height="70" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="450" y="242" fill="#a3e635" font-weight="700">/retomar-proyecto</text>
+    <text x="450" y="266" fill="#737373" font-size="13">abrir, solo lectura</text>
+  </g>
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M190,75 L246,75"/>
+    <path d="M420,75 L476,75"/>
+    <path d="M650,75 L706,75"/>
+    <path d="M795,110 C795,200 660,245 554,245"/>
+    <path d="M350,245 C260,245 335,180 335,114"/>
+  </g>
+  <g font-size="13" fill="#737373" text-anchor="middle">
+    <text x="745" y="175" text-anchor="end">RESUME + head</text>
+    <text x="250" y="200">siguiente acción</text>
+  </g>
+</svg>

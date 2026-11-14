@@ -1,0 +1,271 @@
+/* Tema común de las diapositivas del taller (estilo terminal). Se enlaza con css_file. */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap");
+
+
+:root {
+  --lienzo:
+    radial-gradient(circle at 50% -20%, rgba(163, 230, 53, 0.10), transparent 50%),
+    #0a0a0a;
+  --panel: #121212;
+  --borde: #262626;
+  --texto: #d4d4d4;
+  --titulo: #fafafa;
+  --tenue: #737373;
+  --acento: #a3e635;
+  --acento-2: #67e8f9;
+  --code-bg: rgba(163, 230, 53, 0.08);
+  --degradado: #a3e635;
+  --degradado-titulo: linear-gradient(90deg, #fafafa, #fafafa);
+  --ok: #a3e635;
+  --aviso: #facc15;
+  --error: #f87171;
+  --radio: 4px;
+  --sombra: none;
+  --f-titulo: "JetBrains Mono", ui-monospace, monospace;
+  --f-texto: "Inter", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+  --peso-titulo: 700;
+  --tracking: -0.04em;
+  --marca: "";
+}
+
+
+.reveal {
+  background: var(--lienzo) !important;
+  color: var(--texto) !important;
+}
+
+/* Capas internas transparentes: dejan ver el lienzo y el prompt de fondo */
+.reveal .slides,
+.reveal .backgrounds {
+  background: transparent !important;
+}
+
+.reveal .slides section {
+  text-align: left;
+  font-family: var(--f-texto) !important;
+  font-size: 1.45rem;
+  line-height: 1.6;
+}
+
+.reveal p, .reveal li, .reveal td, .reveal strong {
+  color: var(--texto) !important;
+  font-family: var(--f-texto) !important;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: var(--f-titulo) !important;
+  color: var(--titulo) !important;
+  letter-spacing: var(--tracking);
+}
+
+.reveal h2 {
+  font-size: 2.6rem !important;
+  font-weight: var(--peso-titulo) !important;
+  margin-bottom: 0.9em !important;
+  border: none;
+}
+
+.reveal h2::before {
+  content: var(--marca);
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-bottom: 0.6em;
+  background: var(--degradado);
+  border-radius: 2px;
+}
+
+.reveal em { color: var(--tenue) !important; }
+.reveal li::marker { color: var(--acento); }
+
+.reveal code {
+  font-family: var(--f-mono) !important;
+  color: var(--acento) !important;
+  background: var(--code-bg) !important;
+  border-radius: 6px;
+  padding: 0.1em 0.4em;
+}
+
+.reveal h2 code { background: none !important; padding: 0; color: inherit !important; }
+
+.reveal .codehilite {
+  background: var(--panel) !important;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.1rem 1.3rem;
+  box-shadow: var(--sombra);
+}
+
+.reveal .codehilite pre, .reveal .codehilite code, .reveal .codehilite span {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  font-family: var(--f-mono) !important;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--texto) !important;
+}
+
+.reveal .codehilite .nt, .reveal .codehilite .k, .reveal .codehilite .nf { color: var(--acento) !important; }
+.reveal .codehilite .l, .reveal .codehilite .s, .reveal .codehilite .s1, .reveal .codehilite .s2 { color: var(--acento-2) !important; }
+.reveal .codehilite .c, .reveal .codehilite .c1 { color: var(--tenue) !important; font-style: italic; }
+.reveal .codehilite .p, .reveal .codehilite .o { color: var(--tenue) !important; }
+
+.reveal img { max-width: 100%; max-height: 60vh; }
+
+/* Portada */
+.portada { display: flex; flex-direction: column; justify-content: center; min-height: 60vh; }
+.portada .numero {
+  font-family: var(--f-mono);
+  color: var(--acento);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.portada .titulo {
+  font-family: var(--f-titulo);
+  font-size: 6rem;
+  font-weight: var(--peso-titulo);
+  letter-spacing: var(--tracking);
+  line-height: 1.02;
+  margin: 0.25em 0 0.3em;
+  background: var(--degradado-titulo);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.portada .bajada { color: var(--tenue); font-size: 1.8rem; max-width: 30ch; }
+
+/* Tarjetas */
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; }
+.tarjeta {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(8px);
+  color: var(--texto);
+}
+.tarjeta b {
+  display: block;
+  font-family: var(--f-titulo);
+  color: var(--titulo);
+  font-size: 1.3rem;
+  margin-bottom: 0.4em;
+}
+.tarjeta.ok b { color: var(--ok); }
+.tarjeta.aviso b { color: var(--aviso); }
+.tarjeta.error b { color: var(--error); }
+.tarjeta.ok { border-color: color-mix(in srgb, var(--ok) 40%, var(--borde)); }
+.tarjeta.aviso { border-color: color-mix(in srgb, var(--aviso) 40%, var(--borde)); }
+.tarjeta.error { border-color: color-mix(in srgb, var(--error) 40%, var(--borde)); }
+
+.nota {
+  margin-top: 1.3rem;
+  padding: 0.8rem 1.1rem;
+  border-left: 3px solid var(--acento);
+  background: var(--code-bg);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  color: var(--texto);
+}
+
+/* Navegación de reveal con el acento del tema */
+.reveal .controls { color: var(--acento) !important; }
+.reveal .progress { color: var(--acento) !important; }
+
+/* Idea central de la diapositiva: el porqué en una frase */
+.idea {
+  font-family: var(--f-titulo);
+  font-size: 1.9rem;
+  line-height: 1.35;
+  color: var(--titulo);
+  max-width: 42ch;
+  margin: 0 0 1.4em;
+}
+
+/* Anatomía: campo a la izquierda, su porqué a la derecha */
+.anatomia {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1rem 1.6rem;
+  align-items: baseline;
+}
+
+.anatomia code {
+  background: none !important;
+  padding: 0 !important;
+  font-size: 1.25rem;
+}
+
+.anatomia span {
+  color: var(--texto);
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+/* Fondo: lluvia de caracteres, tenue y lenta (SVG generado, embebido) */
+.reveal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22720%22 height=%22960%22 font-family=%22monospace%22 font-size=%2216%22%3E%3Ctext x=%2210%22 y=%22110%22 fill=%22%23a3e635%22 fill-opacity=%220.29%22%3El%3C/text%3E%3Ctext x=%2210%22 y=%22132%22 fill=%22%23a3e635%22 fill-opacity=%220.43%22%3Es%3C/text%3E%3Ctext x=%2210%22 y=%22176%22 fill=%22%23a3e635%22 fill-opacity=%220.72%22%3E-%3C/text%3E%3Ctext x=%2210%22 y=%22198%22 fill=%22%23a3e635%22 fill-opacity=%220.86%22%3El%3C/text%3E%3Ctext x=%2210%22 y=%22220%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3Ea%3C/text%3E%3Ctext x=%2230%22 y=%2288%22 fill=%22%23a3e635%22 fill-opacity=%220.32%22%3Ed%3C/text%3E%3Ctext x=%2230%22 y=%22110%22 fill=%22%23a3e635%22 fill-opacity=%220.49%22%3Ef%3C/text%3E%3Ctext x=%2230%22 y=%22154%22 fill=%22%23a3e635%22 fill-opacity=%220.83%22%3E-%3C/text%3E%3Ctext x=%2230%22 y=%22176%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3Eh%3C/text%3E%3Ctext x=%2250%22 y=%22616%22 fill=%22%23a3e635%22 fill-opacity=%220.27%22%3Eg%3C/text%3E%3Ctext x=%2250%22 y=%22638%22 fill=%22%23a3e635%22 fill-opacity=%220.39%22%3Ei%3C/text%3E%3Ctext x=%2250%22 y=%22660%22 fill=%22%23a3e635%22 fill-opacity=%220.51%22%3Et%3C/text%3E%3Ctext x=%2250%22 y=%22704%22 fill=%22%23a3e635%22 fill-opacity=%220.76%22%3El%3C/text%3E%3Ctext x=%2250%22 y=%22726%22 fill=%22%23a3e635%22 fill-opacity=%220.88%22%3Eo%3C/text%3E%3Ctext x=%2250%22 y=%22748%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3Eg%3C/text%3E%3Ctext x=%2270%22 y=%22616%22 fill=%22%23a3e635%22 fill-opacity=%220.43%22%3Et%3C/text%3E%3Ctext x=%2270%22 y=%22638%22 fill=%22%23a3e635%22 fill-opacity=%220.72%22%3Eo%3C/text%3E%3Ctext x=%2270%22 y=%22660%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3Ep%3C/text%3E%3Ctext x=%22110%22 y=%22902%22 fill=%22%23a3e635%22 fill-opacity=%220.18%22%3E%5D%3C/text%3E%3Ctext x=%22110%22 y=%22924%22 fill=%22%23a3e635%22 fill-opacity=%220.22%22%3E3%3C/text%3E%3Ctext x=%22110%22 y=%22946%22 fill=%22%23a3e635%22 fill-opacity=%220.25%22%3E%5B%3C/text%3E%3Ctext x=%22110%22 y=%2222%22 fill=%22%23a3e635%22 fill-opacity=%220.28%22%3E%5D%3C/text%3E%3Ctext x=%22110%22 y=%2244%22 fill=%22%23a3e635%22 fill-opacity=%220.31%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22110%22 y=%2266%22 fill=%22%23a3e635%22 fill-opacity=%220.35%22%3E3%3C/text%3E%3Ctext x=%22110%22 y=%2288%22 fill=%22%23a3e635%22 fill-opacity=%220.38%22%3E4%3C/text%3E%3Ctext x=%22110%22 y=%22110%22 fill=%22%23a3e635%22 fill-opacity=%220.41%22%3E2%3C/text%3E%3Ctext x=%22110%22 y=%22132%22 fill=%22%23a3e635%22 fill-opacity=%220.44%22%3E%7D%3C/text%3E%3Ctext x=%22110%22 y=%22154%22 fill=%22%23a3e635%22 fill-opacity=%220.48%22%3E8%3C/text%3E%3Ctext x=%22110%22 y=%22176%22 fill=%22%23a3e635%22 fill-opacity=%220.51%22%3E%E3%82%A6%3C/text%3E%3Ctext x=%22110%22 y=%22198%22 fill=%22%23a3e635%22 fill-opacity=%220.54%22%3E%E3%82%B5%3C/text%3E%3Ctext x=%22110%22 y=%22220%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E9%3C/text%3E%3Ctext x=%22110%22 y=%22242%22 fill=%22%23a3e635%22 fill-opacity=%220.61%22%3E%7B%3C/text%3E%3Ctext x=%22110%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.64%22%3E7%3C/text%3E%3Ctext x=%22110%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.67%22%3E%5B%3C/text%3E%3Ctext x=%22110%22 y=%22308%22 fill=%22%23a3e635%22 fill-opacity=%220.71%22%3E%E3%82%A8%3C/text%3E%3Ctext x=%22110%22 y=%22330%22 fill=%22%23a3e635%22 fill-opacity=%220.74%22%3E%7D%3C/text%3E%3Ctext x=%22110%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.77%22%3E%25%3C/text%3E%3Ctext x=%22110%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.8%22%3E1%3C/text%3E%3Ctext x=%22110%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.84%22%3E6%3C/text%3E%3Ctext x=%22110%22 y=%22418%22 fill=%22%23a3e635%22 fill-opacity=%220.87%22%3E%5D%3C/text%3E%3Ctext x=%22110%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.9%22%3E%5B%3C/text%3E%3Ctext x=%22110%22 y=%22462%22 fill=%22%23a3e635%22 fill-opacity=%220.93%22%3E%2A%3C/text%3E%3Ctext x=%22110%22 y=%22484%22 fill=%22%23a3e635%22 fill-opacity=%220.97%22%3E2%3C/text%3E%3Ctext x=%22110%22 y=%22506%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E%E3%82%AF%3C/text%3E%3Ctext x=%22150%22 y=%22308%22 fill=%22%23a3e635%22 fill-opacity=%220.18%22%3E%26lt;%3C/text%3E%3Ctext x=%22150%22 y=%22330%22 fill=%22%23a3e635%22 fill-opacity=%220.22%22%3E%25%3C/text%3E%3Ctext x=%22150%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.25%22%3E%7B%3C/text%3E%3Ctext x=%22150%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.29%22%3E%E3%82%B7%3C/text%3E%3Ctext x=%22150%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.32%22%3E%E3%82%AA%3C/text%3E%3Ctext x=%22150%22 y=%22418%22 fill=%22%23a3e635%22 fill-opacity=%220.35%22%3E%E3%82%BB%3C/text%3E%3Ctext x=%22150%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.39%22%3E%5D%3C/text%3E%3Ctext x=%22150%22 y=%22462%22 fill=%22%23a3e635%22 fill-opacity=%220.42%22%3E%E3%82%BB%3C/text%3E%3Ctext x=%22150%22 y=%22484%22 fill=%22%23a3e635%22 fill-opacity=%220.46%22%3E%E3%82%AF%3C/text%3E%3Ctext x=%22150%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.49%22%3E%E3%82%A8%3C/text%3E%3Ctext x=%22150%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.52%22%3E5%3C/text%3E%3Ctext x=%22150%22 y=%22550%22 fill=%22%23a3e635%22 fill-opacity=%220.56%22%3E1%3C/text%3E%3Ctext x=%22150%22 y=%22572%22 fill=%22%23a3e635%22 fill-opacity=%220.59%22%3E%26amp;%3C/text%3E%3Ctext x=%22150%22 y=%22594%22 fill=%22%23a3e635%22 fill-opacity=%220.63%22%3E5%3C/text%3E%3Ctext x=%22150%22 y=%22616%22 fill=%22%23a3e635%22 fill-opacity=%220.66%22%3E5%3C/text%3E%3Ctext x=%22150%22 y=%22638%22 fill=%22%23a3e635%22 fill-opacity=%220.69%22%3E%5B%3C/text%3E%3Ctext x=%22150%22 y=%22660%22 fill=%22%23a3e635%22 fill-opacity=%220.73%22%3E%E3%82%A8%3C/text%3E%3Ctext x=%22150%22 y=%22682%22 fill=%22%23a3e635%22 fill-opacity=%220.76%22%3E/%3C/text%3E%3Ctext x=%22150%22 y=%22704%22 fill=%22%23a3e635%22 fill-opacity=%220.8%22%3E%26lt;%3C/text%3E%3Ctext x=%22150%22 y=%22726%22 fill=%22%23a3e635%22 fill-opacity=%220.83%22%3E%E3%82%AB%3C/text%3E%3Ctext x=%22150%22 y=%22748%22 fill=%22%23a3e635%22 fill-opacity=%220.86%22%3E%E3%82%B9%3C/text%3E%3Ctext x=%22150%22 y=%22770%22 fill=%22%23a3e635%22 fill-opacity=%220.9%22%3E%E3%82%A6%3C/text%3E%3Ctext x=%22150%22 y=%22792%22 fill=%22%23a3e635%22 fill-opacity=%220.93%22%3E=%3C/text%3E%3Ctext x=%22150%22 y=%22814%22 fill=%22%23a3e635%22 fill-opacity=%220.97%22%3E4%3C/text%3E%3Ctext x=%22150%22 y=%22836%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E7%3C/text%3E%3Ctext x=%22170%22 y=%22220%22 fill=%22%23a3e635%22 fill-opacity=%220.23%22%3Ee%3C/text%3E%3Ctext x=%22170%22 y=%22242%22 fill=%22%23a3e635%22 fill-opacity=%220.32%22%3Ec%3C/text%3E%3Ctext x=%22170%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.41%22%3Eh%3C/text%3E%3Ctext x=%22170%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.49%22%3Eo%3C/text%3E%3Ctext x=%22170%22 y=%22330%22 fill=%22%23a3e635%22 fill-opacity=%220.66%22%3E%24%3C/text%3E%3Ctext x=%22170%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.74%22%3EP%3C/text%3E%3Ctext x=%22170%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.83%22%3EA%3C/text%3E%3Ctext x=%22170%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.91%22%3ET%3C/text%3E%3Ctext x=%22170%22 y=%22418%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3EH%3C/text%3E%3Ctext x=%22190%22 y=%22792%22 fill=%22%23a3e635%22 fill-opacity=%220.26%22%3E%5B%3C/text%3E%3Ctext x=%22190%22 y=%22814%22 fill=%22%23a3e635%22 fill-opacity=%220.36%22%3E%E3%82%AA%3C/text%3E%3Ctext x=%22190%22 y=%22836%22 fill=%22%23a3e635%22 fill-opacity=%220.47%22%3E%E3%82%AB%3C/text%3E%3Ctext x=%22190%22 y=%22858%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E%26amp;%3C/text%3E%3Ctext x=%22190%22 y=%22880%22 fill=%22%23a3e635%22 fill-opacity=%220.68%22%3E%E3%82%AD%3C/text%3E%3Ctext x=%22190%22 y=%22902%22 fill=%22%23a3e635%22 fill-opacity=%220.79%22%3E=%3C/text%3E%3Ctext x=%22190%22 y=%22924%22 fill=%22%23a3e635%22 fill-opacity=%220.89%22%3E%26lt;%3C/text%3E%3Ctext x=%22190%22 y=%22946%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E%5D%3C/text%3E%3Ctext x=%22210%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.27%22%3Eg%3C/text%3E%3Ctext x=%22210%22 y=%22418%22 fill=%22%23a3e635%22 fill-opacity=%220.39%22%3Ei%3C/text%3E%3Ctext x=%22210%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.51%22%3Et%3C/text%3E%3Ctext x=%22210%22 y=%22484%22 fill=%22%23a3e635%22 fill-opacity=%220.76%22%3El%3C/text%3E%3Ctext x=%22210%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.88%22%3Eo%3C/text%3E%3Ctext x=%22210%22 y=%22528%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3Eg%3C/text%3E%3Ctext x=%22230%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.27%22%3E%23%3C/text%3E%3Ctext x=%22230%22 y=%22462%22 fill=%22%23a3e635%22 fill-opacity=%220.39%22%3E%5B%3C/text%3E%3Ctext x=%22230%22 y=%22484%22 fill=%22%23a3e635%22 fill-opacity=%220.51%22%3E%25%3C/text%3E%3Ctext x=%22230%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.64%22%3E%E3%82%B9%3C/text%3E%3Ctext x=%22230%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.76%22%3E%E3%82%A6%3C/text%3E%3Ctext x=%22230%22 y=%22550%22 fill=%22%23a3e635%22 fill-opacity=%220.88%22%3E%40%3C/text%3E%3Ctext x=%22230%22 y=%22572%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E%E3%82%B1%3C/text%3E%3Ctext x=%22250%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.19%22%3E0%3C/text%3E%3Ctext x=%22250%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.23%22%3E%2B%3C/text%3E%3Ctext x=%22250%22 y=%22550%22 fill=%22%23a3e635%22 fill-opacity=%220.28%22%3E7%3C/text%3E%3Ctext x=%22250%22 y=%22572%22 fill=%22%23a3e635%22 fill-opacity=%220.32%22%3E%26lt;%3C/text%3E%3Ctext x=%22250%22 y=%22594%22 fill=%22%23a3e635%22 fill-opacity=%220.36%22%3E3%3C/text%3E%3Ctext x=%22250%22 y=%22616%22 fill=%22%23a3e635%22 fill-opacity=%220.41%22%3E3%3C/text%3E%3Ctext x=%22250%22 y=%22638%22 fill=%22%23a3e635%22 fill-opacity=%220.45%22%3E%E3%82%A6%3C/text%3E%3Ctext x=%22250%22 y=%22660%22 fill=%22%23a3e635%22 fill-opacity=%220.49%22%3E8%3C/text%3E%3Ctext x=%22250%22 y=%22682%22 fill=%22%23a3e635%22 fill-opacity=%220.53%22%3E5%3C/text%3E%3Ctext x=%22250%22 y=%22704%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22250%22 y=%22726%22 fill=%22%23a3e635%22 fill-opacity=%220.62%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22250%22 y=%22748%22 fill=%22%23a3e635%22 fill-opacity=%220.66%22%3E%26lt;%3C/text%3E%3Ctext x=%22250%22 y=%22770%22 fill=%22%23a3e635%22 fill-opacity=%220.7%22%3E5%3C/text%3E%3Ctext x=%22250%22 y=%22792%22 fill=%22%23a3e635%22 fill-opacity=%220.74%22%3E0%3C/text%3E%3Ctext x=%22250%22 y=%22814%22 fill=%22%23a3e635%22 fill-opacity=%220.79%22%3E%E3%82%B9%3C/text%3E%3Ctext x=%22250%22 y=%22836%22 fill=%22%23a3e635%22 fill-opacity=%220.83%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22250%22 y=%22858%22 fill=%22%23a3e635%22 fill-opacity=%220.87%22%3E%7D%3C/text%3E%3Ctext x=%22250%22 y=%22880%22 fill=%22%23a3e635%22 fill-opacity=%220.91%22%3E%E3%82%A4%3C/text%3E%3Ctext x=%22250%22 y=%22902%22 fill=%22%23a3e635%22 fill-opacity=%220.96%22%3E8%3C/text%3E%3Ctext x=%22250%22 y=%22924%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E%E3%82%B7%3C/text%3E%3Ctext x=%22270%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.21%22%3Es%3C/text%3E%3Ctext x=%22270%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.27%22%3Eu%3C/text%3E%3Ctext x=%22270%22 y=%22550%22 fill=%22%23a3e635%22 fill-opacity=%220.33%22%3Ed%3C/text%3E%3Ctext x=%22270%22 y=%22572%22 fill=%22%23a3e635%22 fill-opacity=%220.39%22%3Eo%3C/text%3E%3Ctext x=%22270%22 y=%22616%22 fill=%22%23a3e635%22 fill-opacity=%220.51%22%3Es%3C/text%3E%3Ctext x=%22270%22 y=%22638%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3Ey%3C/text%3E%3Ctext x=%22270%22 y=%22660%22 fill=%22%23a3e635%22 fill-opacity=%220.64%22%3Es%3C/text%3E%3Ctext x=%22270%22 y=%22682%22 fill=%22%23a3e635%22 fill-opacity=%220.7%22%3Et%3C/text%3E%3Ctext x=%22270%22 y=%22704%22 fill=%22%23a3e635%22 fill-opacity=%220.76%22%3Ee%3C/text%3E%3Ctext x=%22270%22 y=%22726%22 fill=%22%23a3e635%22 fill-opacity=%220.82%22%3Em%3C/text%3E%3Ctext x=%22270%22 y=%22748%22 fill=%22%23a3e635%22 fill-opacity=%220.88%22%3Ec%3C/text%3E%3Ctext x=%22270%22 y=%22770%22 fill=%22%23a3e635%22 fill-opacity=%220.94%22%3Et%3C/text%3E%3Ctext x=%22270%22 y=%22792%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3El%3C/text%3E%3Ctext x=%22290%22 y=%22220%22 fill=%22%23a3e635%22 fill-opacity=%220.22%22%3E5%3C/text%3E%3Ctext x=%22290%22 y=%22242%22 fill=%22%23a3e635%22 fill-opacity=%220.28%22%3E1%3C/text%3E%3Ctext x=%22290%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.35%22%3E9%3C/text%3E%3Ctext x=%22290%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.41%22%3E4%3C/text%3E%3Ctext x=%22290%22 y=%22308%22 fill=%22%23a3e635%22 fill-opacity=%220.48%22%3E%24%3C/text%3E%3Ctext x=%22290%22 y=%22330%22 fill=%22%23a3e635%22 fill-opacity=%220.54%22%3E4%3C/text%3E%3Ctext x=%22290%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.61%22%3E0%3C/text%3E%3Ctext x=%22290%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.67%22%3E%26lt;%3C/text%3E%3Ctext x=%22290%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.74%22%3E%5D%3C/text%3E%3Ctext x=%22290%22 y=%22418%22 fill=%22%23a3e635%22 fill-opacity=%220.8%22%3E1%3C/text%3E%3Ctext x=%22290%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.87%22%3E%E3%82%A2%3C/text%3E%3Ctext x=%22290%22 y=%22462%22 fill=%22%23a3e635%22 fill-opacity=%220.93%22%3E%E3%82%A6%3C/text%3E%3Ctext x=%22290%22 y=%22484%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E0%3C/text%3E%3Ctext x=%22310%22 y=%22814%22 fill=%22%23a3e635%22 fill-opacity=%220.18%22%3E%E3%82%AA%3C/text%3E%3Ctext x=%22310%22 y=%22836%22 fill=%22%23a3e635%22 fill-opacity=%220.22%22%3E8%3C/text%3E%3Ctext x=%22310%22 y=%22858%22 fill=%22%23a3e635%22 fill-opacity=%220.25%22%3E%26amp;%3C/text%3E%3Ctext x=%22310%22 y=%22880%22 fill=%22%23a3e635%22 fill-opacity=%220.29%22%3E%26gt;%3C/text%3E%3Ctext x=%22310%22 y=%22902%22 fill=%22%23a3e635%22 fill-opacity=%220.32%22%3E%2B%3C/text%3E%3Ctext x=%22310%22 y=%22924%22 fill=%22%23a3e635%22 fill-opacity=%220.35%22%3E%23%3C/text%3E%3Ctext x=%22310%22 y=%22946%22 fill=%22%23a3e635%22 fill-opacity=%220.39%22%3E%25%3C/text%3E%3Ctext x=%22310%22 y=%2222%22 fill=%22%23a3e635%22 fill-opacity=%220.42%22%3E3%3C/text%3E%3Ctext x=%22310%22 y=%2244%22 fill=%22%23a3e635%22 fill-opacity=%220.46%22%3E%E3%82%BB%3C/text%3E%3Ctext x=%22310%22 y=%2266%22 fill=%22%23a3e635%22 fill-opacity=%220.49%22%3E%25%3C/text%3E%3Ctext x=%22310%22 y=%2288%22 fill=%22%23a3e635%22 fill-opacity=%220.52%22%3E%7D%3C/text%3E%3Ctext x=%22310%22 y=%22110%22 fill=%22%23a3e635%22 fill-opacity=%220.56%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22310%22 y=%22132%22 fill=%22%23a3e635%22 fill-opacity=%220.59%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22310%22 y=%22154%22 fill=%22%23a3e635%22 fill-opacity=%220.63%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22310%22 y=%22176%22 fill=%22%23a3e635%22 fill-opacity=%220.66%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22310%22 y=%22198%22 fill=%22%23a3e635%22 fill-opacity=%220.69%22%3E6%3C/text%3E%3Ctext x=%22310%22 y=%22220%22 fill=%22%23a3e635%22 fill-opacity=%220.73%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22310%22 y=%22242%22 fill=%22%23a3e635%22 fill-opacity=%220.76%22%3E%2A%3C/text%3E%3Ctext x=%22310%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.8%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22310%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.83%22%3E3%3C/text%3E%3Ctext x=%22310%22 y=%22308%22 fill=%22%23a3e635%22 fill-opacity=%220.86%22%3E2%3C/text%3E%3Ctext x=%22310%22 y=%22330%22 fill=%22%23a3e635%22 fill-opacity=%220.9%22%3E4%3C/text%3E%3Ctext x=%22310%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.93%22%3E3%3C/text%3E%3Ctext x=%22310%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.97%22%3E%E3%82%B9%3C/text%3E%3Ctext x=%22310%22 y=%22396%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E0%3C/text%3E%3Ctext x=%22330%22 y=%2222%22 fill=%22%23a3e635%22 fill-opacity=%220.24%22%3E%5B%3C/text%3E%3Ctext x=%22330%22 y=%2244%22 fill=%22%23a3e635%22 fill-opacity=%220.34%22%3E9%3C/text%3E%3Ctext x=%22330%22 y=%2266%22 fill=%22%23a3e635%22 fill-opacity=%220.43%22%3E%7B%3C/text%3E%3Ctext x=%22330%22 y=%2288%22 fill=%22%23a3e635%22 fill-opacity=%220.53%22%3E6%3C/text%3E%3Ctext x=%22330%22 y=%22110%22 fill=%22%23a3e635%22 fill-opacity=%220.62%22%3E%E3%82%AF%3C/text%3E%3Ctext x=%22330%22 y=%22132%22 fill=%22%23a3e635%22 fill-opacity=%220.72%22%3E%2B%3C/text%3E%3Ctext x=%22330%22 y=%22154%22 fill=%22%23a3e635%22 fill-opacity=%220.81%22%3E1%3C/text%3E%3Ctext x=%22330%22 y=%22176%22 fill=%22%23a3e635%22 fill-opacity=%220.91%22%3E4%3C/text%3E%3Ctext x=%22330%22 y=%22198%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E3%3C/text%3E%3Ctext x=%22350%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.29%22%3Ep%3C/text%3E%3Ctext x=%22350%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.43%22%3Es%3C/text%3E%3Ctext x=%22350%22 y=%22572%22 fill=%22%23a3e635%22 fill-opacity=%220.72%22%3Ea%3C/text%3E%3Ctext x=%22350%22 y=%22594%22 fill=%22%23a3e635%22 fill-opacity=%220.86%22%3Eu%3C/text%3E%3Ctext x=%22350%22 y=%22616%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3Ex%3C/text%3E%3Ctext x=%22370%22 y=%22704%22 fill=%22%23a3e635%22 fill-opacity=%220.24%22%3E%E3%82%BB%3C/text%3E%3Ctext x=%22370%22 y=%22726%22 fill=%22%23a3e635%22 fill-opacity=%220.34%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22370%22 y=%22748%22 fill=%22%23a3e635%22 fill-opacity=%220.43%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22370%22 y=%22770%22 fill=%22%23a3e635%22 fill-opacity=%220.53%22%3E%E3%82%A8%3C/text%3E%3Ctext x=%22370%22 y=%22792%22 fill=%22%23a3e635%22 fill-opacity=%220.62%22%3E5%3C/text%3E%3Ctext x=%22370%22 y=%22814%22 fill=%22%23a3e635%22 fill-opacity=%220.72%22%3E9%3C/text%3E%3Ctext x=%22370%22 y=%22836%22 fill=%22%23a3e635%22 fill-opacity=%220.81%22%3E6%3C/text%3E%3Ctext x=%22370%22 y=%22858%22 fill=%22%23a3e635%22 fill-opacity=%220.91%22%3E%E3%82%AB%3C/text%3E%3Ctext x=%22370%22 y=%22880%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E%E3%82%A2%3C/text%3E%3Ctext x=%22390%22 y=%2244%22 fill=%22%23a3e635%22 fill-opacity=%220.19%22%3E3%3C/text%3E%3Ctext x=%22390%22 y=%2266%22 fill=%22%23a3e635%22 fill-opacity=%220.23%22%3E/%3C/text%3E%3Ctext x=%22390%22 y=%2288%22 fill=%22%23a3e635%22 fill-opacity=%220.27%22%3E%E3%82%AF%3C/text%3E%3Ctext x=%22390%22 y=%22110%22 fill=%22%23a3e635%22 fill-opacity=%220.3%22%3E9%3C/text%3E%3Ctext x=%22390%22 y=%22132%22 fill=%22%23a3e635%22 fill-opacity=%220.34%22%3E%26amp;%3C/text%3E%3Ctext x=%22390%22 y=%22154%22 fill=%22%23a3e635%22 fill-opacity=%220.38%22%3E%7B%3C/text%3E%3Ctext x=%22390%22 y=%22176%22 fill=%22%23a3e635%22 fill-opacity=%220.42%22%3E1%3C/text%3E%3Ctext x=%22390%22 y=%22198%22 fill=%22%23a3e635%22 fill-opacity=%220.46%22%3E/%3C/text%3E%3Ctext x=%22390%22 y=%22220%22 fill=%22%23a3e635%22 fill-opacity=%220.5%22%3E%E3%82%A8%3C/text%3E%3Ctext x=%22390%22 y=%22242%22 fill=%22%23a3e635%22 fill-opacity=%220.54%22%3E%23%3C/text%3E%3Ctext x=%22390%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E5%3C/text%3E%3Ctext x=%22390%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.61%22%3E%26amp;%3C/text%3E%3Ctext x=%22390%22 y=%22308%22 fill=%22%23a3e635%22 fill-opacity=%220.65%22%3E%E3%82%A2%3C/text%3E%3Ctext x=%22390%22 y=%22330%22 fill=%22%23a3e635%22 fill-opacity=%220.69%22%3E/%3C/text%3E%3Ctext x=%22390%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.73%22%3E%E3%82%AF%3C/text%3E%3Ctext x=%22390%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.77%22%3E0%3C/text%3E%3Ctext x=%22390%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.81%22%3E%E3%82%AD%3C/text%3E%3Ctext x=%22390%22 y=%22418%22 fill=%22%23a3e635%22 fill-opacity=%220.85%22%3E4%3C/text%3E%3Ctext x=%22390%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.88%22%3E%7B%3C/text%3E%3Ctext x=%22390%22 y=%22462%22 fill=%22%23a3e635%22 fill-opacity=%220.92%22%3E%7B%3C/text%3E%3Ctext x=%22390%22 y=%22484%22 fill=%22%23a3e635%22 fill-opacity=%220.96%22%3E%26gt;%3C/text%3E%3Ctext x=%22390%22 y=%22506%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E%E3%82%AB%3C/text%3E%3Ctext x=%22410%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.22%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22410%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.29%22%3E4%3C/text%3E%3Ctext x=%22410%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.36%22%3E2%3C/text%3E%3Ctext x=%22410%22 y=%22418%22 fill=%22%23a3e635%22 fill-opacity=%220.43%22%3E/%3C/text%3E%3Ctext x=%22410%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.5%22%3E%26lt;%3C/text%3E%3Ctext x=%22410%22 y=%22462%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E%E3%82%AD%3C/text%3E%3Ctext x=%22410%22 y=%22484%22 fill=%22%23a3e635%22 fill-opacity=%220.65%22%3E1%3C/text%3E%3Ctext x=%22410%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.72%22%3E1%3C/text%3E%3Ctext x=%22410%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.79%22%3E%E3%82%A4%3C/text%3E%3Ctext x=%22410%22 y=%22550%22 fill=%22%23a3e635%22 fill-opacity=%220.86%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22410%22 y=%22572%22 fill=%22%23a3e635%22 fill-opacity=%220.93%22%3E%E3%82%A2%3C/text%3E%3Ctext x=%22410%22 y=%22594%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E2%3C/text%3E%3Ctext x=%22430%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.19%22%3E%E3%82%AF%3C/text%3E%3Ctext x=%22430%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.23%22%3E5%3C/text%3E%3Ctext x=%22430%22 y=%22550%22 fill=%22%23a3e635%22 fill-opacity=%220.28%22%3E4%3C/text%3E%3Ctext x=%22430%22 y=%22572%22 fill=%22%23a3e635%22 fill-opacity=%220.32%22%3E6%3C/text%3E%3Ctext x=%22430%22 y=%22594%22 fill=%22%23a3e635%22 fill-opacity=%220.36%22%3E4%3C/text%3E%3Ctext x=%22430%22 y=%22616%22 fill=%22%23a3e635%22 fill-opacity=%220.41%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22430%22 y=%22638%22 fill=%22%23a3e635%22 fill-opacity=%220.45%22%3E2%3C/text%3E%3Ctext x=%22430%22 y=%22660%22 fill=%22%23a3e635%22 fill-opacity=%220.49%22%3E%E3%82%AB%3C/text%3E%3Ctext x=%22430%22 y=%22682%22 fill=%22%23a3e635%22 fill-opacity=%220.53%22%3E3%3C/text%3E%3Ctext x=%22430%22 y=%22704%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22430%22 y=%22726%22 fill=%22%23a3e635%22 fill-opacity=%220.62%22%3E%2B%3C/text%3E%3Ctext x=%22430%22 y=%22748%22 fill=%22%23a3e635%22 fill-opacity=%220.66%22%3E%2B%3C/text%3E%3Ctext x=%22430%22 y=%22770%22 fill=%22%23a3e635%22 fill-opacity=%220.7%22%3E0%3C/text%3E%3Ctext x=%22430%22 y=%22792%22 fill=%22%23a3e635%22 fill-opacity=%220.74%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22430%22 y=%22814%22 fill=%22%23a3e635%22 fill-opacity=%220.79%22%3E%23%3C/text%3E%3Ctext x=%22430%22 y=%22836%22 fill=%22%23a3e635%22 fill-opacity=%220.83%22%3E%E3%82%AD%3C/text%3E%3Ctext x=%22430%22 y=%22858%22 fill=%22%23a3e635%22 fill-opacity=%220.87%22%3E%23%3C/text%3E%3Ctext x=%22430%22 y=%22880%22 fill=%22%23a3e635%22 fill-opacity=%220.91%22%3E5%3C/text%3E%3Ctext x=%22430%22 y=%22902%22 fill=%22%23a3e635%22 fill-opacity=%220.96%22%3E%24%3C/text%3E%3Ctext x=%22430%22 y=%22924%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E7%3C/text%3E%3Ctext x=%22450%22 y=%22682%22 fill=%22%23a3e635%22 fill-opacity=%220.22%22%3E1%3C/text%3E%3Ctext x=%22450%22 y=%22704%22 fill=%22%23a3e635%22 fill-opacity=%220.29%22%3E%E3%82%B7%3C/text%3E%3Ctext x=%22450%22 y=%22726%22 fill=%22%23a3e635%22 fill-opacity=%220.36%22%3E%2A%3C/text%3E%3Ctext x=%22450%22 y=%22748%22 fill=%22%23a3e635%22 fill-opacity=%220.43%22%3E%E3%82%AB%3C/text%3E%3Ctext x=%22450%22 y=%22770%22 fill=%22%23a3e635%22 fill-opacity=%220.5%22%3E5%3C/text%3E%3Ctext x=%22450%22 y=%22792%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22450%22 y=%22814%22 fill=%22%23a3e635%22 fill-opacity=%220.65%22%3E%E3%82%BB%3C/text%3E%3Ctext x=%22450%22 y=%22836%22 fill=%22%23a3e635%22 fill-opacity=%220.72%22%3E%E3%82%B3%3C/text%3E%3Ctext x=%22450%22 y=%22858%22 fill=%22%23a3e635%22 fill-opacity=%220.79%22%3E5%3C/text%3E%3Ctext x=%22450%22 y=%22880%22 fill=%22%23a3e635%22 fill-opacity=%220.86%22%3E0%3C/text%3E%3Ctext x=%22450%22 y=%22902%22 fill=%22%23a3e635%22 fill-opacity=%220.93%22%3E0%3C/text%3E%3Ctext x=%22450%22 y=%22924%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E8%3C/text%3E%3Ctext x=%22490%22 y=%22220%22 fill=%22%23a3e635%22 fill-opacity=%220.18%22%3E%2B%3C/text%3E%3Ctext x=%22490%22 y=%22242%22 fill=%22%23a3e635%22 fill-opacity=%220.22%22%3E=%3C/text%3E%3Ctext x=%22490%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.25%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22490%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.28%22%3E%24%3C/text%3E%3Ctext x=%22490%22 y=%22308%22 fill=%22%23a3e635%22 fill-opacity=%220.31%22%3E%E3%82%AD%3C/text%3E%3Ctext x=%22490%22 y=%22330%22 fill=%22%23a3e635%22 fill-opacity=%220.35%22%3E9%3C/text%3E%3Ctext x=%22490%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.38%22%3E%7D%3C/text%3E%3Ctext x=%22490%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.41%22%3E%7D%3C/text%3E%3Ctext x=%22490%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.44%22%3E8%3C/text%3E%3Ctext x=%22490%22 y=%22418%22 fill=%22%23a3e635%22 fill-opacity=%220.48%22%3E1%3C/text%3E%3Ctext x=%22490%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.51%22%3E0%3C/text%3E%3Ctext x=%22490%22 y=%22462%22 fill=%22%23a3e635%22 fill-opacity=%220.54%22%3E%23%3C/text%3E%3Ctext x=%22490%22 y=%22484%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E6%3C/text%3E%3Ctext x=%22490%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.61%22%3E/%3C/text%3E%3Ctext x=%22490%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.64%22%3E8%3C/text%3E%3Ctext x=%22490%22 y=%22550%22 fill=%22%23a3e635%22 fill-opacity=%220.67%22%3E%E3%82%B7%3C/text%3E%3Ctext x=%22490%22 y=%22572%22 fill=%22%23a3e635%22 fill-opacity=%220.71%22%3E2%3C/text%3E%3Ctext x=%22490%22 y=%22594%22 fill=%22%23a3e635%22 fill-opacity=%220.74%22%3E3%3C/text%3E%3Ctext x=%22490%22 y=%22616%22 fill=%22%23a3e635%22 fill-opacity=%220.77%22%3E1%3C/text%3E%3Ctext x=%22490%22 y=%22638%22 fill=%22%23a3e635%22 fill-opacity=%220.8%22%3E%E3%82%A2%3C/text%3E%3Ctext x=%22490%22 y=%22660%22 fill=%22%23a3e635%22 fill-opacity=%220.84%22%3E3%3C/text%3E%3Ctext x=%22490%22 y=%22682%22 fill=%22%23a3e635%22 fill-opacity=%220.87%22%3E%E3%82%A6%3C/text%3E%3Ctext x=%22490%22 y=%22704%22 fill=%22%23a3e635%22 fill-opacity=%220.9%22%3E%26gt;%3C/text%3E%3Ctext x=%22490%22 y=%22726%22 fill=%22%23a3e635%22 fill-opacity=%220.93%22%3E5%3C/text%3E%3Ctext x=%22490%22 y=%22748%22 fill=%22%23a3e635%22 fill-opacity=%220.97%22%3E%5D%3C/text%3E%3Ctext x=%22490%22 y=%22770%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E%E3%82%AA%3C/text%3E%3Ctext x=%22510%22 y=%2288%22 fill=%22%23a3e635%22 fill-opacity=%220.23%22%3E%E3%82%AD%3C/text%3E%3Ctext x=%22510%22 y=%22110%22 fill=%22%23a3e635%22 fill-opacity=%220.32%22%3E%E3%82%BB%3C/text%3E%3Ctext x=%22510%22 y=%22132%22 fill=%22%23a3e635%22 fill-opacity=%220.41%22%3E%24%3C/text%3E%3Ctext x=%22510%22 y=%22154%22 fill=%22%23a3e635%22 fill-opacity=%220.49%22%3E%5D%3C/text%3E%3Ctext x=%22510%22 y=%22176%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E/%3C/text%3E%3Ctext x=%22510%22 y=%22198%22 fill=%22%23a3e635%22 fill-opacity=%220.66%22%3E%E3%82%B5%3C/text%3E%3Ctext x=%22510%22 y=%22220%22 fill=%22%23a3e635%22 fill-opacity=%220.74%22%3E%26gt;%3C/text%3E%3Ctext x=%22510%22 y=%22242%22 fill=%22%23a3e635%22 fill-opacity=%220.83%22%3E8%3C/text%3E%3Ctext x=%22510%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.91%22%3E%7B%3C/text%3E%3Ctext x=%22510%22 y=%22286%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E9%3C/text%3E%3Ctext x=%22530%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.27%22%3Ek%3C/text%3E%3Ctext x=%22530%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.39%22%3Ei%3C/text%3E%3Ctext x=%22530%22 y=%22308%22 fill=%22%23a3e635%22 fill-opacity=%220.51%22%3El%3C/text%3E%3Ctext x=%22530%22 y=%22330%22 fill=%22%23a3e635%22 fill-opacity=%220.64%22%3El%3C/text%3E%3Ctext x=%22530%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.88%22%3E-%3C/text%3E%3Ctext x=%22530%22 y=%22396%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E9%3C/text%3E%3Ctext x=%22550%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.23%22%3E9%3C/text%3E%3Ctext x=%22550%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.32%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22550%22 y=%22308%22 fill=%22%23a3e635%22 fill-opacity=%220.41%22%3E%2B%3C/text%3E%3Ctext x=%22550%22 y=%22330%22 fill=%22%23a3e635%22 fill-opacity=%220.49%22%3E7%3C/text%3E%3Ctext x=%22550%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E%7D%3C/text%3E%3Ctext x=%22550%22 y=%22374%22 fill=%22%23a3e635%22 fill-opacity=%220.66%22%3E3%3C/text%3E%3Ctext x=%22550%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.74%22%3E%E3%82%AA%3C/text%3E%3Ctext x=%22550%22 y=%22418%22 fill=%22%23a3e635%22 fill-opacity=%220.83%22%3E%25%3C/text%3E%3Ctext x=%22550%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.91%22%3E/%3C/text%3E%3Ctext x=%22550%22 y=%22462%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E/%3C/text%3E%3Ctext x=%22570%22 y=%22792%22 fill=%22%23a3e635%22 fill-opacity=%220.24%22%3E3%3C/text%3E%3Ctext x=%22570%22 y=%22814%22 fill=%22%23a3e635%22 fill-opacity=%220.34%22%3E5%3C/text%3E%3Ctext x=%22570%22 y=%22836%22 fill=%22%23a3e635%22 fill-opacity=%220.43%22%3E2%3C/text%3E%3Ctext x=%22570%22 y=%22858%22 fill=%22%23a3e635%22 fill-opacity=%220.53%22%3E%E3%82%A4%3C/text%3E%3Ctext x=%22570%22 y=%22880%22 fill=%22%23a3e635%22 fill-opacity=%220.62%22%3E2%3C/text%3E%3Ctext x=%22570%22 y=%22902%22 fill=%22%23a3e635%22 fill-opacity=%220.72%22%3E6%3C/text%3E%3Ctext x=%22570%22 y=%22924%22 fill=%22%23a3e635%22 fill-opacity=%220.81%22%3E%26gt;%3C/text%3E%3Ctext x=%22570%22 y=%22946%22 fill=%22%23a3e635%22 fill-opacity=%220.91%22%3E%E3%82%B9%3C/text%3E%3Ctext x=%22570%22 y=%2222%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E%7D%3C/text%3E%3Ctext x=%22610%22 y=%22880%22 fill=%22%23a3e635%22 fill-opacity=%220.23%22%3Ee%3C/text%3E%3Ctext x=%22610%22 y=%22902%22 fill=%22%23a3e635%22 fill-opacity=%220.32%22%3Ec%3C/text%3E%3Ctext x=%22610%22 y=%22924%22 fill=%22%23a3e635%22 fill-opacity=%220.41%22%3Eh%3C/text%3E%3Ctext x=%22610%22 y=%22946%22 fill=%22%23a3e635%22 fill-opacity=%220.49%22%3Eo%3C/text%3E%3Ctext x=%22610%22 y=%2244%22 fill=%22%23a3e635%22 fill-opacity=%220.66%22%3E%24%3C/text%3E%3Ctext x=%22610%22 y=%2266%22 fill=%22%23a3e635%22 fill-opacity=%220.74%22%3EP%3C/text%3E%3Ctext x=%22610%22 y=%2288%22 fill=%22%23a3e635%22 fill-opacity=%220.83%22%3EA%3C/text%3E%3Ctext x=%22610%22 y=%22110%22 fill=%22%23a3e635%22 fill-opacity=%220.91%22%3ET%3C/text%3E%3Ctext x=%22610%22 y=%22132%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3EH%3C/text%3E%3Ctext x=%22630%22 y=%22396%22 fill=%22%23a3e635%22 fill-opacity=%220.22%22%3E%E3%82%B9%3C/text%3E%3Ctext x=%22630%22 y=%22418%22 fill=%22%23a3e635%22 fill-opacity=%220.29%22%3E%26gt;%3C/text%3E%3Ctext x=%22630%22 y=%22440%22 fill=%22%23a3e635%22 fill-opacity=%220.36%22%3E%7B%3C/text%3E%3Ctext x=%22630%22 y=%22462%22 fill=%22%23a3e635%22 fill-opacity=%220.43%22%3E%E3%82%BD%3C/text%3E%3Ctext x=%22630%22 y=%22484%22 fill=%22%23a3e635%22 fill-opacity=%220.5%22%3E%26gt;%3C/text%3E%3Ctext x=%22630%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3E5%3C/text%3E%3Ctext x=%22630%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.65%22%3E%26amp;%3C/text%3E%3Ctext x=%22630%22 y=%22550%22 fill=%22%23a3e635%22 fill-opacity=%220.72%22%3E/%3C/text%3E%3Ctext x=%22630%22 y=%22572%22 fill=%22%23a3e635%22 fill-opacity=%220.79%22%3E%E3%82%A2%3C/text%3E%3Ctext x=%22630%22 y=%22594%22 fill=%22%23a3e635%22 fill-opacity=%220.86%22%3E%7D%3C/text%3E%3Ctext x=%22630%22 y=%22616%22 fill=%22%23a3e635%22 fill-opacity=%220.93%22%3E2%3C/text%3E%3Ctext x=%22630%22 y=%22638%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E%E3%82%B9%3C/text%3E%3Ctext x=%22650%22 y=%22462%22 fill=%22%23a3e635%22 fill-opacity=%220.27%22%3Ek%3C/text%3E%3Ctext x=%22650%22 y=%22484%22 fill=%22%23a3e635%22 fill-opacity=%220.39%22%3Ei%3C/text%3E%3Ctext x=%22650%22 y=%22506%22 fill=%22%23a3e635%22 fill-opacity=%220.51%22%3El%3C/text%3E%3Ctext x=%22650%22 y=%22528%22 fill=%22%23a3e635%22 fill-opacity=%220.64%22%3El%3C/text%3E%3Ctext x=%22650%22 y=%22572%22 fill=%22%23a3e635%22 fill-opacity=%220.88%22%3E-%3C/text%3E%3Ctext x=%22650%22 y=%22594%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3E9%3C/text%3E%3Ctext x=%22690%22 y=%22176%22 fill=%22%23a3e635%22 fill-opacity=%220.27%22%3Et%3C/text%3E%3Ctext x=%22690%22 y=%22198%22 fill=%22%23a3e635%22 fill-opacity=%220.39%22%3Ea%3C/text%3E%3Ctext x=%22690%22 y=%22220%22 fill=%22%23a3e635%22 fill-opacity=%220.51%22%3Ei%3C/text%3E%3Ctext x=%22690%22 y=%22242%22 fill=%22%23a3e635%22 fill-opacity=%220.64%22%3El%3C/text%3E%3Ctext x=%22690%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.88%22%3E-%3C/text%3E%3Ctext x=%22690%22 y=%22308%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3Ef%3C/text%3E%3Ctext x=%22710%22 y=%22220%22 fill=%22%23a3e635%22 fill-opacity=%220.26%22%3Em%3C/text%3E%3Ctext x=%22710%22 y=%22242%22 fill=%22%23a3e635%22 fill-opacity=%220.36%22%3Ek%3C/text%3E%3Ctext x=%22710%22 y=%22264%22 fill=%22%23a3e635%22 fill-opacity=%220.47%22%3Ed%3C/text%3E%3Ctext x=%22710%22 y=%22286%22 fill=%22%23a3e635%22 fill-opacity=%220.57%22%3Ei%3C/text%3E%3Ctext x=%22710%22 y=%22308%22 fill=%22%23a3e635%22 fill-opacity=%220.68%22%3Er%3C/text%3E%3Ctext x=%22710%22 y=%22352%22 fill=%22%23a3e635%22 fill-opacity=%220.89%22%3E-%3C/text%3E%3Ctext x=%22710%22 y=%22374%22 fill=%22%23d9f99d%22 fill-opacity=%221.0%22%3Ep%3C/text%3E%3C/svg%3E");
+  background-size: 720px 960px;
+  opacity: 0.45;
+  animation: lluvia 90s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes lluvia {
+  from { background-position: 0 0; }
+  to { background-position: 0 960px; }
+}
+
+/* Ventana estilo Terminal de macOS alrededor de cada diapositiva */
+.reveal .slides > section {
+  background: rgba(12, 12, 12, 0.84) !important;
+  backdrop-filter: blur(2px);
+  border: 1px solid #2e2e2e;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.03);
+  padding: 4.2rem 3rem 2.5rem !important;
+  box-sizing: border-box;
+}
+
+.reveal .slides > section::before {
+  content: "taller-ia — zsh";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  text-align: center;
+  font-family: var(--f-texto);
+  font-size: 0.95rem;
+  color: #8a8a8a;
+  background:
+    radial-gradient(circle at 1.4rem 50%, #ff5f57 0.4rem, transparent 0.45rem),
+    radial-gradient(circle at 2.6rem 50%, #febc2e 0.4rem, transparent 0.45rem),
+    radial-gradient(circle at 3.8rem 50%, #28c840 0.4rem, transparent 0.45rem),
+    linear-gradient(#2b2b2b, #232323);
+  border-bottom: 1px solid #111;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Pie de página común a todas las sesiones */
+.reveal::after {
+  content: "Taller de IA  ·  Bryan Chura";
+  position: absolute;
+  left: 3%;
+  bottom: 2.5%;
+  font-family: var(--f-mono);
+  font-size: 0.85rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  color: var(--tenue);
+  pointer-events: none;
+  z-index: 30;
+}

@@ -7,3 +7,5 @@ next:
   - Agregar una etapa bronze que lea un CSV.
 open: []       # AAAA-MM-DD: texto
 blockers: []   # AAAA-MM-DD: texto
+# last_session: 1042   # ID del resumen de la última sesión en Engram
+engram: []     # IDs de memorias relevantes, la más nueva primero
