@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 380" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Muchos caminos llevan del pedido a una solución; ante lo ambiguo, el modelo toma el más probable. -->
+  <g fill="none" stroke="#404040" stroke-width="1.5">
+    <path d="M70,190 C170,40 440,40 550,190"/>
+    <path d="M70,190 C190,90 420,100 550,190"/>
+    <path d="M70,190 C200,280 410,290 550,190"/>
+    <path d="M70,190 C160,350 450,350 550,190"/>
+  </g>
+  <path d="M70,190 C200,175 420,175 550,190" fill="none" stroke="#a3e635" stroke-width="9" stroke-linecap="round"/>
+  <path d="M70,190 C120,330 260,90 330,250 C380,350 480,300 550,190" fill="none" stroke="#67e8f9" stroke-width="2.5" stroke-dasharray="7 6"/>
+
+  <circle cx="70" cy="190" r="14" fill="#121212" stroke="#fafafa" stroke-width="2"/>
+  <circle cx="550" cy="190" r="14" fill="#121212" stroke="#fafafa" stroke-width="2"/>
+  <g font-size="15" text-anchor="middle" fill="#fafafa" font-weight="700">
+    <text x="70" y="240">pedido</text>
+    <text x="550" y="240">resultado</text>
+  </g>
+  <g font-size="13" text-anchor="middle">
+    <text x="310" y="160" fill="#a3e635" font-weight="700">camino esperado (el promedio)</text>
+    <text x="330" y="290" fill="#67e8f9">el que necesitabas</text>
+    <text x="310" y="30" fill="#737373">otros caminos posibles</text>
+  </g>
+  <text x="310" y="370" font-size="12" fill="#737373" text-anchor="middle">si el pedido es ambiguo, gana el camino más probable</text>
+</svg>

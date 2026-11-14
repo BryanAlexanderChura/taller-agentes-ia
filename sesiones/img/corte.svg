@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 190" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Fecha de corte: lo que pasó después del entrenamiento el modelo no lo vio. -->
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a3e635"/>
+    </marker>
+  </defs>
+  <rect x="40" y="60" width="480" height="36" rx="5" fill="#a3e635" fill-opacity="0.14" stroke="#a3e635" stroke-width="1.5"/>
+  <rect x="520" y="60" width="340" height="36" rx="5" fill="#facc15" fill-opacity="0.08" stroke="#facc15" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <g font-size="14" text-anchor="middle" font-weight="700">
+    <text x="280" y="84" fill="#a3e635">lo que aprendió</text>
+    <text x="690" y="84" fill="#facc15">lo que no vio</text>
+  </g>
+  <g stroke="#fafafa" stroke-width="2">
+    <path d="M520,46 L520,110"/>
+    <path d="M860,46 L860,110"/>
+  </g>
+  <g font-size="13" fill="#fafafa" text-anchor="middle">
+    <text x="520" y="36">fecha de corte</text>
+    <text x="860" y="36">hoy</text>
+  </g>
+  <text x="690" y="128" font-size="12" fill="#737373" text-anchor="middle">versiones nuevas, APIs que cambiaron</text>
+  <path d="M690,176 C690,150 690,150 690,138" stroke="#a3e635" stroke-width="2" fill="none" marker-end="url(#flecha)"/>
+  <text x="560" y="180" font-size="12" fill="#a3e635" text-anchor="middle">docs, MCP o web lo traen</text>
+</svg>

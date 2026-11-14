@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- CLI: nada en contexto hasta que la llama. MCP: sus tools viajan en cada turno, pero conecta lo que no tiene CLI. -->
+  <text x="20" y="32" font-size="19" font-weight="700" fill="#a3e635">CLI</text>
+  <text x="20" y="54" font-size="13" fill="#a3a3a3">en reposo: nada en el contexto</text>
+  <g font-size="14" text-anchor="middle">
+    <rect x="20" y="70" width="120" height="44" rx="4" fill="#121212" stroke="#404040" stroke-width="1.5"/><text x="80" y="97" fill="#a3a3a3">turno 1</text>
+    <rect x="150" y="70" width="120" height="44" rx="4" fill="#121212" stroke="#404040" stroke-width="1.5"/><text x="210" y="97" fill="#a3a3a3">turno 2</text>
+    <rect x="280" y="70" width="170" height="44" rx="4" fill="#a3e635" fill-opacity="0.16" stroke="#a3e635" stroke-width="1.5"/><text x="365" y="97" fill="#a3e635">gh pr list</text>
+    <rect x="460" y="70" width="120" height="44" rx="4" fill="#121212" stroke="#404040" stroke-width="1.5"/><text x="520" y="97" fill="#a3a3a3">turno 4</text>
+  </g>
+  <text x="20" y="140" font-size="12" fill="#737373">ocupa contexto solo cuando la usa</text>
+
+  <text x="20" y="200" font-size="19" font-weight="700" fill="#facc15">MCP</text>
+  <text x="20" y="222" font-size="13" fill="#a3a3a3">sus tools se describen en cada turno</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="20" y="238" width="120" height="70" rx="4" fill="#121212" stroke="#404040" stroke-width="1.5"/>
+    <rect x="20" y="238" width="120" height="26" rx="4" fill="#facc15" fill-opacity="0.2"/><text x="80" y="256" fill="#facc15">tools</text><text x="80" y="292" fill="#a3a3a3">turno 1</text>
+    <rect x="150" y="238" width="120" height="70" rx="4" fill="#121212" stroke="#404040" stroke-width="1.5"/>
+    <rect x="150" y="238" width="120" height="26" rx="4" fill="#facc15" fill-opacity="0.2"/><text x="210" y="256" fill="#facc15">tools</text><text x="210" y="292" fill="#a3a3a3">turno 2</text>
+    <rect x="280" y="238" width="170" height="70" rx="4" fill="#121212" stroke="#facc15" stroke-width="1.5"/>
+    <rect x="280" y="238" width="170" height="26" rx="4" fill="#facc15" fill-opacity="0.2"/><text x="365" y="256" fill="#facc15">tools</text><text x="365" y="292" fill="#facc15">engram.search</text>
+    <rect x="460" y="238" width="120" height="70" rx="4" fill="#121212" stroke="#404040" stroke-width="1.5"/>
+    <rect x="460" y="238" width="120" height="26" rx="4" fill="#facc15" fill-opacity="0.2"/><text x="520" y="256" fill="#facc15">tools</text><text x="520" y="292" fill="#a3a3a3">turno 4</text>
+  </g>
+  <text x="20" y="334" font-size="12" fill="#737373">pesa siempre, pero llega a lo que no tiene CLI</text>
+
+  <rect x="20" y="364" width="560" height="56" rx="6" fill="#a3e635" fill-opacity="0.08" stroke="#a3e635" stroke-width="1.5"/>
+  <text x="300" y="398" font-size="16" fill="#fafafa" font-weight="700" text-anchor="middle">CLI primero; MCP cuando no hay CLI</text>
+</svg>

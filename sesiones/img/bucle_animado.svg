@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- El bucle del agente en 20 s: cada iteración agrega un bloque al final y el modelo
+       relee la cadena entera. Con "reducir movimiento" se muestra completo y quieto. -->
+  <style>
+    .f1 { animation: f1 20s infinite; } .f2 { animation: f2 20s infinite; }
+    .f3 { animation: f3 20s infinite; } .f4 { animation: f4 20s infinite; }
+    .f5 { animation: f5 20s infinite; } .f6 { animation: f6 20s infinite; }
+    .c1 { animation: c1 20s infinite; } .c2 { animation: c2 20s infinite; }
+    .c3 { animation: c3 20s infinite; } .c4 { animation: c4 20s infinite; }
+    .c5 { animation: c5 20s infinite; } .c6 { animation: c6 20s infinite; }
+    .pulso { animation: pulso 20s infinite; }
+    @keyframes f1 { 0%, 5% { opacity: 0 } 7%, 93% { opacity: 1 } 97%, 100% { opacity: 0 } }
+    @keyframes f2 { 0%, 20% { opacity: 0 } 22%, 93% { opacity: 1 } 97%, 100% { opacity: 0 } }
+    @keyframes f3 { 0%, 35% { opacity: 0 } 37%, 93% { opacity: 1 } 97%, 100% { opacity: 0 } }
+    @keyframes f4 { 0%, 50% { opacity: 0 } 52%, 93% { opacity: 1 } 97%, 100% { opacity: 0 } }
+    @keyframes f5 { 0%, 65% { opacity: 0 } 67%, 93% { opacity: 1 } 97%, 100% { opacity: 0 } }
+    @keyframes f6 { 0%, 80% { opacity: 0 } 82%, 93% { opacity: 1 } 97%, 100% { opacity: 0 } }
+    @keyframes c1 { 0%, 5% { opacity: 0 } 6%, 19.9% { opacity: 1 } 20%, 100% { opacity: 0 } }
+    @keyframes c2 { 0%, 20% { opacity: 0 } 21%, 34.9% { opacity: 1 } 35%, 100% { opacity: 0 } }
+    @keyframes c3 { 0%, 35% { opacity: 0 } 36%, 49.9% { opacity: 1 } 50%, 100% { opacity: 0 } }
+    @keyframes c4 { 0%, 50% { opacity: 0 } 51%, 64.9% { opacity: 1 } 65%, 100% { opacity: 0 } }
+    @keyframes c5 { 0%, 65% { opacity: 0 } 66%, 79.9% { opacity: 1 } 80%, 100% { opacity: 0 } }
+    @keyframes c6 { 0%, 80% { opacity: 0 } 81%, 93% { opacity: 1 } 97%, 100% { opacity: 0 } }
+    @keyframes pulso {
+      0%, 7% { stroke-opacity: 0.15 } 9% { stroke-opacity: 1 } 13% { stroke-opacity: 0.15 }
+      22% { stroke-opacity: 0.15 } 24% { stroke-opacity: 1 } 28% { stroke-opacity: 0.15 }
+      37% { stroke-opacity: 0.15 } 39% { stroke-opacity: 1 } 43% { stroke-opacity: 0.15 }
+      52% { stroke-opacity: 0.15 } 54% { stroke-opacity: 1 } 58% { stroke-opacity: 0.15 }
+      67% { stroke-opacity: 0.15 } 69% { stroke-opacity: 1 } 73% { stroke-opacity: 0.15 }
+      82% { stroke-opacity: 0.15 } 84% { stroke-opacity: 1 } 88%, 100% { stroke-opacity: 0.15 }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .f1, .f2, .f3, .f4, .f5, .f6, .pulso { animation: none; }
+      .c1, .c2, .c3, .c4, .c5 { animation: none; opacity: 0; }
+      .c6 { animation: none; }
+    }
+  </style>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a3e635"/>
+    </marker>
+    <marker id="flecha-gris" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+
+  <g font-size="15">
+    <rect class="pulso" x="30" y="14" width="520" height="36" rx="5" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="46" y="38" fill="#a3e635" font-weight="700">system · AGENTS.md · tools</text>
+    <text x="536" y="38" fill="#737373" font-size="12" text-anchor="end">fijo, al inicio</text>
+
+    <g class="f1">
+      <rect class="pulso" x="30" y="58" width="520" height="30" rx="5" fill="#121212" stroke="#a3e635" stroke-width="1.5"/>
+      <text x="46" y="78" fill="#fafafa" font-weight="700">tú</text>
+      <text x="160" y="78" fill="#d4d4d4">arregla el test que falla</text>
+    </g>
+    <g class="f2">
+      <rect class="pulso" x="30" y="96" width="520" height="30" rx="5" fill="#121212" stroke="#a3e635" stroke-width="1.5"/>
+      <text x="46" y="116" fill="#a3e635" font-weight="700">modelo</text>
+      <text x="160" y="116" fill="#d4d4d4">bash: uv run pytest</text>
+    </g>
+    <g class="f3">
+      <rect class="pulso" x="30" y="134" width="520" height="30" rx="5" fill="#121212" stroke="#a3e635" stroke-width="1.5"/>
+      <text x="46" y="154" fill="#67e8f9" font-weight="700">terminal</text>
+      <text x="160" y="154" fill="#f87171">1 failed: test_total</text>
+    </g>
+    <g class="f4">
+      <rect class="pulso" x="30" y="172" width="520" height="30" rx="5" fill="#121212" stroke="#a3e635" stroke-width="1.5"/>
+      <text x="46" y="192" fill="#a3e635" font-weight="700">modelo</text>
+      <text x="160" y="192" fill="#d4d4d4">edita calculo.py</text>
+    </g>
+    <g class="f5">
+      <rect class="pulso" x="30" y="210" width="520" height="30" rx="5" fill="#121212" stroke="#a3e635" stroke-width="1.5"/>
+      <text x="46" y="230" fill="#67e8f9" font-weight="700">terminal</text>
+      <text x="160" y="230" fill="#a3e635">1 passed</text>
+    </g>
+    <g class="f6">
+      <rect class="pulso" x="30" y="248" width="520" height="30" rx="5" fill="#121212" stroke="#a3e635" stroke-width="1.5"/>
+      <text x="46" y="268" fill="#a3e635" font-weight="700">modelo</text>
+      <text x="160" y="268" fill="#d4d4d4">listo: el test pasa</text>
+    </g>
+  </g>
+
+  <g text-anchor="middle">
+    <rect x="660" y="110" width="210" height="76" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="765" y="143" font-size="16" fill="#a3e635" font-weight="700">modelo</text>
+    <text x="765" y="166" font-size="12" fill="#737373">no recuerda nada</text>
+  </g>
+  <g text-anchor="middle" font-size="14">
+    <g class="c1"><text x="765" y="88" fill="#fafafa" font-weight="700">iteración 1</text><text x="765" y="210" fill="#737373" font-size="12">relee 2 bloques</text></g>
+    <g class="c2"><text x="765" y="88" fill="#fafafa" font-weight="700">iteración 2</text><text x="765" y="210" fill="#737373" font-size="12">relee 3 bloques</text></g>
+    <g class="c3"><text x="765" y="88" fill="#fafafa" font-weight="700">iteración 3</text><text x="765" y="210" fill="#737373" font-size="12">relee 4 bloques</text></g>
+    <g class="c4"><text x="765" y="88" fill="#fafafa" font-weight="700">iteración 4</text><text x="765" y="210" fill="#737373" font-size="12">relee 5 bloques</text></g>
+    <g class="c5"><text x="765" y="88" fill="#fafafa" font-weight="700">iteración 5</text><text x="765" y="210" fill="#737373" font-size="12">relee 6 bloques</text></g>
+    <g class="c6"><text x="765" y="88" fill="#fafafa" font-weight="700">iteración 6</text><text x="765" y="210" fill="#737373" font-size="12">relee 7 bloques</text></g>
+  </g>
+  <path class="pulso" d="M558,148 L654,148" stroke="#a3e635" stroke-width="2.5" fill="none" marker-end="url(#flecha)"/>
+  <text x="606" y="136" font-size="12" fill="#737373" text-anchor="middle">todo</text>
+  <path d="M765,222 C765,305 420,312 300,292" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#flecha-gris)"/>
+  <text x="640" y="282" font-size="12" fill="#737373" text-anchor="middle">lo nuevo va al final</text>
+</svg>

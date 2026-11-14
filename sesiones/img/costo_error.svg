@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 430" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Mismo pedido, dos recorridos: el malentendido aparece en el diff o en el plan. -->
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="34" font-size="19" font-weight="700" fill="#f87171">directo</text>
+  <g font-size="15" text-anchor="middle">
+    <rect x="20" y="50" width="220" height="56" rx="5" fill="#121212" stroke="#525252" stroke-width="2"/>
+    <text x="130" y="84" fill="#d4d4d4">código</text>
+    <rect x="248" y="50" width="110" height="56" rx="5" fill="#f87171" fill-opacity="0.2" stroke="#f87171" stroke-width="2"/>
+    <text x="303" y="74" fill="#f87171" font-weight="700">diff:</text>
+    <text x="303" y="94" fill="#f87171">no era eso</text>
+    <rect x="366" y="50" width="214" height="56" rx="5" fill="#f87171" fill-opacity="0.1" stroke="#f87171" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="473" y="84" fill="#f87171">rehacer el código</text>
+  </g>
+  <text x="20" y="136" font-size="14" fill="#737373">el malentendido aparece al final</text>
+
+  <text x="20" y="204" font-size="19" font-weight="700" fill="#a3e635">con plan</text>
+  <g font-size="15" text-anchor="middle">
+    <rect x="20" y="220" width="80" height="56" rx="5" fill="#a3e635" fill-opacity="0.2" stroke="#a3e635" stroke-width="2"/>
+    <text x="60" y="254" fill="#a3e635" font-weight="700">plan</text>
+    <rect x="108" y="220" width="110" height="56" rx="5" fill="#67e8f9" fill-opacity="0.12" stroke="#67e8f9" stroke-width="2"/>
+    <text x="163" y="244" fill="#67e8f9" font-weight="700">ajuste:</text>
+    <text x="163" y="264" fill="#67e8f9">una frase</text>
+    <rect x="226" y="220" width="220" height="56" rx="5" fill="#121212" stroke="#525252" stroke-width="2"/>
+    <text x="336" y="254" fill="#d4d4d4">código</text>
+    <rect x="454" y="220" width="80" height="56" rx="5" fill="#a3e635" fill-opacity="0.2" stroke="#a3e635" stroke-width="2"/>
+    <text x="494" y="254" fill="#a3e635" font-weight="700">listo</text>
+  </g>
+  <text x="20" y="306" font-size="14" fill="#737373">el malentendido aparece antes de tocar nada</text>
+
+  <path d="M20,350 L576,350" stroke="#525252" stroke-width="2" marker-end="url(#flecha)"/>
+  <text x="576" y="340" font-size="13" fill="#737373" text-anchor="end">tiempo</text>
+  <text x="20" y="412" font-size="15" fill="#fafafa">mismo pedido; termina antes el que se corrigió en el plan</text>
+</svg>

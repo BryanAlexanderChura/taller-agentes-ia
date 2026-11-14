@@ -3,7 +3,7 @@ import marimo
 app = marimo.App(
     width="medium",
     css_file="tema.css",
-    layout_file="layouts/s07_modulo_medallion.slides.json",
+    layout_file="layouts/s06_modulo_medallion.slides.json",
 )
 
 
@@ -18,7 +18,7 @@ def _():
 def _(mo):
     mo.md(r"""
     <div class="portada">
-      <span class="numero">Sesión 7</span>
+      <span class="numero">Sesión 6</span>
       <span class="titulo">Medallion y módulos</span>
       <span class="bajada">Si cada cosa tiene su lugar, nadie gasta tiempo buscándola.</span>
     </div>
@@ -108,21 +108,26 @@ def _(mo):
                     mo.md(r"""
     ```text
     ventas/
-      a01_extraer.py
-      b01_procesar.py
-      c01_reporte.py
+      .gitignore
+      data/
+      scripts/
+        a01_extraer.py
+        b01_procesar.py
+        c01_reporte.py
       docs/
         RESUME.yaml
         CHANGELOG.md
+      config/
+        config.yaml
     ```
     """),
                     mo.md(r"""
     <div class="anatomia">
-      <code>a01_extraer</code><span>Lee sin transformar: el origen se puede repetir.</span>
-      <code>b01_procesar</code><span>Limpia y valida en un solo lugar.</span>
-      <code>c01_reporte</code><span>Entrega listo para usar, sin lógica escondida.</span>
-      <code>RESUME.yaml</code><span>Dice dónde seguir: el chat siguiente no empieza de cero.</span>
-      <code>CHANGELOG.md</code><span>Qué cambió y por qué, para quien llegue después.</span>
+      <code>data/</code><span>Los datos no van a git: pesan, cambian y pueden ser sensibles.</span>
+      <code>scripts/</code><span>Las etapas en orden: a, b y c son bronze, silver y gold.</span>
+      <code>docs/</code><span>RESUME dice dónde seguir; CHANGELOG, qué cambió y por qué.</span>
+      <code>config/</code><span>Reglas y rutas fuera del código: cambiarlas no toca un script.</span>
+      <code>.gitignore</code><span>Deja fuera data/ desde el primer commit, no cuando ya es tarde.</span>
     </div>
     """),
                 ],

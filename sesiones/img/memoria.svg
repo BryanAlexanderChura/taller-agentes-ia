@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Engram: la decisión sale del chat que se cierra y llega al chat siguiente. -->
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle">
+    <rect x="20" y="50" width="200" height="84" rx="6" fill="#121212" stroke="#404040" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="120" y="86" font-size="16" fill="#a3a3a3" font-weight="700">chat de ayer</text>
+    <text x="120" y="110" font-size="12" fill="#737373">se cerró, se perdió</text>
+
+    <rect x="350" y="40" width="200" height="104" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="450" y="78" font-size="16" fill="#a3e635" font-weight="700">Engram</text>
+    <text x="450" y="102" font-size="12" fill="#d4d4d4">decisiones y su porqué</text>
+    <text x="450" y="122" font-size="12" fill="#737373">no el chat entero</text>
+
+    <rect x="680" y="50" width="200" height="84" rx="6" fill="#121212" stroke="#fafafa" stroke-width="2"/>
+    <text x="780" y="86" font-size="16" fill="#fafafa" font-weight="700">chat de hoy</text>
+    <text x="780" y="110" font-size="12" fill="#737373">empieza de cero</text>
+  </g>
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M222,92 L346,92"/>
+    <path d="M552,92 L676,92"/>
+  </g>
+  <g font-size="12" fill="#737373" text-anchor="middle">
+    <text x="284" y="80">guarda</text>
+    <text x="614" y="80">busca</text>
+  </g>
+  <text x="450" y="185" font-size="12" fill="#737373" text-anchor="middle">lo que no se guardó, hoy no existe</text>
+</svg>

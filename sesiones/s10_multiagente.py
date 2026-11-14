@@ -50,6 +50,25 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""
+    ## ¿Por qué subagentes?
+
+    <div class="idea">Un contexto limpio para el trabajo que ensuciaría el tuyo.</div>
+
+    <div class="tarjetas">
+      <div class="tarjeta ok"><b>Contexto propio</b>
+        Explora mucho y devuelve solo un resumen.</div>
+      <div class="tarjeta ok"><b>Ojos frescos</b>
+        Revisa sin el sesgo de quien escribió el código.</div>
+      <div class="tarjeta aviso"><b>Tiene costo</b>
+        Más tokens y detalle perdido en el traspaso: lo pequeño, inline.</div>
+    </div>
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
     ## ¿Por qué un worktree por agente?
 
     <div class="idea">Dos agentes en la misma carpeta se pisan: cada uno necesita su copia.</div>

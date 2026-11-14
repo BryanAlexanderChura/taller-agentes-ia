@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Línea principal (main) -->
+  <path d="M80,200 L870,200" stroke="#a3e635" stroke-width="3" fill="none"/>
+  <!-- Rama: sale de un commit de main y vuelve a unirse (merge) -->
+  <path d="M220,200 C260,200 270,100 320,100 L560,100 C610,100 620,200 660,200" stroke="#67e8f9" stroke-width="3" fill="none"/>
+
+  <!-- Commits de main -->
+  <g fill="#121212" stroke="#a3e635" stroke-width="3">
+    <circle cx="100" cy="200" r="11"/>
+    <circle cx="220" cy="200" r="11"/>
+    <circle cx="420" cy="200" r="11"/>
+    <circle cx="800" cy="200" r="11"/>
+  </g>
+  <!-- Commit de merge: une la rama con main -->
+  <circle cx="660" cy="200" r="15" fill="#a3e635" stroke="#a3e635" stroke-width="3"/>
+
+  <!-- Commits de la rama -->
+  <g fill="#121212" stroke="#67e8f9" stroke-width="3">
+    <circle cx="350" cy="100" r="11"/>
+    <circle cx="440" cy="100" r="11"/>
+    <circle cx="530" cy="100" r="11"/>
+  </g>
+
+  <!-- Etiquetas -->
+  <g font-size="20" font-weight="700">
+    <text x="10" y="207" fill="#a3e635">main</text>
+    <text x="300" y="72" fill="#67e8f9" text-anchor="middle">rama</text>
+  </g>
+  <g font-size="17" fill="#d4d4d4" text-anchor="middle">
+    <text x="100" y="242">commit</text>
+    <text x="660" y="242" fill="#a3e635" font-weight="700">merge</text>
+    <text x="440" y="72" fill="#737373">probar sin romper</text>
+  </g>
+  <g font-size="15" fill="#737373" text-anchor="middle">
+    <text x="100" y="266">punto de retorno</text>
+    <text x="660" y="266">entra lo que funcionó</text>
+    <text x="420" y="242">main sigue intacto</text>
+  </g>
+</svg>

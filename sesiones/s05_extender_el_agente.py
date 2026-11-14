@@ -28,57 +28,28 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"""
-    ## ¿Por qué skills?
-
-    <div class="idea">Un procedimiento largo solo ocupa contexto cuando se usa.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta"><b>Solo la descripción</b>
-        Es lo único que paga en cada turno; con eso decide si la usa.</div>
-      <div class="tarjeta"><b>El cuerpo, a demanda</b>
-        Los pasos entran al contexto recién cuando hacen falta.</div>
-      <div class="tarjeta ok"><b>Siempre igual</b>
-        El método no depende de cómo lo pidas ese día.</div>
-    </div>
-    """)
-    return
-
-
-@app.cell
-def _(mo):
     mo.vstack(
         [
-            mo.md("## Anatomía de una skill"),
+            mo.md(r"""
+    ## ¿Por qué curar el contexto?
+
+    <div class="idea">Todo lo que se carga compite por atención: extender es elegir qué entra y cuándo.</div>
+    """),
             mo.hstack(
                 [
                     mo.md(r"""
-    ```markdown
-    ---
-    name: verificar
-    description: Verifica un módulo antes
-      de declarar terminado.
-    ---
-    ## Reglas
-    ## Pasos
-    ## Antipatrones
-    ## Historial de reglas
-
-    scripts/check.py
-    ```
-    """),
-                    mo.md(r"""
-    <div class="anatomia">
-      <code>description</code><span>Lo único que el agente ve siempre: decide con eso si la carga.</span>
-      <code>Reglas</code><span>Lo que nunca debe hacer, antes que cualquier paso.</span>
-      <code>Pasos</code><span>El método, para no improvisarlo cada vez.</span>
-      <code>Antipatrones</code><span>El error típico, nombrado para reconocerlo.</span>
-      <code>Historial</code><span>Cada regla con el fallo que la justificó.</span>
-      <code>scripts/</code><span>Lo mecánico lo hace código, no el modelo.</span>
+    <div class="tarjetas columna">
+      <div class="tarjeta error"><b>Más no es mejor</b>
+        Cada línea cargada le quita atención a tu tarea.</div>
+      <div class="tarjeta aviso"><b>Lo que no se usa, estorba</b>
+        Una regla o tool sin uso igual se lee en cada turno.</div>
+      <div class="tarjeta ok"><b>Cargar a demanda</b>
+        Lo que solo sirve a veces, entra solo esas veces.</div>
     </div>
     """),
+                    mo.image(mo.notebook_dir() / "img" / "contexto_curado.svg", width="92%"),
                 ],
-                widths=[1, 1],
+                widths=[1, 1.1],
                 gap=2.5,
                 align="center",
             ),
@@ -89,85 +60,19 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"""
-    ## ¿Por qué una skill crece con fallos?
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿De cuántas maneras se extiende un agente?
 
-    <div class="idea">Cada regla nace de un fallo real; la que no evitó ninguno, sobra.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta"><b>Mirar git tras el cierre</b>
-        Tomó como pendiente algo que ya estaba hecho.</div>
-      <div class="tarjeta"><b>Veredicto explícito</b>
-        Mezcló fuentes que no coincidían sin avisar.</div>
-      <div class="tarjeta"><b>Edad de cada pendiente</b>
-        Un bloqueante de un mes parecía de ayer.</div>
-      <div class="tarjeta"><b>Solo lectura</b>
-        Empezó a programar dentro de la retoma.</div>
-    </div>
-
-    <div class="nota">Reglas de <code>retomar-sesion</code>. Plantilla: <code>.agents/plantillas/SKILL.md</code>.</div>
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
-    ## ¿Por qué la CLI es su idioma nativo?
-
-    <div class="idea">El agente vive en la terminal: una CLI no ocupa contexto hasta que la usa.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta ok"><b>Gratis en reposo</b>
-        Su ayuda se lee solo cuando hace falta.</div>
-      <div class="tarjeta"><b>Texto que se encadena</b>
-        La salida se lee, se filtra y se combina con otra.</div>
-      <div class="tarjeta"><b>Ya está instalada</b>
-        git, gh, uv: lo que usas tú, lo usa él.</div>
-      <div class="tarjeta"><b>TUI para ti, CLI para él</b>
-        Las mejores herramientas traen las dos.</div>
-    </div>
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
-    ## ¿Por qué MCP?
-
-    <div class="idea">Un estándar para conectar al agente con lo que no tiene CLI.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta ok"><b>Uno sirve a todas</b>
-        El mismo servidor funciona en cualquier herramienta compatible.</div>
-      <div class="tarjeta"><b>Trae lo que no sabe</b>
-        Memoria, índice del código, docs actuales.</div>
-      <div class="tarjeta aviso"><b>Cada tool pesa</b>
-        Sus descripciones viven en el contexto: pocos y bien elegidos.</div>
-    </div>
-
-    <div class="nota">Demo: Engram y CodeGraph respondiendo desde el agente.</div>
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
-    ## ¿Por qué hooks?
-
-    <div class="idea">Las instrucciones son sugerencias; un hook es código que corre siempre.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta aviso"><b>El modelo olvida</b>
-        Con el contexto largo, una regla de AGENTS.md puede perderse.</div>
-      <div class="tarjeta ok"><b>Determinista</b>
-        Corre fuera del modelo: no interpreta, no se distrae.</div>
-      <div class="tarjeta"><b>Lo crítico va aquí</b>
-        Seguridad, formato y verificación no se dejan a la memoria.</div>
-    </div>
-    """)
+    <div class="idea">Muchas, pero se ordenan por cuándo ocupan contexto.</div>
+    """),
+            mo.image(mo.notebook_dir() / "img" / "capas.svg", width="74%"),
+            mo.md(r"""
+    <div class="nota">Curar es bajar cada cosa a la franja más baja que aún funcione.</div>
+    """),
+        ]
+    )
     return
 
 
@@ -175,10 +80,30 @@ def _(mo):
 def _(mo):
     mo.vstack(
         [
-            mo.md("## ¿Por qué un hook en cada momento?"),
-            mo.image(mo.notebook_dir() / "img" / "hooks.svg", width="88%"),
-            mo.md(
-                '<div class="idea">Cada paso del bucle es un punto donde imponer una regla.</div>'
+            mo.md(r"""
+    ## ¿Por qué skills?
+
+    <div class="idea">Un procedimiento largo solo ocupa contexto cuando se usa.</div>
+    """),
+            mo.hstack(
+                [
+                    mo.md(r"""
+    <div class="tarjetas columna">
+      <div class="tarjeta"><b>Solo la descripción</b>
+        Con una línea el agente decide si la necesita.</div>
+      <div class="tarjeta"><b>El cuerpo, a demanda</b>
+        Reglas y pasos entran cuando la tarea los pide.</div>
+      <div class="tarjeta ok"><b>Siempre igual</b>
+        El método no se improvisa en cada chat.</div>
+    </div>
+
+    <div class="nota">Demo: recorrer <code>.agents/skills/</code> en el árbol de archivos.</div>
+    """),
+                    mo.image(mo.notebook_dir() / "img" / "skill_carga.svg", width="92%"),
+                ],
+                widths=[1, 1.1],
+                gap=2.5,
+                align="center",
             ),
         ]
     )
@@ -187,20 +112,94 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"""
-    ## ¿Por qué bloquear en vez de pedir?
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿Por qué una skill crece con fallos?
 
-    <div class="idea">La seguridad no se pide en el prompt: se impone antes de cada comando.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta error"><b>Antes, no después</b>
-        Lo irreversible no se arregla con una disculpa.</div>
-      <div class="tarjeta"><b>Explica el motivo</b>
-        El agente sabe por qué se rechazó y busca otro camino.</div>
-      <div class="tarjeta ok"><b>Una lista para todas</b>
-        Codex, Claude Code y opencode bloquean lo mismo.</div>
+    <div class="idea">Cada regla nace de un fallo real; la que no evitó ninguno, sobra.</div>
+    """),
+            mo.hstack(
+                [
+                    mo.md(r"""
+    <div class="tarjetas columna">
+      <div class="tarjeta"><b>Mirar git tras el cierre</b>
+        <code>retomar-sesion</code>: el RESUME puede ir atrasado.</div>
+      <div class="tarjeta"><b>Veredicto explícito</b>
+        Decir si las fuentes coinciden, no suponerlo.</div>
+      <div class="tarjeta ok"><b>Solo lectura</b>
+        Retomar no edita: así no rompe nada al empezar.</div>
     </div>
-    """)
+
+    <div class="nota">Plantilla: <code>.agents/plantillas/SKILL.md</code>.</div>
+    """),
+                    mo.image(mo.notebook_dir() / "img" / "skill_ciclo.svg", width="92%"),
+                ],
+                widths=[1, 1.1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿CLI o MCP?
+
+    <div class="idea">El agente vive en la terminal: la CLI no pesa hasta que la usa.</div>
+    """),
+            mo.hstack(
+                [
+                    mo.md(r"""
+    <div class="tarjetas columna">
+      <div class="tarjeta ok"><b>CLI: gratis en reposo</b>
+        Ya está instalada y su salida se encadena.</div>
+      <div class="tarjeta aviso"><b>MCP: cada tool pesa</b>
+        Sus descripciones viajan en cada turno.</div>
+      <div class="tarjeta"><b>MCP: uno sirve a todas</b>
+        Conecta lo que no tiene CLI, en cualquier herramienta.</div>
+    </div>
+
+    <div class="nota">Demo: Engram y CodeGraph respondiendo desde el agente.</div>
+    """),
+                    mo.image(mo.notebook_dir() / "img" / "cli_mcp.svg", width="92%"),
+                ],
+                widths=[1, 1.1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿Por qué hooks?
+
+    <div class="idea">Las instrucciones son sugerencias; un hook es código que corre siempre.</div>
+    """),
+            mo.image(mo.notebook_dir() / "img" / "hooks.svg", width="58%"),
+            mo.md(r"""
+    <div class="tarjetas">
+      <div class="tarjeta aviso"><b>El modelo olvida</b>
+        Con el contexto largo, una regla puede perderse.</div>
+      <div class="tarjeta ok"><b>Determinista</b>
+        Corre fuera del modelo: no interpreta, no se distrae.</div>
+      <div class="tarjeta"><b>Un punto por paso</b>
+        Cada momento del bucle es un lugar donde imponer una regla.</div>
+    </div>
+    """),
+        ]
+    )
     return
 
 
@@ -208,57 +207,64 @@ def _(mo):
 def _(mo):
     # Los patrones van con entidades HTML: escritos tal cual, el hook de
     # seguridad del repo bloquea la edición de este archivo.
-    mo.md(r"""
-    ## Anatomía de la lista de bloqueo
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿Por qué bloquear en vez de pedir?
 
-    <div class="idea">Cada patrón bloqueado protege algo que no se recupera.</div>
-
+    <div class="idea">La seguridad no se pide en el prompt: se impone antes de cada comando.</div>
+    """),
+            mo.hstack(
+                [
+                    mo.image(mo.notebook_dir() / "img" / "bloqueo.svg", width="88%"),
+                    mo.md(r"""
     <div class="anatomia">
-      <code>rm&#32;-rf</code><span>Borrar es irreversible: lo que sobra se mueve a <code>legacy/</code>.</span>
-      <code>push --force · reset --hard</code><span>Destruyen historia que otros ya tienen.</span>
-      <code>&#46;env</code><span>Los secretos no deben entrar al contexto.</span>
-      <code>&#45;&#45;no-verify</code><span>Saltar los controles anula todos los demás.</span>
+      <code>rm&#32;-rf</code><span>Lo que sobra se mueve a <code>legacy/</code>.</span>
+      <code>push --force · reset --hard</code><span>Destruyen historia ajena.</span>
+      <code>&#46;env</code><span>Los secretos no entran al contexto.</span>
+      <code>&#45;&#45;no-verify</code><span>Saltar controles anula los demás.</span>
       <code>DROP · DELETE</code><span>En producción, los datos son reales.</span>
     </div>
-    """)
+
+    <div class="nota">Una lista para Codex, Claude Code y opencode.</div>
+    """),
+                ],
+                widths=[1, 1.2],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""
-    ## ¿Por qué subagentes?
-
-    <div class="idea">Un contexto limpio para el trabajo que ensuciaría el tuyo.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta ok"><b>Contexto propio</b>
-        Explora mucho y devuelve solo un resumen.</div>
-      <div class="tarjeta ok"><b>Ojos frescos</b>
-        Revisa sin el sesgo de quien escribió el código.</div>
-      <div class="tarjeta aviso"><b>Tiene costo</b>
-        Más tokens y detalle perdido en el traspaso: lo pequeño, inline.</div>
-    </div>
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
+    mo.vstack(
+        [
+            mo.md(r"""
     ## ¿Por qué empaquetarlo en un harness?
 
     <div class="idea">Clonar el repo es configurar el agente.</div>
-
-    <div class="anatomia">
-      <code>AGENTS.md</code><span>Pide: las reglas que debe tener presentes.</span>
-      <code>skills</code><span>Enseñan: el método, solo cuando hace falta.</span>
-      <code>CLI · MCP</code><span>Conectan: lo que no sabe o no alcanza solo.</span>
-      <code>hooks</code><span>Obligan: lo que no puede quedar a su criterio.</span>
-      <code>subagentes</code><span>Aíslan: el trabajo que ensuciaría el contexto.</span>
-      <code>.agents/</code><span>Versiona todo: viaja con el repo y mejora con cada fallo.</span>
+    """),
+            mo.hstack(
+                [
+                    mo.image(mo.notebook_dir() / "img" / "harness.svg", width="100%"),
+                    mo.md(r"""
+    <div class="tarjetas columna">
+      <div class="tarjeta"><b>Viaja con el repo</b>
+        Quien clona recibe reglas, método y controles.</div>
+      <div class="tarjeta ok"><b>Mejora con cada fallo</b>
+        Una regla nueva sirve a todos desde el siguiente pull.</div>
     </div>
-    """)
+    """),
+                ],
+                widths=[1.5, 1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
     return
 
 

@@ -249,6 +249,33 @@
   line-height: 1.4;
 }
 
+/* SVG animado en línea: fuera de la diapositiva visible se apaga, así arranca
+   desde cero cada vez que la diapositiva aparece. */
+.reveal .slides > section:not(.present) .animada * { animation: none !important; }
+
+/* Tarjetas apiladas, para la columna junto a una imagen. */
+.tarjetas.columna { grid-template-columns: 1fr; gap: 0.8rem; }
+.tarjetas.columna .tarjeta { padding: 0.9rem 1.2rem; }
+
+/* Palabras partidas en tokens: cada <i> es un token, con fondos alternos. */
+.tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.6rem;
+  padding: 1rem 1.3rem;
+  margin: 0 0 1.4rem;
+  background: var(--code-bg);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  font-family: var(--f-titulo);
+  font-size: 1.35rem;
+}
+.tokens span { display: inline-flex; align-items: baseline; gap: 2px; }
+.tokens i { font-style: normal; padding: 0.1rem 0.25rem; border-radius: 3px; color: var(--titulo); }
+.tokens i:nth-child(odd) { background: rgba(163, 230, 53, 0.22); }
+.tokens i:nth-child(even) { background: rgba(103, 232, 249, 0.2); }
+.tokens small { margin-left: 0.5rem; color: var(--tenue); font-size: 0.85rem; }
+
 /* generado:lluvia:inicio */
 /* Fondo: lluvia de caracteres, tenue y lenta */
 .reveal::before {
@@ -372,4 +399,16 @@
   color: var(--acento);
   letter-spacing: 0.15em;
   margin-bottom: 0.2em;
+}
+
+/* En el código, cada carácter como se escribe: sin ligaduras (>= no se vuelve un solo signo). */
+.reveal pre, .reveal code { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
+
+/* Imágenes solas centradas: mo.image con ancho menor a 100% quedaba pegada a la izquierda. */
+.reveal img {
+  display: block;
+  margin-inline: auto;
+}
+.reveal .animada {
+  margin-inline: auto;
 }

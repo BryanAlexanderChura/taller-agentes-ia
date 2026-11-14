@@ -3,7 +3,7 @@ import marimo
 app = marimo.App(
     width="medium",
     css_file="tema.css",
-    layout_file="layouts/s06_herdr.slides.json",
+    layout_file="layouts/s09_herdr.slides.json",
 )
 
 
@@ -18,7 +18,7 @@ def _():
 def _(mo):
     mo.md(r"""
     <div class="portada">
-      <span class="numero">Sesión 6</span>
+      <span class="numero">Sesión 9</span>
       <span class="titulo">Herdr</span>
       <span class="bajada">Varios agentes ayudan solo si ves quién te necesita.</span>
     </div>

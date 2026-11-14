@@ -34,12 +34,12 @@ Codex pide confiar en los hooks del proyecto la primera vez (`/hooks`).
 | 2 | `sesiones/s02_entorno.py` | uv, git, GitHub, gh, por qué marimo |
 | 3 | `sesiones/s03_limites_y_memoria.py` | Límites del LLM, memoria (Engram), instrucciones, verificación |
 | 4 | `sesiones/s04_herramientas.py` | Las cuatro herramientas, archivo de instrucciones, controles |
-| 5 | `sesiones/s05_extender_el_agente.py` | Skills, MCP, CLI y TUI, hooks, seguridad, subagentes |
-| 6 | `sesiones/s06_herdr.py` | Herdr: varios agentes, sidebar de estados, CLI |
-| 7 | `sesiones/s07_modulo_medallion.py` | Arquitectura medallion y `/new-module` |
-| 8 | `sesiones/s08_cierre_y_retoma.py` | `/cerrar-sesion` y `/retomar-sesion` |
-| 9 | `sesiones/s09_verificacion_y_goals.py` | TDD, checker, goals y ejecución larga |
-| 10 | `sesiones/s10_multiagente.py` | Worktrees, roles y orquestación |
+| 5 | `sesiones/s05_extender_el_agente.py` | Curar el contexto: skills, CLI y MCP, hooks, seguridad, harness |
+| 6 | `sesiones/s06_modulo_medallion.py` | Arquitectura medallion y `/new-module` |
+| 7 | `sesiones/s07_cierre_y_retoma.py` | `/cerrar-sesion` y `/retomar-sesion` |
+| 8 | `sesiones/s08_verificacion_y_goals.py` | TDD, checker, goals y ejecución larga |
+| 9 | `sesiones/s09_herdr.py` | Herdr: varios agentes, sidebar de estados, CLI |
+| 10 | `sesiones/s10_multiagente.py` | Subagentes, worktrees, roles y orquestación |
 | 11 | `sesiones/s11_como_continuar.py` | Carpeta `.agents`, próximos pasos, práctica, por qué un framework |
 
 ## Ejemplos

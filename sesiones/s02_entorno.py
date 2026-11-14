@@ -47,6 +47,75 @@ def _(mo):
 
 @app.cell
 def _(mo):
+    mo.vstack(
+        [
+            mo.md("## Anatomía de uv"),
+            mo.hstack(
+                [
+                    mo.md(r"""
+    ```bash
+    uv init --python 3.14
+    uv add polars
+    uv sync
+    uv run python main.py
+    ```
+    """),
+                    mo.md(r"""
+    <div class="anatomia">
+      <code>uv init</code><span>Crea el proyecto y su pyproject.toml: las reglas quedan escritas desde el inicio.</span>
+      <code>uv add</code><span>Declara la dependencia y fija el lock: nada se instala "de palabra".</span>
+      <code>uv sync</code><span>Reproduce el entorno exacto en otra máquina.</span>
+      <code>uv run</code><span>Corre dentro del entorno sin activarlo: no hay "en mi máquina sí funciona".</span>
+    </div>
+    """),
+                ],
+                widths=[1, 1.3],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack(
+        [
+            mo.md("## Anatomía de pyproject.toml"),
+            mo.hstack(
+                [
+                    mo.md(r"""
+    ```toml
+    [project]
+    name = "taller"
+    version = "0.1.0"
+    requires-python = ">=3.14"
+    dependencies = [
+        "polars>=1.0",
+    ]
+    ```
+    """),
+                    mo.md(r"""
+    <div class="anatomia">
+      <code>name</code><span>El proyecto tiene identidad, no es una carpeta suelta.</span>
+      <code>requires-python</code><span>La versión de Python también es una dependencia.</span>
+      <code>dependencies</code><span>Lo que el código necesita, escrito: el agente lo lee antes de instalar.</span>
+      <code>uv.lock</code><span>Al lado: la versión exacta de todo, para que nada cambie solo.</span>
+    </div>
+    """),
+                ],
+                widths=[1, 1.3],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
+    return
+
+
+@app.cell
+def _(mo):
     mo.md(r"""
     ## ¿Por qué git?
 
@@ -60,7 +129,41 @@ def _(mo):
       <div class="tarjeta"><b>Historia que explica</b>
         Cada commit cuenta qué cambió y por qué.</div>
     </div>
+
+    <div class="nota">Demo: <code>git init</code>. Desde ahí, cada cambio queda registrado.</div>
     """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿Por qué la historia es un árbol?
+
+    <div class="idea">Probar en una rama no rompe lo que ya funciona.</div>
+    """),
+            mo.hstack(
+                [
+                    mo.image(mo.notebook_dir() / "img" / "git_arbol.svg", width="100%"),
+                    mo.md(r"""
+    <div class="tarjetas columna">
+      <div class="tarjeta ok"><b>Volver es barato</b>
+        Cada commit es un punto al que regresar.</div>
+      <div class="tarjeta"><b>Probar sin miedo</b>
+        La rama se tira si no sirve; main no se entera.</div>
+      <div class="tarjeta"><b>Red del agente</b>
+        Que se equivoque cuesta poco: se deshace.</div>
+    </div>
+    """),
+                ],
+                widths=[1.4, 1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
     return
 
 
@@ -85,6 +188,38 @@ def _(mo):
 
 @app.cell
 def _(mo):
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿Por qué una CLI?
+
+    <div class="idea">Una CLI se usa escribiendo: la persona y el agente, igual.</div>
+    """),
+            mo.hstack(
+                [
+                    mo.image(mo.notebook_dir() / "img" / "cli_encuentro.svg", width="100%"),
+                    mo.md(r"""
+    <div class="tarjetas columna">
+      <div class="tarjeta"><b>La misma puerta</b>
+        Lo que tú tecleas, el agente lo ejecuta tal cual.</div>
+      <div class="tarjeta"><b>Texto para los dos</b>
+        La salida se lee, se copia y se revisa.</div>
+      <div class="tarjeta"><b>Sin clics</b>
+        Una interfaz gráfica deja fuera al agente.</div>
+    </div>
+    """),
+                ],
+                widths=[1.4, 1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
+    return
+
+
+@app.cell
+def _(mo):
     mo.md(r"""
     ## ¿Por qué gh?
 
@@ -98,6 +233,8 @@ def _(mo):
       <div class="tarjeta"><b>El mismo flujo</b>
         Tú y el agente usan la misma herramienta.</div>
     </div>
+
+    <div class="nota">Demo: <code>gh auth login</code> en vivo.</div>
     """)
     return
 
@@ -118,6 +255,38 @@ def _(mo):
         Notebook, script, app o presentación, como esta.</div>
     </div>
     """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿Por qué un notebook reactivo?
+
+    <div class="idea">Lo que ves en pantalla siempre corresponde al código actual.</div>
+    """),
+            mo.hstack(
+                [
+                    mo.image(mo.notebook_dir() / "img" / "marimo_reactivo.svg", width="100%"),
+                    mo.md(r"""
+    <div class="tarjetas columna">
+      <div class="tarjeta"><b>Cambia y se propaga</b>
+        Solo se recalcula lo que depende del cambio.</div>
+      <div class="tarjeta"><b>Sin orden mágico</b>
+        No importa en qué orden corriste las celdas.</div>
+      <a class="tarjeta" href="?file=demos/eda_economia.py"><span class="num">DEMO</span><b>EDA de economía</b>
+        Un notebook real para tocarlo.</a>
+    </div>
+    """),
+                ],
+                widths=[1.4, 1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
     return
 
 

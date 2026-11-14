@@ -1,4 +1,4 @@
-"""Crea un módulo con etapas medallion y docs mínimos.
+"""Crea un módulo con etapas medallion: data/ (ignorada), scripts/, docs/ y config/.
 
 Uso: uv run python .agents/skills/new-module/scripts/new_module.py <ruta> "<propósito>"
 """
@@ -13,13 +13,24 @@ ETAPAS = {
     "c01_reporte.py": "Gold: dejar listo para consumo.",
 }
 
+# Reglas y rutas fuera del código: cambiar una ruta no obliga a tocar un script.
+CONFIG = """\
+rutas:
+  bronze: data/bronze   # crudo, tal como llega
+  silver: data/silver   # limpio y validado
+  gold: data/gold       # listo para consumo
+"""
+
 
 def crear(ruta: Path, proposito: str) -> None:
     if ruta.exists():
         raise SystemExit(f"ya existe: {ruta}")
-    (ruta / "docs").mkdir(parents=True)
+    for carpeta in ("data", "scripts", "docs", "config"):
+        (ruta / carpeta).mkdir(parents=True)
+    (ruta / ".gitignore").write_text("data/\n", encoding="utf-8")
+    (ruta / "config" / "config.yaml").write_text(CONFIG, encoding="utf-8")
     for archivo, doc in ETAPAS.items():
-        (ruta / archivo).write_text(
+        (ruta / "scripts" / archivo).write_text(
             f'"""{doc}"""\n\n\ndef run():\n    raise NotImplementedError\n',
             encoding="utf-8",
         )

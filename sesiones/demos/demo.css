@@ -1,0 +1,89 @@
+/*
+  Tema de los notebooks de demostración (vista normal, no diapositivas).
+  Misma paleta que ../tema.css, que está pensado para reveal.js y no aplica en vista app.
+*/
+
+:root,
+.marimo,
+.dark,
+.dark-theme {
+  color-scheme: dark;
+  --background: #0a0a0a !important;
+  --foreground: #d4d4d4 !important;
+  --card: #121212 !important;
+  --card-foreground: #d4d4d4 !important;
+  --popover: #121212 !important;
+  --popover-foreground: #d4d4d4 !important;
+  --muted: #1a1a1a !important;
+  --muted-foreground: #737373 !important;
+  --accent: #1f2a10 !important;
+  --accent-foreground: #a3e635 !important;
+  --primary: #a3e635 !important;
+  --primary-foreground: #0a0a0a !important;
+  --secondary: #1a1a1a !important;
+  --secondary-foreground: #d4d4d4 !important;
+  --border: #262626 !important;
+  --input: #262626 !important;
+  --link: #67e8f9 !important;
+  --link-visited: #67e8f9 !important;
+  --base-shadow: transparent !important;
+  --base-shadow-darker: transparent !important;
+  --marimo-heading-font: "JetBrains Mono", ui-monospace, monospace;
+  --marimo-text-font: "Inter", system-ui, sans-serif;
+  --marimo-monospace-font: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body,
+#App {
+  background: #0a0a0a !important;
+  color: #d4d4d4;
+}
+
+.markdown,
+.markdown p,
+.markdown li {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #d4d4d4;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  color: #fafafa;
+  letter-spacing: -0.03em;
+}
+
+.markdown h1::before,
+.markdown h2::before {
+  content: "> ";
+  color: #a3e635;
+}
+
+.markdown code {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  color: #a3e635;
+  background: rgba(163, 230, 53, 0.08);
+}
+
+.markdown strong {
+  color: #fafafa;
+}
+
+/* Etiqueta "datos ficticios" y la caja de conclusión */
+.aviso-datos {
+  display: inline-block;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+}
+
+.conclusion {
+  border-left: 3px solid #a3e635;
+  background: #121212;
+  padding: 0.8rem 1.1rem;
+  border-radius: 4px;
+}

@@ -28,83 +28,92 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"""
+    mo.vstack(
+        [
+            mo.md(r"""
     ## ¿Por qué cuatro herramientas y no una?
 
     <div class="idea">Todas son el mismo bucle: cambia la interfaz, no el método.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta"><b>Mismo bucle</b>
-        Contexto, modelo y tool: lo de la sesión 1 vale en todas.</div>
+    """),
+            mo.hstack(
+                [
+                    mo.md(r"""
+    <div class="tarjetas columna">
       <div class="tarjeta"><b>Ninguna gana siempre</b>
         Como los modelos, la mejor para tu tarea cambia con el tiempo.</div>
+      <div class="tarjeta"><b>Se elige por control</b>
+        Qué necesitas decidir tú, no qué está de moda.</div>
       <div class="tarjeta ok"><b>Sin quedar atado</b>
         Si el método vive en el repo, cambiar de herramienta no cuesta.</div>
     </div>
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
-    ## ¿Por qué cada una tiene su lugar?
-
-    <div class="idea">Se elige por lo que necesitas controlar, no por moda.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta"><b>Codex</b>
-        Lee <code>AGENTS.md</code> de forma nativa, con hooks y subagentes.</div>
-      <div class="tarjeta"><b>opencode</b>
-        Cambiar de proveedor sin cambiar de herramienta.</div>
-      <div class="tarjeta"><b>Claude Code</b>
-        Skills, hooks y subagentes integrados desde el inicio.</div>
-      <div class="tarjeta"><b>pi</b>
-        Mínimo: solo tiene lo que tú le agregas.</div>
-    </div>
 
     <div class="nota">Demo: el mismo pedido en dos herramientas.</div>
-    """)
+    """),
+                    mo.image(mo.notebook_dir() / "img" / "herramientas.svg", width="86%"),
+                ],
+                widths=[1, 1.1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""
-    ## ¿Por qué un archivo de instrucciones?
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿Por qué un solo AGENTS.md?
 
-    <div class="idea">Lo que el agente no puede deducir, lo lee al empezar cada vez.</div>
-
+    <div class="idea">Lo que el agente no puede deducir, lo lee al empezar; una vez, para todas.</div>
+    """),
+            mo.image(mo.notebook_dir() / "img" / "agents_md.svg", width="80%"),
+            mo.md(r"""
     <div class="tarjetas">
-      <div class="tarjeta"><b>Cada chat empieza de cero</b>
-        El archivo es lo primero que lee, sin que nadie lo repita.</div>
-      <div class="tarjeta"><b>Reglas del proyecto</b>
-        Viven en el repo, no en la memoria de quien escribe el prompt.</div>
+      <div class="tarjeta"><b>Reglas en el repo</b>
+        No en la memoria de quien escribe el prompt.</div>
       <div class="tarjeta"><b>Iguales para todos</b>
         Cada persona y cada agente parten de las mismas reglas.</div>
+      <div class="tarjeta ok"><b>Sin duplicar</b>
+        Un archivo por herramienta termina con reglas que divergen.</div>
     </div>
-    """)
+    """),
+        ]
+    )
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""
+    mo.vstack(
+        [
+            mo.md(r"""
     ## ¿Por qué un AGENTS.md corto?
 
     <div class="idea">Se carga en cada turno: cada línea compite por atención, siempre.</div>
-
-    <div class="tarjetas">
+    """),
+            mo.hstack(
+                [
+                    mo.image(mo.notebook_dir() / "img" / "agents_corto.svg", width="100%"),
+                    mo.md(r"""
+    <div class="tarjetas columna">
       <div class="tarjeta"><b>Solo lo no obvio</b>
         Lo que el agente deduce del código no necesita escribirse.</div>
-      <div class="tarjeta"><b>Una regla, un lugar</b>
-        Dos versiones de la misma regla terminan contradiciéndose.</div>
       <div class="tarjeta"><b>Lo largo, aparte</b>
         Un procedimiento va a una skill o a los docs.</div>
       <div class="tarjeta ok"><b>Inicio estable</b>
         Va al principio del contexto: si no cambia, se cachea.</div>
     </div>
-    """)
+    """),
+                ],
+                widths=[1, 1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
     return
 
 
@@ -153,24 +162,13 @@ def _(mo):
 def _(mo):
     mo.vstack(
         [
-            mo.md("## ¿Por qué AGENTS.md y no uno por herramienta?"),
-            mo.image(mo.notebook_dir() / "img" / "agents_md.svg", width="100%"),
-            mo.md(
-                '<div class="idea">Un solo archivo que todas leen: '
-                "las reglas no se duplican ni divergen.</div>"
-            ),
-        ]
-    )
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
+            mo.md(r"""
     ## ¿Por qué no darle permiso total?
 
     <div class="idea">La confianza se da por grados, según lo que cuesta deshacer.</div>
-
+    """),
+            mo.image(mo.notebook_dir() / "img" / "permisos.svg", width="88%"),
+            mo.md(r"""
     <div class="tarjetas">
       <div class="tarjeta ok"><b>Lo reversible fluye</b>
         Con git como punto de retorno, editar es barato.</div>
@@ -179,18 +177,25 @@ def _(mo):
       <div class="tarjeta"><b>El diff cierra</b>
         Lo que aprobaste se confirma viendo qué cambió de verdad.</div>
     </div>
-    """)
+    """),
+        ]
+    )
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""
+    mo.vstack(
+        [
+            mo.md(r"""
     ## ¿Por qué planear antes de editar?
 
     <div class="idea">Corregir un plan cuesta una frase; corregir código, una tarde.</div>
-
-    <div class="tarjetas">
+    """),
+            mo.hstack(
+                [
+                    mo.md(r"""
+    <div class="tarjetas columna">
       <div class="tarjeta"><b>Se ve la intención</b>
         Sabes qué va a hacer antes de que toque nada.</div>
       <div class="tarjeta"><b>El error sale temprano</b>
@@ -200,7 +205,15 @@ def _(mo):
     </div>
 
     <div class="nota">Demo: el mismo pedido en modo plan y directo.</div>
-    """)
+    """),
+                    mo.image(mo.notebook_dir() / "img" / "costo_error.svg", width="92%"),
+                ],
+                widths=[1, 1.1],
+                gap=2.5,
+                align="center",
+            ),
+        ]
+    )
     return
 
 

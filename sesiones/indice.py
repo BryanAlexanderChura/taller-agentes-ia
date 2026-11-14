@@ -89,11 +89,9 @@ def _(mo):
     <div class="idea">Cada cosa en su lugar y un estado que no miente.</div>
 
     <div class="tarjetas">
-      <a class="tarjeta" href="?file=s06_herdr.py"><span class="num">SESIÓN 06</span>
-        <b>Herdr</b>Varios agentes ayudan solo si ves quién te necesita.</a>
-      <a class="tarjeta" href="?file=s07_modulo_medallion.py"><span class="num">SESIÓN 07</span>
+      <a class="tarjeta" href="?file=s06_modulo_medallion.py"><span class="num">SESIÓN 06</span>
         <b>Medallion y módulos</b>Si cada cosa tiene su lugar, nadie gasta tiempo buscándola.</a>
-      <a class="tarjeta" href="?file=s08_cierre_y_retoma.py"><span class="num">SESIÓN 08</span>
+      <a class="tarjeta" href="?file=s07_cierre_y_retoma.py"><span class="num">SESIÓN 07</span>
         <b>Cerrar y retomar</b>El agente no recuerda. El proyecto sí.</a>
     </div>
     """)
@@ -105,11 +103,13 @@ def _(mo):
     mo.md(r"""
     ## Confiar
 
-    <div class="idea">"Terminado" se demuestra, también cuando trabajan varios agentes.</div>
+    <div class="idea">"Terminado" se demuestra; con eso, varios agentes pueden trabajar a la vez.</div>
 
     <div class="tarjetas">
-      <a class="tarjeta" href="?file=s09_verificacion_y_goals.py"><span class="num">SESIÓN 09</span>
+      <a class="tarjeta" href="?file=s08_verificacion_y_goals.py"><span class="num">SESIÓN 08</span>
         <b>Verificación y goals</b>Terminado lo decide una prueba, no el agente.</a>
+      <a class="tarjeta" href="?file=s09_herdr.py"><span class="num">SESIÓN 09</span>
+        <b>Herdr</b>Varios agentes ayudan solo si ves quién te necesita.</a>
       <a class="tarjeta" href="?file=s10_multiagente.py"><span class="num">SESIÓN 10</span>
         <b>Orquestación multiagente</b>Repartir el trabajo para que cada agente atienda una sola cosa.</a>
     </div>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- El harness vive en el repo: se clona y cualquier herramienta queda configurada. -->
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a3e635"/>
+    </marker>
+  </defs>
+  <rect x="20" y="20" width="400" height="260" rx="8" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+  <text x="40" y="52" font-size="17" font-weight="700" fill="#a3e635">tu repo</text>
+  <g font-size="15">
+    <rect x="40" y="70" width="360" height="40" rx="4" fill="#0d0d0d" stroke="#404040"/>
+    <text x="56" y="96" fill="#fafafa" font-weight="700">AGENTS.md</text><text x="384" y="96" fill="#737373" text-anchor="end" font-size="13">reglas</text>
+    <rect x="40" y="118" width="360" height="148" rx="4" fill="#0d0d0d" stroke="#404040"/>
+    <text x="56" y="144" fill="#fafafa" font-weight="700">.agents/</text>
+    <text x="76" y="170" fill="#d4d4d4">skills/</text><text x="384" y="170" fill="#737373" text-anchor="end" font-size="13">método</text>
+    <text x="76" y="196" fill="#d4d4d4">hooks/</text><text x="384" y="196" fill="#737373" text-anchor="end" font-size="13">controles</text>
+    <text x="76" y="222" fill="#d4d4d4">mcp</text><text x="384" y="222" fill="#737373" text-anchor="end" font-size="13">conexiones</text>
+    <text x="76" y="248" fill="#d4d4d4">plantillas/</text><text x="384" y="248" fill="#737373" text-anchor="end" font-size="13">moldes</text>
+  </g>
+
+  <path d="M430,150 L540,150" stroke="#a3e635" stroke-width="3" fill="none" marker-end="url(#flecha)"/>
+  <text x="485" y="138" font-size="15" fill="#a3e635" text-anchor="middle" font-weight="700">git clone</text>
+
+  <g font-size="16" text-anchor="middle" font-weight="700" fill="#fafafa">
+    <rect x="560" y="30" width="320" height="50" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/><text x="720" y="61">Codex</text>
+    <rect x="560" y="96" width="320" height="50" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/><text x="720" y="127">Claude Code</text>
+    <rect x="560" y="162" width="320" height="50" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/><text x="720" y="193">opencode</text>
+    <rect x="560" y="228" width="320" height="50" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/><text x="720" y="259">pi</text>
+  </g>
+</svg>

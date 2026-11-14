@@ -93,7 +93,7 @@ insertadas con `mo.image(mo.notebook_dir() / "img" / "<nombre>.svg", width="100%
 
 | Regla | Fallo que la motivó |
 | --- | --- |
-| Diapositivas con el porqué, no el cómo | La primera versión de s08 explicaba pasos que el instructor ya cuenta. |
+| Diapositivas con el porqué, no el cómo | La primera versión de la sesión de cierre y retoma explicaba pasos que el instructor ya cuenta. |
 | Anatomía con el porqué de cada parte | Al quitar el YAML se perdió la referencia; volvió, pero explicando para qué sirve cada campo. |
 | Una idea central por diapositiva | Las listas de viñetas no dejaban ninguna frase para recordar. |
 | Revisar con capturas | Detalles como un YAML ilegible o un cursor mal ubicado solo se vieron en pantalla. |

@@ -72,13 +72,24 @@ def test_new_module_crea_etapas_y_queda_incompleto_sin_tests(tmp_path, capsys):
     new_module.crear(ruta, "Ventas por cliente")
 
     for archivo in (
-        "a01_extraer.py",
-        "b01_procesar.py",
-        "c01_reporte.py",
+        "scripts/a01_extraer.py",
+        "scripts/b01_procesar.py",
+        "scripts/c01_reporte.py",
         "docs/RESUME.yaml",
         "docs/CHANGELOG.md",
+        "config/config.yaml",
+        ".gitignore",
     ):
         assert (ruta / archivo).is_file()
+    assert (ruta / "data").is_dir()
+    assert "data/" in (ruta / ".gitignore").read_text(encoding="utf-8").splitlines()
+    assert sorted(p.name for p in ruta.iterdir()) == [
+        ".gitignore",
+        "config",
+        "data",
+        "docs",
+        "scripts",
+    ]
     assert check.main(["check.py", str(ruta)]) == 2
     assert "tests: no hay tests" in capsys.readouterr().out
 

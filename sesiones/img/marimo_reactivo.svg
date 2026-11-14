@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="JetBrains Mono, ui-monospace, monospace">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <g font-size="22" text-anchor="middle">
+    <rect x="20" y="50" width="220" height="70" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="130" y="93" fill="#a3e635" font-weight="700">x = 20</text>
+
+    <rect x="340" y="50" width="220" height="70" rx="6" fill="#121212" stroke="#67e8f9" stroke-width="2"/>
+    <text x="450" y="93" fill="#67e8f9" font-weight="700">y = x * 2</text>
+
+    <rect x="660" y="50" width="220" height="70" rx="6" fill="#121212" stroke="#67e8f9" stroke-width="2"/>
+    <text x="770" y="93" fill="#67e8f9" font-weight="700">grafico(y)</text>
+
+    <rect x="340" y="190" width="220" height="70" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="450" y="233" fill="#737373" font-weight="700">z = 5</text>
+  </g>
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M240,85 L336,85"/>
+    <path d="M560,85 L656,85"/>
+  </g>
+  <g font-size="17" text-anchor="middle">
+    <text x="130" y="36" fill="#a3e635">cambias esta celda</text>
+    <text x="450" y="36" fill="#67e8f9">se recalcula</text>
+    <text x="770" y="36" fill="#67e8f9">se recalcula</text>
+    <text x="450" y="284" fill="#737373">no depende de x: no se toca</text>
+  </g>
+</svg>

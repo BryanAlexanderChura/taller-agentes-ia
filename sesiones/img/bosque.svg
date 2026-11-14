@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 380" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- No sabemos lo que no sabemos: un bosque oscuro. La IA tiene el mapa, pero solo alumbra lo que nombras. -->
+  <defs>
+    <radialGradient id="luz" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#a3e635" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#a3e635" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="haz" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a3e635" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#a3e635" stop-opacity="0"/>
+    </linearGradient>
+    <g id="arbol">
+      <path d="M0,-26 L16,6 L-16,6 z" fill="#181818" stroke="#3a3a3a"/>
+      <path d="M0,-12 L20,20 L-20,20 z" fill="#181818" stroke="#3a3a3a"/>
+    </g>
+  </defs>
+
+  <g>
+    <use href="#arbol" x="40" y="60"/><use href="#arbol" x="120" y="45"/><use href="#arbol" x="210" y="70"/>
+    <use href="#arbol" x="300" y="40"/><use href="#arbol" x="390" y="65"/><use href="#arbol" x="480" y="45"/>
+    <use href="#arbol" x="570" y="70"/><use href="#arbol" x="260" y="150"/><use href="#arbol" x="350" y="130"/>
+    <use href="#arbol" x="450" y="150"/><use href="#arbol" x="560" y="140"/><use href="#arbol" x="300" y="240"/>
+    <use href="#arbol" x="400" y="230"/><use href="#arbol" x="500" y="250"/><use href="#arbol" x="590" y="230"/>
+    <use href="#arbol" x="40" y="330"/><use href="#arbol" x="150" y="345"/><use href="#arbol" x="250" y="330"/>
+    <use href="#arbol" x="360" y="345"/><use href="#arbol" x="470" y="330"/><use href="#arbol" x="575" y="345"/>
+  </g>
+
+  <g font-size="13" fill="#4d4d4d" text-anchor="middle">
+    <text x="165" y="110">duckdb</text>
+    <text x="345" y="95">worktrees</text>
+    <text x="520" y="105">hooks</text>
+    <text x="400" y="185">MCP</text>
+    <text x="520" y="200">ruff</text>
+    <text x="350" y="285">marimo</text>
+    <text x="545" y="295">gh</text>
+    <text x="210" y="300">uv</text>
+  </g>
+
+  <path d="M130,210 L470,150 L470,230 z" fill="url(#haz)"/>
+  <circle cx="120" cy="210" r="95" fill="url(#luz)"/>
+  <circle cx="120" cy="210" r="7" fill="#fafafa"/>
+  <text x="120" y="240" font-size="15" fill="#fafafa" font-weight="700" text-anchor="middle">tú</text>
+  <text x="120" y="258" font-size="12" fill="#a3a3a3" text-anchor="middle">lo que ya sabes</text>
+  <text x="440" y="195" font-size="15" fill="#a3e635" font-weight="700" text-anchor="middle">polars</text>
+  <text x="440" y="213" font-size="11" fill="#a3e635" text-anchor="middle">lo que nombraste</text>
+
+  <text x="310" y="374" font-size="12" fill="#737373" text-anchor="middle">la IA conoce el mapa; solo alumbra lo que le pides</text>
+</svg>
