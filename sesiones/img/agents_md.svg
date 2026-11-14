@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290" font-family="JetBrains Mono, ui-monospace, monospace">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <g font-size="16" text-anchor="middle">
+    <rect x="40" y="85" width="270" height="110" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="175" y="128" fill="#a3e635" font-weight="700">AGENTS.md</text>
+    <text x="175" y="156" fill="#737373" font-size="13">reglas del proyecto</text>
+    <text x="175" y="176" fill="#737373" font-size="13">versionadas en el repo</text>
+
+    <rect x="620" y="20" width="240" height="48" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="740" y="50" fill="#fafafa" font-weight="700">Codex</text>
+    <rect x="620" y="86" width="240" height="48" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="740" y="116" fill="#fafafa" font-weight="700">opencode</text>
+    <rect x="620" y="152" width="240" height="48" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="740" y="182" fill="#fafafa" font-weight="700">Claude Code</text>
+    <rect x="620" y="218" width="240" height="48" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="740" y="248" fill="#fafafa" font-weight="700">pi</text>
+  </g>
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M310,140 C470,140 460,44 616,44"/>
+    <path d="M310,140 C470,140 460,110 616,110"/>
+    <path d="M310,140 C470,140 460,176 616,176"/>
+    <path d="M310,140 C470,140 460,242 616,242"/>
+  </g>
+  <g font-size="13" fill="#737373" text-anchor="middle">
+    <text x="175" y="232">se escribe una vez</text>
+    <text x="175" y="252">la herramienta se puede cambiar</text>
+  </g>
+</svg>

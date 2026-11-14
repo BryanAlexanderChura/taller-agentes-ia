@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" font-family="JetBrains Mono, ui-monospace, monospace">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <g font-size="16" text-anchor="middle">
+    <rect x="20" y="30" width="190" height="90" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="115" y="62" fill="#fafafa" font-weight="700">entender</text>
+    <text x="115" y="86" fill="#737373" font-size="13">s01 a s03</text>
+    <text x="115" y="106" fill="#737373" font-size="13">qué es y qué le falta</text>
+
+    <rect x="273" y="30" width="190" height="90" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="368" y="62" fill="#fafafa" font-weight="700">equipar</text>
+    <text x="368" y="86" fill="#737373" font-size="13">s04 y s05</text>
+    <text x="368" y="106" fill="#737373" font-size="13">reglas, skills, hooks</text>
+
+    <rect x="527" y="30" width="190" height="90" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="622" y="62" fill="#fafafa" font-weight="700">organizar</text>
+    <text x="622" y="86" fill="#737373" font-size="13">s06 a s08</text>
+    <text x="622" y="106" fill="#737373" font-size="13">módulos que se retoman</text>
+
+    <rect x="780" y="30" width="190" height="90" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="875" y="62" fill="#fafafa" font-weight="700">confiar</text>
+    <text x="875" y="86" fill="#737373" font-size="13">s09 y s10</text>
+    <text x="875" y="106" fill="#737373" font-size="13">verificar, repartir</text>
+
+    <rect x="350" y="180" width="300" height="80" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="500" y="213" fill="#a3e635" font-weight="700">tu proyecto</text>
+    <text x="500" y="238" fill="#737373" font-size="13">el método, sin depender del chat</text>
+  </g>
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M210,75 L269,75"/>
+    <path d="M463,75 L523,75"/>
+    <path d="M717,75 L776,75"/>
+    <path d="M875,120 C875,220 760,220 654,220"/>
+  </g>
+</svg>

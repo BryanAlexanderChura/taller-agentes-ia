@@ -349,3 +349,27 @@
   text-decoration: none;
   border-bottom: 1px dotted var(--acento);
 }
+
+/* Tarjeta que es un enlace (índice del curso) */
+.reveal a.tarjeta,
+.reveal a.tarjeta:visited {
+  display: block;
+  color: var(--texto) !important;
+  border: 1px solid var(--borde);
+  border-bottom: 1px solid var(--borde);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.reveal a.tarjeta:hover {
+  border-color: var(--acento);
+  transform: translateY(-2px);
+}
+
+.tarjeta .num {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 0.9rem;
+  color: var(--acento);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.2em;
+}

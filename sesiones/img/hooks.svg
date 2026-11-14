@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 370" font-family="JetBrains Mono, ui-monospace, monospace">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <g font-size="16" text-anchor="middle">
+    <rect x="40" y="150" width="150" height="60" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="115" y="176" fill="#fafafa" font-weight="700">sesión</text>
+    <text x="115" y="198" fill="#737373" font-size="13">se abre</text>
+
+    <rect x="320" y="150" width="180" height="60" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="410" y="176" fill="#a3e635" font-weight="700">modelo</text>
+    <text x="410" y="198" fill="#737373" font-size="13">responde o pide</text>
+
+    <rect x="640" y="150" width="180" height="60" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="730" y="176" fill="#fafafa" font-weight="700">tool</text>
+    <text x="730" y="198" fill="#737373" font-size="13">lee, edita, ejecuta</text>
+
+    <rect x="320" y="290" width="180" height="60" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="410" y="316" fill="#fafafa" font-weight="700">fin del turno</text>
+    <text x="410" y="338" fill="#737373" font-size="13">entrega</text>
+  </g>
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M190,180 L316,180"/>
+    <path d="M500,165 L636,165"/>
+    <path d="M640,195 L504,195"/>
+    <path d="M410,210 L410,286"/>
+  </g>
+  <g fill="#a3e635">
+    <circle cx="253" cy="180" r="6"/>
+    <circle cx="568" cy="165" r="6"/>
+    <circle cx="572" cy="195" r="6"/>
+    <circle cx="410" cy="248" r="6"/>
+  </g>
+  <g font-size="14" text-anchor="middle">
+    <text x="253" y="112" fill="#a3e635" font-weight="700">SessionStart</text>
+    <text x="253" y="132" fill="#737373" font-size="13">inyectar memoria</text>
+    <text x="568" y="112" fill="#a3e635" font-weight="700">PreToolUse</text>
+    <text x="568" y="132" fill="#737373" font-size="13">bloquear</text>
+    <text x="572" y="245" fill="#a3e635" font-weight="700">PostToolUse</text>
+    <text x="572" y="265" fill="#737373" font-size="13">formatear, lint, tests</text>
+    <text x="392" y="243" fill="#a3e635" font-weight="700" text-anchor="end">Stop</text>
+    <text x="392" y="263" fill="#737373" font-size="13" text-anchor="end">exigir verificación</text>
+  </g>
+</svg>

@@ -50,10 +50,16 @@ Codex pide confiar en los hooks del proyecto la primera vez (`/hooks`).
 uv run python .agents/skills/verificar/scripts/check.py ejemplos/modulo_demo
 ```
 
-Abrir una sesión:
+Presentar el curso (todas las sesiones en un solo servidor; abre el índice):
+
+```powershell
+uv run python scripts/presentaciones/presentar.py
+```
+
+El índice queda en `http://localhost:2718/?file=indice.py` y cada tarjeta abre su sesión.
+
+Editar una sesión:
 
 ```powershell
 uv run marimo edit sesiones\s01_fundamentos.py
 ```
-
-En marimo, la vista de diapositivas se elige en el menú de layout (app view: slides).

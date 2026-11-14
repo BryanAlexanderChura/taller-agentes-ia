@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" font-family="JetBrains Mono, ui-monospace, monospace">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <g font-size="16" text-anchor="middle">
+    <rect x="20" y="10" width="160" height="64" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="100" y="38" fill="#a3e635" font-weight="700">goal</text>
+    <text x="100" y="60" fill="#737373" font-size="13">criterios fijos</text>
+
+    <rect x="20" y="130" width="160" height="70" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="100" y="162" fill="#fafafa" font-weight="700">tarea</text>
+    <text x="100" y="186" fill="#737373" font-size="13">una de RUN.md</text>
+
+    <rect x="225" y="130" width="160" height="70" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="305" y="162" fill="#fafafa" font-weight="700">test RED</text>
+    <text x="305" y="186" fill="#737373" font-size="13">fija el objetivo</text>
+
+    <rect x="430" y="130" width="160" height="70" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="510" y="162" fill="#fafafa" font-weight="700">código</text>
+    <text x="510" y="186" fill="#737373" font-size="13">hasta GREEN</text>
+
+    <rect x="635" y="130" width="160" height="70" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="715" y="162" fill="#a3e635" font-weight="700">checker</text>
+    <text x="715" y="186" fill="#737373" font-size="13">decide, no opina</text>
+
+    <rect x="840" y="130" width="140" height="70" rx="6" fill="#121212" stroke="#404040" stroke-width="2"/>
+    <text x="910" y="162" fill="#fafafa" font-weight="700">commit</text>
+    <text x="910" y="186" fill="#737373" font-size="13">punto de retorno</text>
+  </g>
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M100,74 L100,126"/>
+    <path d="M180,165 L221,165"/>
+    <path d="M385,165 L426,165"/>
+    <path d="M590,165 L631,165"/>
+    <path d="M795,165 L836,165"/>
+    <path d="M715,130 C715,80 510,80 510,126"/>
+    <path d="M910,200 C910,290 100,290 100,204"/>
+  </g>
+  <g font-size="13" fill="#737373" text-anchor="middle">
+    <text x="612" y="78">FAIL: vuelve al código</text>
+    <text x="505" y="284">PASS: siguiente tarea, hasta cumplir los criterios</text>
+  </g>
+</svg>
