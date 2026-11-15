@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Tres estructuras estándar según lo que se construye. Ninguna es la única. -->
+  <g font-size="16" font-weight="700">
+    <text x="30" y="30" fill="#a3e635">pipeline de datos</text>
+    <text x="330" y="30" fill="#67e8f9">paquete Python</text>
+    <text x="630" y="30" fill="#facc15">ciencia de datos</text>
+  </g>
+  <g font-size="12" fill="#737373">
+    <text x="30" y="50">el del taller (medallion)</text>
+    <text x="330" y="50">src layout (PyPA)</text>
+    <text x="630" y="50">Cookiecutter Data Science</text>
+  </g>
+
+  <rect x="20" y="62" width="270" height="250" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+  <g font-size="15" fill="#d4d4d4">
+    <text x="40" y="94" fill="#fafafa" font-weight="700">ventas/</text>
+    <text x="60" y="124">data/</text>
+    <text x="60" y="152">scripts/</text>
+    <text x="80" y="176" fill="#a3a3a3" font-size="13">a01 · b01 · c01</text>
+    <text x="60" y="204">tests/</text>
+    <text x="60" y="232">docs/</text>
+    <text x="60" y="260">config/</text>
+  </g>
+
+  <rect x="320" y="62" width="270" height="250" rx="6" fill="#121212" stroke="#67e8f9" stroke-width="2"/>
+  <g font-size="15" fill="#d4d4d4">
+    <text x="340" y="94" fill="#fafafa" font-weight="700">mi_paquete/</text>
+    <text x="360" y="124">src/</text>
+    <text x="380" y="148" fill="#a3a3a3" font-size="13">mi_paquete/</text>
+    <text x="360" y="176">tests/</text>
+    <text x="360" y="204">docs/</text>
+    <text x="360" y="232">pyproject.toml</text>
+  </g>
+
+  <rect x="620" y="62" width="270" height="250" rx="6" fill="#121212" stroke="#facc15" stroke-width="2"/>
+  <g font-size="15" fill="#d4d4d4">
+    <text x="640" y="94" fill="#fafafa" font-weight="700">proyecto/</text>
+    <text x="660" y="124">data/</text>
+    <text x="680" y="148" fill="#a3a3a3" font-size="13">raw · processed</text>
+    <text x="660" y="176">notebooks/</text>
+    <text x="660" y="204">models/</text>
+    <text x="660" y="232">reports/</text>
+    <text x="660" y="260">src/</text>
+  </g>
+</svg>

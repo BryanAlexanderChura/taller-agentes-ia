@@ -78,6 +78,7 @@ def test_new_module_crea_etapas_y_queda_incompleto_sin_tests(tmp_path, capsys):
         "docs/RESUME.yaml",
         "docs/CHANGELOG.md",
         "config/config.yaml",
+        "tests/__init__.py",
         ".gitignore",
     ):
         assert (ruta / archivo).is_file()
@@ -89,9 +90,24 @@ def test_new_module_crea_etapas_y_queda_incompleto_sin_tests(tmp_path, capsys):
         "data",
         "docs",
         "scripts",
+        "tests",
     ]
     assert check.main(["check.py", str(ruta)]) == 2
     assert "tests: no hay tests" in capsys.readouterr().out
+
+
+def test_new_module_test_en_tests_importa_su_etapa(tmp_path):
+    ruta = tmp_path / "ventas"
+    new_module.crear(ruta, "Ventas por cliente")
+    (ruta / "scripts" / "b01_procesar.py").write_text(
+        "def run():\n    return 1\n", encoding="utf-8"
+    )
+    (ruta / "tests" / "test_b01_procesar.py").write_text(
+        "from scripts.b01_procesar import run\n\n\ndef test_run():\n    assert run() == 1\n",
+        encoding="utf-8",
+    )
+
+    assert check.correr("pytest", "-q", str(ruta)).returncode == 0
 
 
 def test_new_module_resume_trae_marcador_de_cierre(tmp_path):

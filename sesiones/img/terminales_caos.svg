@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Varias terminales sueltas: la atención se reparte y nadie avisa quién espera. -->
+  <g>
+    <rect x="20" y="30" width="230" height="130" rx="6" fill="#121212" stroke="#404040" stroke-width="2" transform="rotate(-4 135 95)"/>
+    <rect x="340" y="20" width="230" height="130" rx="6" fill="#121212" stroke="#404040" stroke-width="2" transform="rotate(3 455 85)"/>
+    <rect x="30" y="270" width="230" height="130" rx="6" fill="#121212" stroke="#404040" stroke-width="2" transform="rotate(3 145 335)"/>
+    <rect x="345" y="280" width="230" height="130" rx="6" fill="#121212" stroke="#404040" stroke-width="2" transform="rotate(-3 460 345)"/>
+  </g>
+  <g font-size="14">
+    <text x="44" y="66" fill="#a3a3a3" transform="rotate(-4 135 95)">codex</text>
+    <text x="44" y="120" fill="#facc15" font-size="17" font-weight="700" transform="rotate(-4 135 95)">¿terminó?</text>
+    <text x="364" y="56" fill="#a3a3a3" transform="rotate(3 455 85)">pi</text>
+    <text x="364" y="110" fill="#f87171" font-size="17" font-weight="700" transform="rotate(3 455 85)">¿me espera?</text>
+    <text x="54" y="306" fill="#a3a3a3" transform="rotate(3 145 335)">claude</text>
+    <text x="54" y="360" fill="#facc15" font-size="17" font-weight="700" transform="rotate(3 145 335)">¿sigue vivo?</text>
+    <text x="369" y="316" fill="#a3a3a3" transform="rotate(-3 460 345)">pytest</text>
+    <text x="369" y="370" fill="#f87171" font-size="17" font-weight="700" transform="rotate(-3 460 345)">¿falló?</text>
+  </g>
+  <g stroke="#525252" stroke-width="1.5" stroke-dasharray="4 5">
+    <path d="M300,220 L210,150"/><path d="M300,220 L400,150"/><path d="M300,220 L200,280"/><path d="M300,220 L400,290"/>
+  </g>
+  <circle cx="300" cy="220" r="42" fill="#121212" stroke="#fafafa" stroke-width="2"/>
+  <text x="300" y="226" font-size="17" fill="#fafafa" font-weight="700" text-anchor="middle">tú</text>
+</svg>

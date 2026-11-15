@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Cada tarea cerrada es un commit; el marcador del RESUME apunta a la que sigue. -->
+  <path d="M60,110 L700,110" stroke="#525252" stroke-width="3"/>
+  <path d="M700,110 L840,110" stroke="#525252" stroke-width="3" stroke-dasharray="8 7"/>
+
+  <g text-anchor="middle">
+    <circle cx="140" cy="110" r="16" fill="#a3e635"/>
+    <text x="140" y="70" font-size="16" fill="#fafafa" font-weight="700">T1 extraer</text>
+    <text x="140" y="156" font-size="13" fill="#a3e635">commit · PASS</text>
+
+    <circle cx="380" cy="110" r="16" fill="#a3e635"/>
+    <text x="380" y="70" font-size="16" fill="#fafafa" font-weight="700">T2 limpiar</text>
+    <text x="380" y="156" font-size="13" fill="#a3e635">commit · PASS</text>
+
+    <circle cx="620" cy="110" r="16" fill="#121212" stroke="#facc15" stroke-width="3" stroke-dasharray="5 4"/>
+    <text x="620" y="70" font-size="16" fill="#facc15" font-weight="700">T3 reporte</text>
+    <text x="620" y="156" font-size="13" fill="#facc15">a medias</text>
+  </g>
+
+  <text x="760" y="70" font-size="14" fill="#f87171" text-anchor="middle" font-weight="700">se cortó</text>
+  <path d="M760,82 L760,138" stroke="#f87171" stroke-width="2"/>
+
+  <rect x="430" y="190" width="380" height="50" rx="6" fill="#121212" stroke="#67e8f9" stroke-width="2"/>
+  <text x="450" y="221" font-size="15" fill="#67e8f9">RESUME.yaml</text>
+  <text x="600" y="221" font-size="15" fill="#d4d4d4">next: T3 reporte</text>
+  <path d="M620,186 L620,132" stroke="#67e8f9" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <text x="60" y="221" font-size="14" fill="#737373">el chat nuevo verifica T1 y T2,</text>
+  <text x="60" y="241" font-size="14" fill="#737373">y sigue desde T3</text>
+</svg>

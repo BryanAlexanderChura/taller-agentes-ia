@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Sin estructura el agente abre archivo tras archivo; con estructura va directo. -->
+  <defs>
+    <marker id="rojo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f87171"/>
+    </marker>
+    <marker id="verde" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a3e635"/>
+    </marker>
+  </defs>
+  <text x="20" y="30" font-size="18" font-weight="700" fill="#f87171">sin estructura</text>
+  <g font-size="13" fill="#a3a3a3">
+    <rect x="20" y="44" width="560" height="150" rx="6" fill="#121212" stroke="#404040" stroke-width="1.5"/>
+    <text x="40" y="74">final_v2.py</text><text x="220" y="74">limpieza.py</text><text x="420" y="74">test.py</text>
+    <text x="70" y="114">datos_ok.csv</text><text x="260" y="114">nuevo.py</text><text x="430" y="114">utils2.py</text>
+    <text x="40" y="160">reporte_bueno.py</text><text x="250" y="160">viejo/</text><text x="400" y="160">procesar_final.py</text>
+  </g>
+  <g stroke="#f87171" stroke-width="1.8" fill="none" stroke-dasharray="5 4" marker-end="url(#rojo)">
+    <path d="M90,80 C150,95 200,95 250,100"/>
+    <path d="M290,104 C340,80 380,70 420,70"/>
+    <path d="M450,80 C460,110 455,130 470,146"/>
+    <path d="M440,155 C360,170 200,170 130,166"/>
+  </g>
+  <text x="20" y="220" font-size="14" fill="#f87171">abre archivo tras archivo: el contexto se llena buscando</text>
+
+  <text x="20" y="276" font-size="18" font-weight="700" fill="#a3e635">predecible</text>
+  <g font-size="14" fill="#a3a3a3">
+    <rect x="20" y="290" width="560" height="100" rx="6" fill="#121212" stroke="#404040" stroke-width="1.5"/>
+    <text x="40" y="322">scripts/a01_extraer.py</text>
+    <text x="40" y="348" fill="#a3e635" font-weight="700">scripts/b01_procesar.py</text>
+    <text x="40" y="374">scripts/c01_reporte.py</text>
+  </g>
+  <path d="M520,344 L380,344" stroke="#a3e635" stroke-width="2.5" fill="none" marker-end="url(#verde)"/>
+  <text x="530" y="349" font-size="13" fill="#a3e635">limpiar</text>
+  <text x="20" y="420" font-size="14" fill="#a3e635">"limpiar" es silver: una sola lectura</text>
+</svg>

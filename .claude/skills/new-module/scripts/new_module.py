@@ -1,4 +1,4 @@
-"""Crea un módulo con etapas medallion: data/ (ignorada), scripts/, docs/ y config/.
+"""Crea un módulo con etapas medallion: data/ (ignorada), scripts/, tests/, docs/ y config/.
 
 Uso: uv run python .agents/skills/new-module/scripts/new_module.py <ruta> "<propósito>"
 """
@@ -25,10 +25,13 @@ rutas:
 def crear(ruta: Path, proposito: str) -> None:
     if ruta.exists():
         raise SystemExit(f"ya existe: {ruta}")
-    for carpeta in ("data", "scripts", "docs", "config"):
+    for carpeta in ("data", "scripts", "tests", "docs", "config"):
         (ruta / carpeta).mkdir(parents=True)
     (ruta / ".gitignore").write_text("data/\n", encoding="utf-8")
     (ruta / "config" / "config.yaml").write_text(CONFIG, encoding="utf-8")
+    # Con tests/ como paquete, pytest pone la raíz del módulo en el path:
+    # un test importa su etapa con `from scripts.b01_procesar import run`.
+    (ruta / "tests" / "__init__.py").write_text("", encoding="utf-8")
     for archivo, doc in ETAPAS.items():
         (ruta / "scripts" / archivo).write_text(
             f'"""{doc}"""\n\n\ndef run():\n    raise NotImplementedError\n',

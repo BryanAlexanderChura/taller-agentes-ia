@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- El test de panel_macro y su salida real: rojo con el bug, verde con el arreglo. -->
+  <rect x="20" y="20" width="470" height="300" rx="8" fill="#121212" stroke="#404040" stroke-width="2"/>
+  <text x="40" y="48" font-size="13" fill="#737373">tests/test_c01_reporte.py</text>
+  <g font-size="14" fill="#d4d4d4">
+    <text x="40" y="84"><tspan fill="#c084fc">def</tspan> <tspan fill="#67e8f9">test_anio_faltante_no_cuenta_como_cero</tspan>():</text>
+    <text x="60" y="114">df = pl.DataFrame({</text>
+    <text x="80" y="138">"pais": ["Costaluna"] * 4,</text>
+    <text x="80" y="162">"anio": [2018, 2019, 2020, 2021],</text>
+    <text x="80" y="186">"inflacion": [4.0, 5.0, <tspan fill="#facc15" font-weight="700">None</tspan>, 3.6],</text>
+    <text x="60" y="210">})</text>
+    <text x="60" y="242" fill="#737373"># (4.0 + 5.0 + 3.6) / 3 = 4.2</text>
+    <text x="60" y="272"><tspan fill="#c084fc">assert</tspan> inflacion_media(df, "Costaluna")</text>
+    <text x="100" y="296">== pytest.approx(<tspan fill="#a3e635" font-weight="700">4.2</tspan>)</text>
+  </g>
+
+  <rect x="520" y="20" width="360" height="140" rx="8" fill="#0d0d0d" stroke="#f87171" stroke-width="2"/>
+  <text x="540" y="48" font-size="13" fill="#737373">$ uv run pytest -q</text>
+  <g font-size="14">
+    <text x="540" y="78" fill="#d4d4d4">....<tspan fill="#f87171" font-weight="700">F</tspan>..</text>
+    <text x="540" y="106" fill="#f87171">assert 3.15 == 4.2</text>
+    <text x="540" y="140" fill="#f87171" font-weight="700">1 failed, 6 passed</text>
+  </g>
+
+  <rect x="520" y="180" width="360" height="140" rx="8" fill="#0d0d0d" stroke="#a3e635" stroke-width="2"/>
+  <text x="540" y="208" font-size="13" fill="#737373">$ uv run pytest -q</text>
+  <g font-size="14">
+    <text x="540" y="238" fill="#a3e635">.......</text>
+    <text x="540" y="266" fill="#a3a3a3">el faltante ya no cuenta como 0</text>
+    <text x="540" y="300" fill="#a3e635" font-weight="700">7 passed</text>
+  </g>
+</svg>

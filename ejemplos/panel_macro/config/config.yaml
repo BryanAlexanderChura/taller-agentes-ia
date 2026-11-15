@@ -1,0 +1,18 @@
+rutas:
+  bronze: data/bronze   # crudo, tal como llega
+  silver: data/silver   # limpio y validado
+  gold: data/gold       # listo para consumo
+
+semilla: 42             # la misma del EDA (sesiones/demos/eda_economia.py)
+
+# Nombres que llegan escritos de otra forma -> nombre oficial
+nombres:
+  Del norte: Del Norte
+
+# Rangos plausibles en %; un valor fuera es un error de carga, no un dato
+rangos:
+  inflacion: [-10, 50]
+  desempleo: [0, 40]
+
+shocks: [2009, 2020, 2022]
+ventana: 3              # años antes del shock y desde el shock en adelante

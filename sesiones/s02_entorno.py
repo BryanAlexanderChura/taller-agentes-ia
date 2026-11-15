@@ -276,7 +276,7 @@ def _(mo):
         Solo se recalcula lo que depende del cambio.</div>
       <div class="tarjeta"><b>Sin orden mágico</b>
         No importa en qué orden corriste las celdas.</div>
-      <a class="tarjeta" href="?file=demos/eda_economia.py"><span class="num">DEMO</span><b>EDA de economía</b>
+      <a class="tarjeta" href="http://localhost:2719" target="_blank"><span class="num">DEMO</span><b>EDA de economía</b>
         Un notebook real para tocarlo.</a>
     </div>
     """),

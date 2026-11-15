@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Un repo, dos worktrees: cada agente en su carpeta y su rama. -->
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <rect x="170" y="20" width="260" height="80" rx="8" fill="#121212" stroke="#fafafa" stroke-width="2"/>
+  <text x="300" y="54" font-size="17" fill="#fafafa" font-weight="700" text-anchor="middle">panel_macro</text>
+  <text x="300" y="80" font-size="13" fill="#a3a3a3" text-anchor="middle">rama main</text>
+
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M240,104 C200,150 160,160 150,196"/>
+    <path d="M360,104 C400,150 440,160 450,196"/>
+  </g>
+  <text x="300" y="160" font-size="13" fill="#737373" text-anchor="middle">git worktree add</text>
+
+  <rect x="20" y="204" width="260" height="190" rx="8" fill="#121212" stroke="#67e8f9" stroke-width="2"/>
+  <text x="40" y="236" font-size="15" fill="#67e8f9" font-weight="700">wt/limpiar</text>
+  <g font-size="13" fill="#d4d4d4">
+    <text x="40" y="266">worker 1</text>
+    <text x="40" y="296" fill="#a3a3a3">b01_procesar.py</text>
+    <text x="40" y="320" fill="#a3a3a3">test_b01_procesar.py</text>
+  </g>
+  <rect x="40" y="342" width="220" height="32" rx="4" fill="#67e8f9" fill-opacity="0.1"/>
+  <text x="150" y="363" font-size="12" fill="#67e8f9" text-anchor="middle">su carpeta, su rama</text>
+
+  <rect x="320" y="204" width="260" height="190" rx="8" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+  <text x="340" y="236" font-size="15" fill="#a3e635" font-weight="700">wt/reporte</text>
+  <g font-size="13" fill="#d4d4d4">
+    <text x="340" y="266">worker 2</text>
+    <text x="340" y="296" fill="#a3a3a3">c01_reporte.py</text>
+    <text x="340" y="320" fill="#a3a3a3">test_c01_reporte.py</text>
+  </g>
+  <rect x="340" y="342" width="220" height="32" rx="4" fill="#a3e635" fill-opacity="0.1"/>
+  <text x="450" y="363" font-size="12" fill="#a3e635" text-anchor="middle">su carpeta, su rama</text>
+
+  <text x="300" y="426" font-size="13" fill="#737373" text-anchor="middle">editan a la vez sin pisarse</text>
+</svg>

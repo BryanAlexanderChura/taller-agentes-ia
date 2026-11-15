@@ -1,10 +1,10 @@
 # Marcador del módulo, no diario. Lo actualiza /cerrar-sesion; lo lee /retomar-sesion.
-current_focus: Módulo de ejemplo para la demo del checker.
-# goal: docs/goals/goal-1   # solo con un goal activo
+current_focus: Tabla de shocks para el anexo del paper
+goal: docs/goals/goal-1
 updated: 2026-11-14
-head: 60a432c
+head: ""   # commit corto al cerrar la sesión
 next:
-  - Agregar una etapa bronze que lea un CSV.
+  - Confirmar con el dueño la ventana antes/después (D1 en RUN.md).
 open: []       # AAAA-MM-DD: texto
 blockers: []   # AAAA-MM-DD: texto
 # last_session: 1042   # ID del resumen de la última sesión en Engram

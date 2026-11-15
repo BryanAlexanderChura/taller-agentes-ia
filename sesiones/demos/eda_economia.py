@@ -32,16 +32,16 @@ def _(mo):
 
 @app.cell
 def _(alt):
-    # Tema oscuro de los gráficos, con la paleta del taller
+    # Tema claro de los gráficos: colores firmes que se leen sobre blanco
     PALETA = [
-        "#a3e635",
-        "#67e8f9",
-        "#facc15",
-        "#f87171",
-        "#c084fc",
-        "#fb923c",
-        "#f472b6",
-        "#94a3b8",
+        "#4d7c0f",
+        "#0e7490",
+        "#ca8a04",
+        "#dc2626",
+        "#7c3aed",
+        "#ea580c",
+        "#db2777",
+        "#475569",
     ]
 
     MONO = "JetBrains Mono, ui-monospace, monospace"
@@ -50,27 +50,27 @@ def _(alt):
     @alt.theme.register("terminal", enable=True)
     def _tema():
         ejes = {
-            "domainColor": "#262626",
-            "gridColor": "#1f1f1f",
-            "tickColor": "#262626",
-            "labelColor": "#a3a3a3",
-            "titleColor": "#d4d4d4",
+            "domainColor": "#d4d4d4",
+            "gridColor": "#eeeeee",
+            "tickColor": "#d4d4d4",
+            "labelColor": "#525252",
+            "titleColor": "#262626",
             "labelFont": MONO,
             "titleFont": TEXTO,
         }
         return {
             "config": {
-                "background": "#121212",
+                "background": "#ffffff",
                 "font": TEXTO,
-                "view": {"stroke": "#262626"},
+                "view": {"stroke": "#e5e5e5"},
                 "axis": ejes,
                 "legend": {
-                    "labelColor": "#d4d4d4",
-                    "titleColor": "#d4d4d4",
+                    "labelColor": "#262626",
+                    "titleColor": "#262626",
                     "labelFont": TEXTO,
                     "titleFont": TEXTO,
                 },
-                "title": {"color": "#fafafa", "font": MONO, "anchor": "start"},
+                "title": {"color": "#171717", "font": MONO, "anchor": "start"},
                 "range": {"category": PALETA},
             }
         }
@@ -222,7 +222,7 @@ def _(alt, anios, filtrado, pl, variable):
     )
     _shocks = (
         alt.Chart(_bandas)
-        .mark_rule(color="#facc15", strokeDash=[4, 4], opacity=0.7)
+        .mark_rule(color="#ca8a04", strokeDash=[4, 4], opacity=0.7)
         .encode(x=_x, tooltip=["shock", "anio"])
     )
     (_shocks + _lineas).properties(
@@ -304,15 +304,15 @@ def _(VARIABLES, alt, filtrado, pl):
     _celdas = _base.mark_rect().encode(
         color=alt.Color(
             "r:Q",
-            scale=alt.Scale(domain=[-1, 0, 1], range=["#f87171", "#121212", "#a3e635"]),
+            scale=alt.Scale(domain=[-1, 0, 1], range=["#dc2626", "#ffffff", "#4d7c0f"]),
             title="r",
         ),
         tooltip=["var1", "var2", alt.Tooltip("r:Q", format=".2f")],
     )
     _texto = _base.mark_text(font="JetBrains Mono", fontSize=12).encode(
         text=alt.Text("r:Q", format=".2f"),
-        # texto oscuro sobre celdas intensas, claro sobre las tenues
-        color=alt.condition("abs(datum.r) > 0.6", alt.value("#0a0a0a"), alt.value("#fafafa")),
+        # texto claro sobre celdas intensas, oscuro sobre las tenues
+        color=alt.condition("abs(datum.r) > 0.6", alt.value("#ffffff"), alt.value("#171717")),
     )
     (_celdas + _texto).properties(
         title="Correlaciones (países y años filtrados)", width="container", height=340

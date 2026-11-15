@@ -64,28 +64,13 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"""
+    mo.vstack(
+        [
+            mo.md(r"""
     ## ¿Por qué una sola fuente de reglas?
 
     <div class="idea">Si cada herramienta tiene sus reglas, tarde o temprano se contradicen.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta"><b>Se edita en un lugar</b>
-        <code>.agents</code> es la verdad; lo demás son copias o adaptadores.</div>
-      <div class="tarjeta"><b>Cambiar de herramienta es barato</b>
-        Codex, opencode, Claude Code y pi trabajan con las mismas reglas.</div>
-      <div class="tarjeta"><b>Sin symlinks</b>
-        Copias simples: funciona igual en Windows.</div>
-    </div>
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.vstack(
-        [
-            mo.md("## Anatomía de <code>.agents</code>"),
+    """),
             mo.hstack(
                 [
                     mo.md(r"""
@@ -97,7 +82,6 @@ def _(mo):
         cerrar-sesion  retomar-sesion
         revisar-con-pi  grill-me
         root-cause  write-goal
-        presentar-porque
       plantillas/SKILL.md
       hooks/
       sync_claude.py
@@ -105,13 +89,13 @@ def _(mo):
     ```
     """),
                     mo.md(r"""
-    <div class="anatomia">
-      <code>AGENTS.md</code><span>Las reglas del proyecto, en el único archivo que todas leen.</span>
-      <code>skills/</code><span>El cómo se escribe una vez y cualquier agente lo repite igual.</span>
-      <code>plantillas/</code><span>Una skill nueva nace con la forma de las demás.</span>
-      <code>hooks/</code><span>Una sola lista de bloqueos: lo prohibido no depende de la herramienta.</span>
-      <code>sync_claude.py</code><span>Claude Code lee otra carpeta: se le copia, no se mantiene a mano.</span>
-      <code>.&lt;herramienta&gt;/</code><span>Adaptadores finos: enganchan el mismo hook en cada herramienta.</span>
+    <div class="tarjetas columna">
+      <div class="tarjeta"><b>Se edita en un lugar</b>
+        <code>.agents</code> es la verdad; lo demás son copias o adaptadores.</div>
+      <div class="tarjeta"><b>Cambiar de herramienta es barato</b>
+        Codex, opencode, Claude Code y pi siguen las mismas reglas.</div>
+      <div class="tarjeta"><b>Sin symlinks</b>
+        Copias simples: funciona igual en Windows.</div>
     </div>
     """),
                 ],
@@ -133,35 +117,14 @@ def _(mo):
 
     <div class="tarjetas">
       <div class="tarjeta"><b>Empieza chico</b>
-        Un módulo con TDD y checker enseña más que repasar el curso.</div>
+        Un módulo, de RED a PASS, enseña más que repasar el curso.</div>
       <div class="tarjeta"><b>El hábito es cerrar y abrir</b>
         Es lo que convierte cada sesión en un paso retomable.</div>
       <div class="tarjeta"><b>Paralelo cuando haya con qué</b>
         Worktrees y varios agentes solo con tareas independientes.</div>
     </div>
 
-    <div class="nota">Por eso: copia <code>AGENTS.md</code> y <code>.agents/</code> a un proyecto tuyo y crea un módulo.</div>
-    """)
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""
-    ## ¿Por qué un ejercicio tan pequeño?
-
-    <div class="idea">Recorre el ciclo completo en algo que cabe en una sesión.</div>
-
-    <div class="tarjetas">
-      <div class="tarjeta"><b>Empieza en RED</b>
-        El test define qué debe leer antes de escribir una línea.</div>
-      <div class="tarjeta"><b>Termina en PASS</b>
-        No se da por hecho hasta que el checker lo diga.</div>
-      <div class="tarjeta"><b>Sin distracciones</b>
-        Un CSV y una etapa: toda la atención va al método.</div>
-    </div>
-
-    <div class="nota">Ejercicio: agregar a <code>ejemplos/modulo_demo</code> una etapa bronze que lea un CSV.</div>
+    <div class="nota">Ejercicio: agregar a <code>ejemplos/panel_macro</code> el shock de 2015, con su test primero. Después, copia <code>AGENTS.md</code> y <code>.agents/</code> a un proyecto tuyo.</div>
     """)
     return
 
@@ -182,6 +145,21 @@ def _(mo):
         Reglas, tests y estado viven en tu repo, no en un proveedor.</div>
     </div>
     """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack(
+        [
+            mo.md(r"""
+    ## ¿Qué hay fuera del mapa?
+
+    <div class="idea">Lo que recorrimos es un claro; el bosque sigue.</div>
+    """),
+            mo.Html((mo.notebook_dir() / "img" / "bosque_final.svg").read_text(encoding="utf-8")),
+        ]
+    )
     return
 
 

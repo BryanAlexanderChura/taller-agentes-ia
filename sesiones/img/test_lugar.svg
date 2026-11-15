@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Cada etapa tiene su test con el mismo nombre; el ciclo empieza con un test que falla. -->
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <text x="20" y="30" font-size="15" font-weight="700" fill="#fafafa">scripts/</text>
+  <text x="330" y="30" font-size="15" font-weight="700" fill="#fafafa">tests/</text>
+  <g font-size="14">
+    <rect x="20" y="42" width="250" height="40" rx="4" fill="#121212" stroke="#404040"/><text x="36" y="67" fill="#d4d4d4">a01_extraer.py</text>
+    <rect x="330" y="42" width="250" height="40" rx="4" fill="#121212" stroke="#404040"/><text x="346" y="67" fill="#d4d4d4">test_a01_extraer.py</text>
+    <rect x="20" y="92" width="250" height="40" rx="4" fill="#121212" stroke="#a3e635" stroke-width="2"/><text x="36" y="117" fill="#a3e635" font-weight="700">b01_procesar.py</text>
+    <rect x="330" y="92" width="250" height="40" rx="4" fill="#121212" stroke="#a3e635" stroke-width="2"/><text x="346" y="117" fill="#a3e635" font-weight="700">test_b01_procesar.py</text>
+    <rect x="20" y="142" width="250" height="40" rx="4" fill="#121212" stroke="#404040"/><text x="36" y="167" fill="#d4d4d4">c01_reporte.py</text>
+    <rect x="330" y="142" width="250" height="40" rx="4" fill="#121212" stroke="#404040"/><text x="346" y="167" fill="#d4d4d4">test_c01_reporte.py</text>
+  </g>
+  <g stroke="#525252" stroke-width="1.5" stroke-dasharray="4 4">
+    <path d="M270,62 L330,62"/><path d="M270,112 L330,112" stroke="#a3e635"/><path d="M270,162 L330,162"/>
+  </g>
+  <text x="300" y="210" font-size="13" fill="#737373" text-anchor="middle">mismo nombre: cada etapa sabe dónde está su prueba</text>
+
+  <g font-size="16" text-anchor="middle" font-weight="700">
+    <rect x="20" y="250" width="170" height="70" rx="6" fill="#121212" stroke="#f87171" stroke-width="2"/>
+    <text x="105" y="282" fill="#f87171">1 test</text><text x="105" y="304" fill="#f87171" font-size="13">falla</text>
+    <rect x="215" y="250" width="170" height="70" rx="6" fill="#121212" stroke="#facc15" stroke-width="2"/>
+    <text x="300" y="282" fill="#facc15">2 código</text><text x="300" y="304" fill="#facc15" font-size="13">mínimo</text>
+    <rect x="410" y="250" width="170" height="70" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+    <text x="495" y="282" fill="#a3e635">3 PASS</text><text x="495" y="304" fill="#a3e635" font-size="13">verificado</text>
+  </g>
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M192,285 L211,285"/><path d="M387,285 L406,285"/>
+    <path d="M495,324 C495,370 105,370 105,328"/>
+  </g>
+  <text x="300" y="400" font-size="13" fill="#737373" text-anchor="middle">siguiente comportamiento, siguiente test</text>
+  <text x="300" y="428" font-size="12" fill="#737373" text-anchor="middle">el ciclo completo, en la sesión 8</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Maqueta de la pantalla de Herdr: sidebar con estados, pestañas y paneles. -->
+  <rect x="20" y="40" width="760" height="320" rx="8" fill="#0d0d0d" stroke="#525252" stroke-width="2"/>
+
+  <!-- sidebar -->
+  <rect x="20" y="40" width="190" height="320" rx="8" fill="#121212" stroke="#525252" stroke-width="2"/>
+  <text x="36" y="70" font-size="14" fill="#a3e635" font-weight="700">ia-postuler</text>
+  <g font-size="13">
+    <circle cx="44" cy="104" r="6" fill="#67e8f9"/><text x="58" y="109" fill="#d4d4d4">codex</text><text x="196" y="109" fill="#67e8f9" font-size="11" text-anchor="end">working</text>
+    <circle cx="44" cy="136" r="6" fill="#facc15"/><text x="58" y="141" fill="#d4d4d4">pi</text><text x="196" y="141" fill="#facc15" font-size="11" text-anchor="end">blocked</text>
+    <circle cx="44" cy="168" r="6" fill="#a3e635"/><text x="58" y="173" fill="#d4d4d4">claude</text><text x="196" y="173" fill="#a3e635" font-size="11" text-anchor="end">done</text>
+  </g>
+  <text x="36" y="226" font-size="14" fill="#737373" font-weight="700">taller</text>
+  <g font-size="13">
+    <circle cx="44" cy="258" r="6" fill="#525252"/><text x="58" y="263" fill="#a3a3a3">codex</text><text x="196" y="263" fill="#737373" font-size="11" text-anchor="end">idle</text>
+  </g>
+
+  <!-- tabs -->
+  <g font-size="13">
+    <rect x="222" y="50" width="120" height="30" rx="4" fill="#1f2a10" stroke="#a3e635"/><text x="282" y="70" fill="#a3e635" text-anchor="middle">reporte</text>
+    <rect x="350" y="50" width="120" height="30" rx="4" fill="#121212" stroke="#404040"/><text x="410" y="70" fill="#a3a3a3" text-anchor="middle">revisión</text>
+  </g>
+
+  <!-- panes -->
+  <rect x="222" y="90" width="270" height="260" rx="5" fill="#121212" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="236" y="114" font-size="13" fill="#67e8f9" font-weight="700">codex</text>
+  <g font-size="12" fill="#737373"><text x="236" y="140">editando c01_reporte.py</text><text x="236" y="160">...</text></g>
+  <rect x="500" y="90" width="270" height="125" rx="5" fill="#121212" stroke="#facc15" stroke-width="1.5"/>
+  <text x="514" y="114" font-size="13" fill="#facc15" font-weight="700">pi</text>
+  <g font-size="12" fill="#facc15"><text x="514" y="140">¿apruebo correr bash?</text></g>
+  <rect x="500" y="225" width="270" height="125" rx="5" fill="#121212" stroke="#404040" stroke-width="1.5"/>
+  <text x="514" y="249" font-size="13" fill="#a3a3a3" font-weight="700">tests</text>
+  <g font-size="12" fill="#a3e635"><text x="514" y="275">7 passed</text></g>
+
+  <!-- etiquetas -->
+  <g font-size="14" font-weight="700" fill="#fafafa">
+    <text x="800" y="70">tab</text>
+    <text x="800" y="160">pane</text>
+    <text x="800" y="286">pane</text>
+  </g>
+  <g stroke="#a3a3a3" stroke-width="1.2" stroke-dasharray="3 4">
+    <path d="M796,66 L474,66"/><path d="M796,156 L772,156"/><path d="M796,282 L772,282"/>
+  </g>
+  <text x="36" y="24" font-size="14" font-weight="700" fill="#fafafa">sidebar</text>
+  <text x="140" y="24" font-size="12" fill="#a3a3a3">estado de todos</text>
+  <text x="380" y="24" font-size="14" font-weight="700" fill="#fafafa">workspace</text>
+  <text x="482" y="24" font-size="12" fill="#a3a3a3">= un proyecto (ia-postuler, taller)</text>
+</svg>

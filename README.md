@@ -38,16 +38,16 @@ Codex pide confiar en los hooks del proyecto la primera vez (`/hooks`).
 | 6 | `sesiones/s06_modulo_medallion.py` | Arquitectura medallion y `/new-module` |
 | 7 | `sesiones/s07_cierre_y_retoma.py` | `/cerrar-sesion` y `/retomar-sesion` |
 | 8 | `sesiones/s08_verificacion_y_goals.py` | TDD, checker, goals y ejecución larga |
-| 9 | `sesiones/s09_herdr.py` | Herdr: varios agentes, sidebar de estados, CLI |
+| 9 | `sesiones/s09_herdr.py` | Parte avanzada. Herdr: varios agentes, estados, CLI |
 | 10 | `sesiones/s10_multiagente.py` | Subagentes, worktrees, roles y orquestación |
 | 11 | `sesiones/s11_como_continuar.py` | Carpeta `.agents`, próximos pasos, práctica, por qué un framework |
 
 ## Ejemplos
 
-- `ejemplos/modulo_demo/`: módulo de juguete con docs y tests para la demo.
+- `ejemplos/panel_macro/`: el EDA de s02 llevado a módulo (extraer, limpiar, tabla de shocks), con tests y goal; ejemplo de s08.
 
 ```powershell
-uv run python .agents/skills/verificar/scripts/check.py ejemplos/modulo_demo
+uv run python .agents/skills/verificar/scripts/check.py ejemplos/panel_macro
 ```
 
 Presentar el curso (todas las sesiones en un solo servidor; abre el índice):
@@ -57,6 +57,7 @@ uv run python scripts/presentaciones/presentar.py
 ```
 
 El índice queda en `http://localhost:2718/?file=indice.py` y cada tarjeta abre su sesión.
+La demo EDA de la sesión 2 corre aparte en modo edición, en `http://localhost:2719`. Si un puerto está ocupado, el lanzador lo libera.
 
 Editar una sesión:
 

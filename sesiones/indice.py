@@ -109,7 +109,7 @@ def _(mo):
       <a class="tarjeta" href="?file=s08_verificacion_y_goals.py"><span class="num">SESIÓN 08</span>
         <b>Verificación y goals</b>Terminado lo decide una prueba, no el agente.</a>
       <a class="tarjeta" href="?file=s09_herdr.py"><span class="num">SESIÓN 09</span>
-        <b>Herdr</b>Varios agentes ayudan solo si ves quién te necesita.</a>
+        <b>Herdr</b>Parte avanzada: varios agentes, un solo lugar.</a>
       <a class="tarjeta" href="?file=s10_multiagente.py"><span class="num">SESIÓN 10</span>
         <b>Orquestación multiagente</b>Repartir el trabajo para que cada agente atienda una sola cosa.</a>
     </div>

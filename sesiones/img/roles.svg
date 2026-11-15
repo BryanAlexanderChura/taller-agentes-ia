@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Roles: tú fijas y aceptas; el orquestador divide e integra; workers hacen; el reviewer solo lee. -->
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+    </marker>
+  </defs>
+  <rect x="330" y="10" width="240" height="64" rx="6" fill="#121212" stroke="#fafafa" stroke-width="2"/>
+  <text x="450" y="38" font-size="17" fill="#fafafa" font-weight="700" text-anchor="middle">tú</text>
+  <text x="450" y="60" font-size="12" fill="#a3a3a3" text-anchor="middle">fijas el objetivo y aceptas</text>
+
+  <rect x="300" y="110" width="300" height="70" rx="6" fill="#121212" stroke="#a3e635" stroke-width="2"/>
+  <text x="450" y="140" font-size="17" fill="#a3e635" font-weight="700" text-anchor="middle">orquestador</text>
+  <text x="450" y="164" font-size="12" fill="#a3a3a3" text-anchor="middle">divide, asigna e integra; no implementa</text>
+
+  <g text-anchor="middle">
+    <rect x="20" y="240" width="250" height="80" rx="6" fill="#121212" stroke="#67e8f9" stroke-width="2"/>
+    <text x="145" y="270" font-size="16" fill="#67e8f9" font-weight="700">worker 1</text>
+    <text x="145" y="296" font-size="12" fill="#a3a3a3">una tarea, sus archivos</text>
+    <rect x="325" y="240" width="250" height="80" rx="6" fill="#121212" stroke="#67e8f9" stroke-width="2"/>
+    <text x="450" y="270" font-size="16" fill="#67e8f9" font-weight="700">worker 2</text>
+    <text x="450" y="296" font-size="12" fill="#a3a3a3">una tarea, sus archivos</text>
+    <rect x="630" y="240" width="250" height="80" rx="6" fill="#121212" stroke="#facc15" stroke-width="2"/>
+    <text x="755" y="270" font-size="16" fill="#facc15" font-weight="700">reviewer</text>
+    <text x="755" y="296" font-size="12" fill="#a3a3a3">otro modelo; solo lee</text>
+  </g>
+  <g stroke="#525252" stroke-width="2.5" fill="none" marker-end="url(#flecha)">
+    <path d="M450,78 L450,106"/>
+    <path d="M380,184 C300,210 170,210 150,236"/>
+    <path d="M450,184 L450,236"/>
+    <path d="M520,184 C600,210 730,210 750,236"/>
+  </g>
+</svg>

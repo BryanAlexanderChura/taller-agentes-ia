@@ -8,6 +8,7 @@ dependencies = [
     "marimo",
     "numpy>=2.5.4",
     "polars>=2.1.0",
+    "pyyaml>=6.0.3",
 ]
 
 [tool.ruff]
@@ -24,3 +25,6 @@ dev = [
     "pytest",
     "ruff",
 ]
+
+[tool.pytest.ini_options]
+norecursedirs = ["legacy", ".venv", "notes"]

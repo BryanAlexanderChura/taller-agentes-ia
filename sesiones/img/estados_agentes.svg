@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Los estados que Herdr reconoce; blocked es lo primero que se atiende. -->
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#facc15"/>
+    </marker>
+  </defs>
+  <rect x="20" y="20" width="300" height="360" rx="8" fill="#121212" stroke="#525252" stroke-width="2"/>
+  <g font-size="18">
+    <rect x="34" y="104" width="272" height="64" rx="6" fill="#facc15" fill-opacity="0.12" stroke="#facc15" stroke-width="2"/>
+    <circle cx="62" cy="62" r="9" fill="#67e8f9"/><text x="84" y="68" fill="#67e8f9" font-weight="700">working</text>
+    <circle cx="62" cy="136" r="9" fill="#facc15"/><text x="84" y="142" fill="#facc15" font-weight="700">blocked</text>
+    <circle cx="62" cy="214" r="9" fill="#a3e635"/><text x="84" y="220" fill="#a3e635" font-weight="700">done</text>
+    <circle cx="62" cy="290" r="9" fill="#525252"/><text x="84" y="296" fill="#a3a3a3" font-weight="700">idle</text>
+  </g>
+  <g font-size="13" fill="#a3a3a3">
+    <text x="84" y="88">trabajando: no interrumpir</text>
+    <text x="84" y="162" fill="#facc15">pide aprobación o pregunta</text>
+    <text x="84" y="240">terminó: revisar resultado</text>
+    <text x="84" y="316">listo para otra tarea</text>
+  </g>
+  <path d="M470,136 L330,136" stroke="#facc15" stroke-width="3" fill="none" marker-end="url(#flecha)"/>
+  <text x="470" y="128" font-size="16" fill="#facc15" font-weight="700">atiende</text>
+  <text x="470" y="150" font-size="16" fill="#facc15" font-weight="700">primero</text>
+  <text x="340" y="350" font-size="13" fill="#737373">un vistazo, sin abrir cada panel</text>
+</svg>

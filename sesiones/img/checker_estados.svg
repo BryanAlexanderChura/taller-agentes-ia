@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 270" font-family="JetBrains Mono, ui-monospace, monospace">
+  <!-- Salidas reales del checker sobre panel_macro en tres momentos. -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <text x="155" y="26" fill="#a3a3a3">recién creado</text>
+    <text x="450" y="26" fill="#a3a3a3">con el bug</text>
+    <text x="745" y="26" fill="#a3a3a3">arreglado</text>
+  </g>
+
+  <rect x="20" y="40" width="270" height="170" rx="8" fill="#0d0d0d" stroke="#facc15" stroke-width="2"/>
+  <rect x="315" y="40" width="270" height="170" rx="8" fill="#0d0d0d" stroke="#f87171" stroke-width="2"/>
+  <rect x="610" y="40" width="270" height="170" rx="8" fill="#0d0d0d" stroke="#a3e635" stroke-width="2"/>
+
+  <g font-size="12" fill="#737373">
+    <text x="36" y="66">$ check.py panel_macro</text>
+    <text x="331" y="66">$ check.py panel_macro</text>
+    <text x="626" y="66">$ check.py panel_macro</text>
+  </g>
+  <g font-size="13">
+    <text x="36" y="104" fill="#facc15">INCOMPLETE tests:</text>
+    <text x="36" y="126" fill="#facc15">no hay tests</text>
+    <text x="331" y="104" fill="#f87171">FAIL tests:</text>
+    <text x="331" y="126" fill="#f87171">assert 3.15 == 4.2</text>
+    <text x="626" y="104" fill="#737373"># docs, lint y tests:</text>
+    <text x="626" y="126" fill="#737373"># todo en orden</text>
+  </g>
+  <g font-size="17" font-weight="700">
+    <text x="36" y="186" fill="#facc15">VERIFY INCOMPLETE</text>
+    <text x="331" y="186" fill="#f87171">VERIFY FAIL</text>
+    <text x="626" y="186" fill="#a3e635">VERIFY PASS</text>
+  </g>
+
+  <g font-size="13" fill="#a3a3a3" text-anchor="middle">
+    <text x="155" y="246">sin pruebas no hay PASS</text>
+    <text x="450" y="246">la prueba atrapa el error</text>
+    <text x="745" y="246">terminado, con evidencia</text>
+  </g>
+</svg>
