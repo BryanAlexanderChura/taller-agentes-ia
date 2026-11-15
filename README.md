@@ -4,11 +4,10 @@ Claude Code, Codex, opencode y pi: del modelo mental al flujo de trabajo con har
 
 ## Preparación (Windows)
 
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts\windows\instalar.ps1
-```
+Doble clic en `scripts\instalacion-herramientas\instalacion-windows\instalar_claude.bat`.
 
-Verifica git, gh, lazygit, uv, node, claude, codex, opencode, pi, engram y herdr (preview en Windows);
+Sin permisos de administrador; usa winget si existe y, si no, descarga a la carpeta del usuario.
+Verifica VS Code, git, gh, lazygit, uv, node, claude, opencode, pi, engram y herdr (preview en Windows);
 instala solo lo que falta, conecta Engram a cada agente y deja el entorno Python listo (`uv sync`).
 
 ## Harness del taller
