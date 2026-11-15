@@ -1,0 +1,14 @@
+current_focus: Gráfico de prueba creado en prueba/grafico/; falta excluir prueba/ del checker.
+updated: 2026-11-14
+head: bd74a7b
+next:
+  - Excluir prueba/ (.gitignore o checker) y volver a correr el checker.
+open:
+  - "2026-11-14: prueba/ sale untracked en git status"
+  - "2026-11-14: elegir cómo excluir prueba/ (.gitignore o checker)"
+blockers: []
+last_session: 8
+engram:
+  cierre_sesion_grafico: 8
+  cierre_sesion_clones: 7
+  repos_clonados_prueba: 6
