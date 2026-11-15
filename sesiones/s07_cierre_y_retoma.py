@@ -3,6 +3,7 @@ import marimo
 app = marimo.App(
     width="medium",
     css_file="tema.css",
+    html_head_file="lapiz.html",
     layout_file="layouts/s07_cierre_y_retoma.slides.json",
 )
 

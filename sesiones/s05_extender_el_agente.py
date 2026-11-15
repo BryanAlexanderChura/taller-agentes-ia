@@ -3,6 +3,7 @@ import marimo
 app = marimo.App(
     width="medium",
     css_file="tema.css",
+    html_head_file="lapiz.html",
     layout_file="layouts/s05_extender_el_agente.slides.json",
 )
 
